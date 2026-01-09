@@ -1,0 +1,53 @@
+<div class="why-choose-us-area">
+    <div class="container">
+        <div class="row mx-0">
+            <div class="col-lg-6 col-md-12 px-0">
+                <div class="choose-us-content">
+                    <span class="top-title">Why Choose Us</span>
+                    <h2>We Are Award Winning Company</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cupiditate, dolorem odio quia mollitia deleniti at error</p>
+                    <ul>
+                        <li><i class="flaticon-tick"></i> 25 Years of Experience</li>
+                        <li><i class="flaticon-tick"></i> Save You Money</li>
+                        <li><i class="flaticon-tick"></i> A Fast & Easy Application</li>
+                        <li><i class="flaticon-tick"></i> 24/7 Support</li>
+                        <li><i class="flaticon-tick"></i> Growing Your Business</li>
+                    </ul>
+                    <a routerLink="/about-us" class="default-btn">Learn More</a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 px-0">
+                <div class="why-choose-us-img position-relative" style="background-image: url(img/choose-us/choose-us-2.jpg);">
+                    <button type="button" class="popup-youtube video-btn" (click)="openPopup()">
+                        <i class="bx bx-play"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Video Popup -->
+@if (isOpen) {
+    <div
+        class="mfp-wrap mfp-close-btn-in mfp-auto-cursor mfp-fade mfp-ready"
+        tabindex="-1"
+    >
+        <div class="mfp-container mfp-iframe-holder">
+            <div class="mfp-content">
+                <div class="mfp-iframe-scaler">
+                    <button
+                        (click)="closePopup()"
+                        title="Close (Esc)"
+                        type="button"
+                        class="mfp-close"
+                    >
+                        ×
+                    </button>
+                    <iframe src="https://www.youtube.com/embed/u31qwQUeGuM" title="Placeholder video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mfp-bg mfp-fade mfp-ready"></div>
+}

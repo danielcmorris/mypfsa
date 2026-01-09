@@ -1,0 +1,54 @@
+import { Routes } from '@angular/router';
+import { HomeDemoOne } from './demos/home-demo-one/home-demo-one';
+import { HomeDemoTwo } from './demos/home-demo-two/home-demo-two';
+import { HomeDemoThree } from './demos/home-demo-three/home-demo-three';
+import { AboutPage } from './pages/about-page/about-page';
+import { ContactPage } from './pages/contact-page/contact-page';
+import { ErrorPage } from './pages/error-page/error-page';
+import { TestimonialsPage } from './pages/testimonials-page/testimonials-page';
+import { AgentsPage } from './pages/agents-page/agents-page';
+import { ServicesPage } from './pages/services-page/services-page';
+import { ServiceDetailsPage } from './pages/service-details-page/service-details-page';
+import { MyAccountPage } from './pages/my-account-page/my-account-page';
+import { ForgotPasswordPage } from './pages/forgot-password-page/forgot-password-page';
+import { PricingPage } from './pages/pricing-page/pricing-page';
+import { ClaimsPage } from './pages/claims-page/claims-page';
+import { FaqPage } from './pages/faq-page/faq-page';
+import { PrivacyPolicyPage } from './pages/privacy-policy-page/privacy-policy-page';
+import { TermsConditionsPage } from './pages/terms-conditions-page/terms-conditions-page';
+import { BusinessInsurancePage } from './pages/business-insurance-page/business-insurance-page';
+import { HealthInsurancePage } from './pages/health-insurance-page/health-insurance-page';
+import { LifeInsurancePage } from './pages/life-insurance-page/life-insurance-page';
+import { CarInsurancePage } from './pages/car-insurance-page/car-insurance-page';
+import { BlogGridPage } from './pages/blog-grid-page/blog-grid-page';
+import { BlogRightSidebarPage } from './pages/blog-right-sidebar-page/blog-right-sidebar-page';
+import { BlogDetailsPage } from './pages/blog-details-page/blog-details-page';
+
+export const routes: Routes = [
+    {path: '', component: HomeDemoOne},
+    {path: 'index-2', component: HomeDemoTwo},
+    {path: 'index-3', component: HomeDemoThree},
+    {path: 'about-us', component: AboutPage},
+    {path: 'testimonials', component: TestimonialsPage},
+    {path: 'agents', component: AgentsPage},
+    {path: 'services', component: ServicesPage},
+    {path: 'service-details', component: ServiceDetailsPage},
+    {path: 'pricing', component: PricingPage},
+    {path: 'claims', component: ClaimsPage},
+    {path: 'business-insurance', component: BusinessInsurancePage},
+    {path: 'health-insurance', component: HealthInsurancePage},
+    {path: 'life-insurance', component: LifeInsurancePage},
+    {path: 'car-insurance', component: CarInsurancePage},
+    {path: 'faq', component: FaqPage},
+    {path: 'privacy-policy', component: PrivacyPolicyPage},
+    {path: 'terms-conditions', component: TermsConditionsPage},
+    {path: 'my-account', component: MyAccountPage},
+    {path: 'forgot-password', component: ForgotPasswordPage},
+    {path: 'blog-grid', component: BlogGridPage},
+    {path: 'blog-right-sidebar', component: BlogRightSidebarPage},
+    {path: 'blog-details', component: BlogDetailsPage},
+    {path: 'contact-us', component: ContactPage},
+    // Here add new component
+    
+    {path: '**', component: ErrorPage} // This line will remain down from the whole component list
+];

@@ -1,0 +1,85 @@
+<app-top-header />
+
+<app-navbar />
+
+<app-inner-page-banner
+    [pageTitle]="'Contact Us'"
+    [backgroundImage]="'img/page-bg/page-bg-4.jpg'"
+/>
+
+<!-- Contact -->
+<div class="main-contact-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <div class="contact-info">
+                    <h3>Contact us, We Are Here to Help You</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+                    <ul class="address">
+                        <li class="location">
+                            <span>Our Office Address</span>
+                            2364 Oakdale Avenue Clearwater, FL 34620, New York, USA
+                        </li>
+                        <li>
+                            <span>Email</span>
+                            <a href="mailto:hello&#64;revor.com">hello&#64;revor.com</a>
+                            <a href="mailto:support&#64;revor.com">support&#64;revor.com</a>
+                        </li>
+                        <li>
+                            <span>Phone</span>
+                            <a href="tel:+1-(514)-312-6677">+1 (514) 312-6677</a>
+                            <a href="tel:+1(514)-312-6688">+1 (514) 312-6688</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="contact-wrap">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="email" name="email" id="email" class="form-control" placeholder="Email Address">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" name="phone_number" id="phone_number" class="form-control" placeholder="Your Phone">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-sm-6">
+                                    <div class="form-group">
+                                        <input type="text" name="msg_subject" id="msg_subject" class="form-control"  placeholder="Subject">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12">
+                                    <button type="submit" class="default-btn"><span>Send Now</span></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Contact -->
+
+<!-- Maps -->
+<div class="map-area">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3031.961340187998!2d-74.1631562842741!3d40.54244325590753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24bad1abc99cf%3A0x5f9d2a11a3874c1a!2sAmboy%20Medical%20Practice!5e0!3m2!1sen!2sbd!4v1605182910292!5m2!1sen!2sbd"></iframe>
+</div>
+<!-- End Maps -->
+
+<app-footer />

@@ -1,0 +1,147 @@
+.single-pricing-box {
+	text-align: center;
+	background-color: #f1fbfc;
+	padding-bottom: 30px;
+	transition: var(--transition);
+	margin-bottom: 30px;
+
+	.pricing-title {
+		margin-bottom: 30px;
+		padding: 30px;
+		border-bottom: 1px solid #e1eaeb;
+
+		span {
+			display: block;
+			margin-bottom: 10px;
+			font: {
+				family: var(--headingFontFamily);
+				weight: 600;
+			};
+		}
+		h1 {
+			margin-bottom: 0;
+			line-height: 1;
+			font-size: 60px;
+
+			sub {
+				font-weight: normal;
+				font-size: 40px;
+			}
+		}
+	}
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style-type: none;
+		padding: 0 30px 30px;
+		line-height: 1;
+
+		li {
+			font-size: 16px;
+			margin-bottom: 20px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+			i {
+				margin-right: 5px;
+			}
+		}
+	}
+	&.active {
+		position: relative;
+		z-index: 1;
+		background: {
+			position: center center;
+			repeat: no-repeat;
+			size: cover;
+		};
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: var(--optionalColor);
+			opacity: 0.9;
+			z-index: -1;
+		}
+		.pricing-title {
+			border-color: #475571;
+
+			span {
+				color: var(--whiteColor);
+			}
+			h1 {
+				color: var(--whiteColor);
+			}
+			p {
+				color: var(--whiteColor);
+			}
+		}
+		ul {
+			li {
+				color: var(--whiteColor);
+
+				i {
+					color: var(--whiteColor);
+				}
+			}
+		}
+	}
+	&:hover {
+		transform: translateY(-5px);
+	}
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .single-pricing-box {
+        padding-bottom: 20px;
+        
+		ul{
+			padding: 0 20px 20px;
+		}
+		.pricing-title {
+			padding: 20px;
+            margin-bottom: 20px;
+            
+			h1 {
+				font-size: 50px;
+			}
+		}
+	}
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .single-pricing-box {
+        padding-bottom: 20px;
+        
+		ul {
+			padding: 0 20px 20px;
+		}
+		.pricing-title {
+			padding: 20px;
+            margin-bottom: 20px;
+            
+			h1 {
+				font-size: 50px;
+			}
+		}
+	}
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Max width 1700px */
+@media only screen and (min-width: 1700px) {}

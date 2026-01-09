@@ -1,0 +1,170 @@
+<!-- Navbar -->
+<div
+    class="navbar-area"
+    [ngClass]="{'is-sticky': isSticky}"
+>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" routerLink="/">
+                <img src="img/logo.png" alt="logo">
+            </a>
+            <button
+                class="navbar-toggler rounded-0 shadow-none"
+                (click)="toggleClass()"
+                type="button"
+            >
+                <span class="burger-menu">
+                    <span class="top-bar"></span>
+                    <span class="middle-bar"></span>
+                    <span class="bottom-bar"></span>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav m-auto">
+                    <li class="nav-item" *ngFor="let item of mainMenu">
+                        <a *ngIf="item.children && item.children.length > 0" href="javascript:void(0)" class="nav-link">
+                            {{ item.label }} <i class="bx bx-chevron-down"></i>
+                        </a>
+                        <a *ngIf="!item.children || item.children.length === 0" [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">
+                            {{ item.label }}
+                        </a>
+                        <ul class="dropdown-menu" *ngIf="item.children && item.children.length > 0">
+                            <li class="nav-item" *ngFor="let child of item.children">
+                                <a *ngIf="child.children && child.children.length > 0" href="javascript:void(0)" class="nav-link">
+                                    {{ child.label }} <i class="bx bx-chevron-right"></i>
+                                </a>
+                                <a *ngIf="!child.children || child.children.length === 0" [routerLink]="child.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">
+                                    {{ child.label }}
+                                </a>
+                                <ul class="dropdown-menu" *ngIf="child.children && child.children.length > 0">
+                                    <li class="nav-item" *ngFor="let grandchild of child.children">
+                                        <a [routerLink]="grandchild.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">
+                                            {{ grandchild.label }}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="others-option">
+                    <!-- <form class="search-box">
+                        <input type="text" name="Search" placeholder="Search for..." class="form-control">
+                        <button type="submit" class="search-btn"><i class="bx bx-search"></i></button>
+                        <button type="submit" class="close-btn"><i class="bx bx-x"></i></button>
+                    </form> -->
+                    <!-- <div class="call-us">
+                        <i class="bx bx-phone-call"></i>
+                        <a href="tel:+1-(514)-312-5678">+1 (514) 312-5678</a>
+                    </div> -->
+                    <!-- <div class="get-quote">
+                        <a routerLink="/pricing" class="default-btn">Get a Quote</a>
+                    </div> -->
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<!-- Responsive Navbar -->
+<div
+    class="responsive-navbar offcanvas offcanvas-end border-0 transition"
+    [class.show]="classApplied"
+>
+    <div class="offcanvas-header">
+        <a routerLink="/" class="logo d-inline-block">
+            <img src="img/logo.png" alt="logo">
+        </a>
+        <button
+            type="button"
+            (click)="toggleClass()"
+            class="close-btn bg-transparent transition position-relative lh-1 p-0 border-0"
+        >
+            <i class='bx bx-x'></i>
+        </button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="accordion">
+            <div class="accordion-item rounded-0 border-0" *ngFor="let item of mainMenu; let i = index">
+                <button
+                    *ngIf="item.children && item.children.length > 0"
+                    type="button"
+                    (click)="toggleSection(i)"
+                    [ngClass]="{ 'open': isSectionOpen(i) }"
+                    class="accordion-button d-block text-start shadow-none fw-bold border-0 transition border-radius"
+                >
+                    {{ item.label }}
+                </button>
+                <a
+                    *ngIf="!item.children || item.children.length === 0"
+                    [routerLink]="item.path"
+                    class="accordion-button without-icon d-block text-start shadow-none fw-bold border-0 transition border-radius"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{exact: true}"
+                >
+                    {{ item.label }}
+                </a>
+                <div class="accordion-collapse" [ngClass]="{ 'open': isSectionOpen(i) }" *ngIf="item.children && item.children.length > 0">
+                    <div class="accordion-body">
+                        <ul class="sidebar-sub-menu p-0 list-unstyled mb-0">
+                            <li class="sidemenu-item" *ngFor="let child of item.children; let j = index">
+                                <button
+                                    *ngIf="child.children && child.children.length > 0"
+                                    type="button"
+                                    (click)="toggleSection2(i * 100 + j)"
+                                    [ngClass]="{ 'open': isSectionOpen2(i * 100 + j) }"
+                                    class="accordion-button d-block text-start shadow-none fw-bold border-0 transition border-radius"
+                                >
+                                    {{ child.label }}
+                                </button>
+                                <a
+                                    *ngIf="!child.children || child.children.length === 0"
+                                    [routerLink]="child.path"
+                                    routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{exact: true}"
+                                    class="sidemenu-link border-radius d-block position-relative transition fw-bold"
+                                >
+                                    {{ child.label }}
+                                </a>
+                                <div class="accordion-collapse" [ngClass]="{ 'open': isSectionOpen2(i * 100 + j) }" *ngIf="child.children && child.children.length > 0">
+                                    <div class="accordion-body">
+                                        <ul class="sidebar-sub-menu p-0 list-unstyled mb-0">
+                                            <li class="sidemenu-item" *ngFor="let grandchild of child.children">
+                                                <a
+                                                    [routerLink]="grandchild.path"
+                                                    routerLinkActive="active"
+                                                    [routerLinkActiveOptions]="{exact: true}"
+                                                    class="sidemenu-link border-radius d-block position-relative transition fw-bold"
+                                                >
+                                                    {{ grandchild.label }}
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="others-option">
+            <div class="option-item">
+                <form class="search-box">
+                    <input type="text" class="input-search" placeholder="Search here...">
+                    <button type="submit">
+                        <i class='bx bx-search'></i>
+                    </button>
+                </form>
+            </div>
+            <div class="option-item d-flex align-items-center">
+                <!-- <a routerLink="/pricing" class="default-btn">Get a Quote</a> -->
+                <div class="call-us">
+                    <i class="bx bx-phone-call"></i>
+                    <a href="tel:+1-(514)-312-5678">+1 (514) 312-5678</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="offcanvas-backdrop fade" [class.show]="classApplied"></div>

@@ -1,0 +1,106 @@
+.claims-content {
+	max-width: 810px;
+	margin: auto;
+
+	h2 {
+		font-size: 35px;
+	}
+	h3 {
+		font-size: 25px;
+		margin-bottom: 15px;
+	}
+	.content {
+		margin-bottom: 30px;
+
+		&.step-1 {
+			text-align: center;
+
+			span {
+				color: var(--mainColor);
+				font-size: 16px;
+				display: block;
+				margin-bottom: 10px;
+			}
+			h2 {
+				max-width: 440px;
+				margin: 0 auto 20px;
+			}
+			.claims-img {
+				margin-bottom: 30px;
+			}
+		}
+		&.step-5 {
+			margin-bottom: 0;
+
+			.contact-us {
+				background-color: #f1fbfc;
+				padding: 20px;
+				margin-bottom: 30px;
+
+				span {
+					display: block;
+					position: relative;
+					padding-left: 20px;
+					color: var(--headingColor);
+					margin-bottom: 5px;
+					font: {
+						weight: 600;
+						size: 18px;
+					};
+					&::before {
+						content: "";
+						position: absolute;
+						top: 8px;
+						left: 0;
+						width: 10px;
+						height: 10px;
+						background-color: var(--mainColor);
+						border-radius: 50%;
+					}
+				}
+				a {
+					font-weight: 600;
+					padding-left: 20px;
+				}
+			}
+			
+		}
+	}
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .claims-content {
+		h2 {
+			font-size: 25px;
+		}
+		h3 {
+			font-size: 20px;
+		}
+	}
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .claims-content {
+		h2 {
+			font-size: 25px;
+		}
+		h3 {
+			font-size: 20px;
+		}
+	}
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Max width 1700px */
+@media only screen and (min-width: 1700px) {}

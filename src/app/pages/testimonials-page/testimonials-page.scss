@@ -1,0 +1,11 @@
+@use "../../demos/home-demo-three/feedback/feedback.scss" as *;
+
+.testimonials-item {
+    margin-bottom: 30px;
+
+    img {
+        width: auto;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+    }
+}

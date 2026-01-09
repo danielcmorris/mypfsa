@@ -1,0 +1,38 @@
+<section class="team-area ptb-100">
+    <div class="container">
+        <div class="section-title">
+            <span class="top-title">Our Agent</span>
+            <h2>Meet Our Expert Agents</h2>
+        </div>
+        <div class="team-slider">
+            <owl-carousel-o [options]="teamSlidesOptions">
+                @for (a of agents; track $index) {
+                   <ng-template carouselSlide>
+                    <div class="single-team">
+                        <div class="team-img">
+                            <img src="{{a.image}}" alt="{{a.name}}">
+                            <!-- <ul class="team-link">
+                                <li><a href="#" target="_blank"><i class="bx bxl-facebook"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="bx bxl-twitter"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="bx bxl-pinterest-alt"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="bx bxl-instagram"></i></a></li>
+                            </ul> -->
+                        </div>
+                        <div class="team-content">
+                            <h3>{{a.name}}</h3>
+                            <span>{{a.license}}</span>
+                          <div style="text-align: left;border-top: solid 1px darkgray;padding:10px;margin:10px">
+
+                            <ul>
+                                <li>Direct Line: {{a.contact.phone}}</li>
+                                <li>Email: {{a.contact.email}}</li>
+                            </ul>
+                        </div>
+                        </div>
+                    </div>
+                </ng-template>  
+                }
+            </owl-carousel-o>
+        </div>
+    </div>
+</section>

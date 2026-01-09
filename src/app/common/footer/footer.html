@@ -1,0 +1,81 @@
+<!-- Footer -->
+<footer class="footer-area bg-color pt-100 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="single-footer-widget single-bg">
+                    <a routerLink="/" class="logo">
+                        <img src="img/logo.png" alt="Image">
+                    </a>
+                    <p>A member-owned fraternal benefit society offering life insurance, retirement and education savings products plus cultural, social, and community support.<br><br></p>
+                    <ul class="social-icon">
+                        <li><a href="#" target="_blank"><i class="bx bxl-facebook"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="bx bxl-instagram"></i></a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="single-footer-widget">
+                    <h3>Contact</h3>
+                    <ul class="address">
+                        <li>
+                            <span>Phone:</span>
+                           <a href="tel:+1-(209)-702-6364">+1 (209) 702-6364</a>
+                        </li>
+                        <li>
+                            <span>Email:</span>
+                            <a href="mailto:hello&#64;revor.com">mypfsa&#64;mypfsa.org</a>
+
+                        </li>
+                        <li class="location">
+                            <span>Address:</span>
+                             1100 14th Street, Suite E, Modesto, CA 95354, USA
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="single-footer-widget">
+                    <h3>Services</h3>
+                    <ul class="import-link">
+                        <li><a routerLink="/service-details">Whole Life Insurance</a></li>
+                        <li><a routerLink="/service-details">Term Life Insurance</a></li>
+                        <li><a routerLink="/service-details">Universal Life Insurance</a></li>
+
+                        <li><a routerLink="/service-details">Wealth Transfer</a></li>
+                        <li><a routerLink="/service-details">IRA's & Annuities</a></li>
+                        <li><a routerLink="/service-details">Educational Savings</a></li>
+                        <li><a routerLink="/service-details">Universal Life Insurance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="single-footer-widget">
+                    <h3>Get in Touch</h3>
+                    <p>Sign up to get our latest news.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="form-control" placeholder="Enter email address" name="EMAIL" required
+                            autocomplete="off">
+                        <button class="default-btn" type="submit">Subscribe Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Copyright -->
+<div class="copy-right-area bg-color">
+    <div class="container">
+        <p>© PFSA 2026</p>
+    </div>
+</div>
+
+<!-- Back to Top -->
+@if (isShow) {
+<div class="go-top" (click)="scrollToTop()">
+    <i class="bx bx-chevrons-up"></i>
+    <i class="bx bx-chevrons-up"></i>
+</div>
+}

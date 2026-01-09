@@ -1,0 +1,184 @@
+::ng-deep {
+    .team-area {
+        position: relative;
+    
+        .owl-theme {
+            .owl-nav {
+                margin: 0;
+                
+                .owl-prev, .owl-next {
+                    background-color: transparent;
+                    padding: 0;
+                    
+                    i {
+                        font-size: 20px;
+                        color: var(--mainColor);
+                        border: 1px solid var(--mainColor);
+                        width: 40px;
+                        height: 40px;
+                        line-height: 40px;
+                        border-radius: 50%;
+                        display: inline-block;
+                        transition: var(--transition);
+                    }
+                    &:hover {
+                        i {
+                            background-color: var(--mainColor);
+                            color: var(--whiteColor);
+                        }
+                    }
+                }
+                [class*=owl-]:hover {
+                    background-color: transparent;
+                }
+            }
+        }
+        .owl-carousel {
+            .owl-item img {
+                width: auto;
+                margin: auto;
+            }
+        }
+    }
+}
+.single-team {
+	z-index: 1;
+	padding: 30px;
+	padding-top: 0;
+	text-align: center;
+	position: relative;
+	margin-bottom: 30px;
+	background-color: #f1fbfc;
+	transition: var(--transition);
+
+	.team-img {
+		position: relative;
+		z-index: 1;
+
+		.team-link {
+			left: 0;
+			right: 0;
+			margin: 0;
+			bottom: 0;
+			padding: 0;
+			position: absolute;
+			transform: scaleX(0);
+			list-style-type: none;
+			transition: var(--transition);
+
+			li {
+				display: inline-block;
+				margin: 0 3px;
+
+				a {
+					margin: 0 0;
+					display: inline-block;
+
+					i {
+						width: 50px;
+						height: 50px;
+						font-size: 20px;
+						line-height: 50px;
+						text-align: center;
+						color: var(--optionalColor);
+						box-shadow: var(--boxShadow);
+						transition: var(--transition);
+						background-color: var(--whiteColor);
+					}
+					&:hover {
+						i {
+							background-color: var(--mainColor);
+							color: var(--whiteColor);
+						}
+					}
+				}
+			}
+		}
+	}
+	.team-content {
+		padding-top: 30px;
+
+		h3 {
+			font-size: 18px;
+			transition: var(--transition);
+		}
+		span {
+			color: var(--mainColor);
+			font-size: 15px;
+		}
+	}
+	&:hover {
+		transform: translateY(-5px);
+		background-color: var(--optionalColor);
+
+		.team-img {
+			.team-link {
+				transform: scaleX(1);
+			}
+		}
+		.team-content {
+			padding-top: 30px;
+
+			h3 {
+				color: var(--whiteColor);
+			}
+		}
+	}
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .single-team {
+		padding: 20px;
+        padding-top: 0;
+        
+		.team-img {
+			.team-link {
+				li {
+					a {
+						i {
+							width: 40px;
+							height: 40px;
+							line-height: 40px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .single-team {
+		padding: 20px;
+        padding-top: 0;
+        
+		.team-img {
+			.team-link {
+				li {
+					a {
+						i {
+							width: 40px;
+							height: 40px;
+							line-height: 40px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Max width 1700px */
+@media only screen and (min-width: 1700px) {}

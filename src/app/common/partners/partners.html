@@ -1,0 +1,36 @@
+<div
+    class="partner-area bg-color ptb-70"
+    [ngClass]="{'bg-white': router.url === '/testimonials' || router.url === '/about-us'}"
+>
+    <div class="container">
+        <div class="partner-slider">
+            <owl-carousel-o [options]="partnerSlidesOptions">
+                <ng-template carouselSlide>
+                    <div class="partner-item">
+                        <img src="img/partner/partner-1.png" alt="Image">
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="partner-item">
+                        <img src="img/partner/partner-2.png" alt="Image">
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="partner-item">
+                        <img src="img/partner/partner-3.png" alt="Image">
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="partner-item">
+                        <img src="img/partner/partner-4.png" alt="Image">
+                    </div>
+                </ng-template>
+                <ng-template carouselSlide>
+                    <div class="partner-item">
+                        <img src="img/partner/partner-5.png" alt="Image">
+                    </div>
+                </ng-template>
+            </owl-carousel-o>
+        </div>
+    </div>
+</div>

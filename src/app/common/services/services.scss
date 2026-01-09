@@ -1,0 +1,133 @@
+.services-area {
+	.default-btn {
+		display: table;
+		margin: 20px auto 0;
+	}
+}
+.single-services-box {
+	text-align: center;
+	padding: 30px;
+	position: relative;
+	z-index: 1;
+	transition: var(--transition);
+	border: 1px solid #f5f5f5;
+	margin-bottom: 30px;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 15px;
+		left: 15px;
+		width: 0;
+		height: 0;
+		transition: var(--transition);
+		opacity: 0;
+		border: {
+			top: 2px solid var(--mainColor);
+			left: 2px solid var(--mainColor);
+		};
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 15px;
+		right: 15px;
+		width: 0;
+		height: 0;
+		transition: var(--transition);
+		opacity: 0;
+		border: {
+			bottom: 2px solid var(--mainColor);
+			right: 2px solid var(--mainColor);
+		};
+	}
+	i {
+		font-size: 50px;
+		color: var(--mainColor);
+		line-height: 1;
+		margin-bottom: 17px;
+		display: inline-block;
+	}
+	h3 {
+		font-size: 20px;
+		margin-bottom: 12px;
+
+		a {
+			color: var(--headingColor);
+
+			&:hover {
+				color: var(--mainColor);
+			}
+		}
+	}
+	.read-more {
+		color: var(--headingColor);
+		
+		&:hover {
+			color: var(--mainColor);
+		}
+	}
+	&:hover {
+		transform: translateY(-5px);
+		background-color: #f1fbfc;
+		border-color: #f1fbfc;
+
+		&::before {
+			width: 50px;
+			height: 50px;
+			opacity: 1;
+		}
+		&::after {
+			width: 50px;
+			height: 50px;
+			opacity: 1;
+		}
+	}
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+	.services-area {
+		.default-btn {
+			margin: 0 auto 0;
+		}
+	}
+    .single-services-box {
+		background-color: #f1fbfc;
+        margin-bottom: 30px;
+        
+		h3 {
+			font-size: 18px;
+		}
+	}
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+	.services-area {
+		.default-btn {
+			margin: 0 auto 0;
+		}
+	}
+    .single-services-box {
+		background-color: #f1fbfc;
+        margin-bottom: 30px;
+        
+		h3 {
+			font-size: 18px;
+		}
+	}
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Max width 1700px */
+@media only screen and (min-width: 1700px) {}

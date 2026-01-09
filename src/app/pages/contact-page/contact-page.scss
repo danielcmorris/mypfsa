@@ -1,0 +1,132 @@
+.main-contact-area {
+	.form-group {
+		margin-bottom: 30px;
+
+		.form-control {
+			background-color: var(--whiteColor);
+		}
+	}
+	#contactForm {
+		background-color: #f1fbfc;
+		padding: 30px;
+	}
+	.contact-info {
+		h3 {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+		p {
+			margin-bottom: 25px;
+		}
+		.address {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+
+			.location {
+				position: relative;
+
+				i {
+					position: absolute;
+					color: #8b8c90;
+					left: 0;
+					top: 5px;
+					font-size: 45px;
+				}
+				span {
+					display: block;
+					margin-bottom: 10px;
+					color: var(--mainColor);
+					font: {
+						size: 16px;
+						weight: 600;
+					};
+				}
+			}
+			li {
+				position: relative;
+				margin-bottom: 20px;
+
+				a {
+					color: var(--bodyColor);
+					display: block;
+
+					&:hover {
+						color: var(--mainColor);
+					}
+				}
+				&:last-child {
+					margin-bottom: 0;
+				}
+				i {
+					position: absolute;
+					color: #8b8c90;
+					left: 0;
+					top: 0;
+					font-size: 45px;
+				}
+				span {
+					display: block;
+					margin-bottom: 10px;
+					color: var(--mainColor);
+					font: {
+						size: 16px;
+						weight: 600;
+					};
+				}
+			}
+		}
+	}
+}
+.map-area {
+	iframe {
+		width: 100%;
+		height: 480px;
+		display: block;
+		border: none !important;
+	}
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+    .main-contact-area {
+		.contact-info {
+			margin-bottom: 50px;
+		}
+		#contactForm {
+			padding: 20px;
+		}
+	}
+	.map-area {
+        iframe {
+            height: 300px;
+        }
+    }
+
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .main-contact-area {
+		.contact-info {
+			margin-bottom: 50px;
+		}
+	}
+	.map-area {
+        iframe {
+            height: 300px;
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {}
+
+/* Max width 1700px */
+@media only screen and (min-width: 1700px) {}
