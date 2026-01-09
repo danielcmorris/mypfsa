@@ -31,7 +31,7 @@ jobs:
           server: morrisdev.com
           username: ${{ secrets.FTP_USERNAME }}  # Your cPanel username
           password: ${{ secrets.FTP_PASSWORD }}  # Your cPanel password
-          local-dir: ./dist/revor/
+          local-dir: ./dist/revor/browser/
           server-dir: /mypfsa.morrisdev.com/
           exclude: |
             **/.git*
