@@ -1,0 +1,41 @@
+<div class="agents-container" id="agents-list">
+  <div class="agents-header">
+    <h2>Our Insurance Agents</h2>
+    <p class="subtitle">Licensed professionals ready to serve you</p>
+  </div>
+
+  @if (loading) {
+    <div class="loading">Loading agents...</div>
+  }
+
+  @if (!loading) {
+    <div class="agents-grid">
+      @for (agent of agents; track agent.name) {
+        <div class="agent-card">
+          <div class="agent-image-wrapper">
+            <img [src]="agent.image" [alt]="agent.name" class="agent-image">
+          </div>
+          <div class="agent-info">
+            <h3 class="agent-name">{{ agent.name }}</h3>
+            <p class="agent-license">{{ agent.license }}</p>
+            
+            <div class="agent-contact">
+              @if (agent.contact.phone) {
+                <div class="contact-item">
+                  <i class="bx bx-phone"></i>
+                  <a [href]="'tel:' + agent.contact.phone">{{ agent.contact.phone }}</a>
+                </div>
+              }
+              @if (agent.contact.email) {
+                <div class="contact-item">
+                  <i class="bx bx-envelope"></i>
+                  <a [href]="'mailto:' + agent.contact.email">{{ agent.contact.email }}</a>
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>
