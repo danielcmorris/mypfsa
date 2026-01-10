@@ -87,9 +87,9 @@ export class NavigationService {
       },
       {
         label: 'About Us',
-        path: '/about',
+        path: '/about-us',
         children: [
-          { label: 'Leadership', path: '/about/leadership' },
+          { label: 'Leadership', path: '/about-us', fragment: 'leadership' },
           { label: 'Council Directory', path: '/about/council-directory' },
           { label: 'Library', path: '/about/library' },
           { label: 'Bylaws and Financial', path: '/about/bylaws-financial' },

@@ -4,6 +4,7 @@ export interface MenuItem {
   children?: MenuItem[];
   external?: boolean;
   icon?: string;
+  fragment?: string;
 }
 
 export interface NavigationMenu {

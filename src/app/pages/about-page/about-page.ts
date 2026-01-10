@@ -8,11 +8,13 @@ import { Partners } from "../../common/partners/partners";
 import { Feedback } from "../../common/feedback/feedback";
 import { Agents } from "../../common/agents/agents";
 import { Footer } from "../../common/footer/footer";
+ 
+import { LeadershipComponent } from '../../common/leadership/leadership.component';
 
 @Component({
     selector: 'app-about-page',
     standalone: true,
-    imports: [TopHeader, Navbar, InnerPageBanner, Funfacts, WhyChooseUs, Partners, Feedback, Agents, Footer],
+    imports: [TopHeader, Navbar, InnerPageBanner, Funfacts, WhyChooseUs, Partners, Feedback, Agents, Footer,  LeadershipComponent ],
     templateUrl: './about-page.html',
     styleUrl: './about-page.scss'
 })

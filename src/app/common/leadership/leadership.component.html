@@ -1,0 +1,46 @@
+<div class="welcome-area pt-100">
+    <div class="container">
+
+        <div class="section-title">
+            <span id="leadership">PFSA Leadership</span>
+            <h2>Our Elected Leaders</h2>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        @for(set of leadershipSets; track $index) {
+        <div class="row">
+            <div class="col-12" style="text-align: center;  margin-bottom:20px;">
+                <h2>{{set.title}}</h2>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <img src="{{set.imgPath}}" alt="{{set.title}}" class="img-fluid border-radius mb-4">
+                <div style="font-size: 10pt;">{{set.caption}}</div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+
+                <table class="board-table">
+
+                    @for (m of set.members; track $index) {
+                    <tr>
+                        <td>{{m.position}}</td>
+                        <td>{{m.name}}</td>
+                        <td>Co. {{m.councilNumber}}, {{m.councilName}}</td>
+                    </tr>
+                    }
+
+                </table>
+
+
+            </div>
+        </div>
+        }
+    </div>
+
+
+</div>
+
+
+<!-- End About Us -->

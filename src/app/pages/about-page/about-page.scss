@@ -1,1 +1,13 @@
 @use "../../common/welcome/welcome.scss" as *;
+.welcome-content {
+    background-color: rgba(211, 211, 211, 0.7); /* Light gray with 70% opacity */
+    padding: 40px; /* Add some padding so text doesn't touch edges */
+    margin-right:10px;
+}
+
+.welcome-text,
+.welcome-text h2,
+.welcome-text p,
+.welcome-text li {
+    color: #000000; /* Black text */
+}

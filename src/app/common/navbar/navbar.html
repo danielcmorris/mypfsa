@@ -33,12 +33,12 @@
                                 <a *ngIf="child.children && child.children.length > 0" href="javascript:void(0)" class="nav-link">
                                     {{ child.label }} <i class="bx bx-chevron-right"></i>
                                 </a>
-                                <a *ngIf="!child.children || child.children.length === 0" [routerLink]="child.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">
+                                <a *ngIf="!child.children || child.children.length === 0" [routerLink]="child.path" [fragment]="child.fragment" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">
                                     {{ child.label }}
                                 </a>
                                 <ul class="dropdown-menu" *ngIf="child.children && child.children.length > 0">
                                     <li class="nav-item" *ngFor="let grandchild of child.children">
-                                        <a [routerLink]="grandchild.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">
+                                        <a [routerLink]="grandchild.path" routerLinkActive="active"  [fragment]="grandchild.fragment"  [routerLinkActiveOptions]="{exact: true}" class="nav-link">
                                             {{ grandchild.label }}
                                         </a>
                                     </li>

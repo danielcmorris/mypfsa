@@ -1,8 +1,9 @@
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf, ViewportScroller } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { NavigationService } from '../../services/navigation.service';
 import { MenuItem } from '../../models/navigation.model';
+import { filter } from 'rxjs';
 
 @Component({
     selector: 'app-navbar',
@@ -16,11 +17,25 @@ export class Navbar implements OnInit {
     mainMenu: MenuItem[] = [];
     socialLinks: MenuItem[] = [];
 
-    constructor(private navigationService: NavigationService) {}
-
+    constructor(private navigationService: NavigationService,
+        private router: Router,
+        private viewportScroller: ViewportScroller
+    ) { }
     ngOnInit() {
         this.mainMenu = this.navigationService.getMainMenu();
         this.socialLinks = this.navigationService.getSocialLinks();
+
+        this.router.events.pipe(
+            filter(event => event instanceof NavigationEnd)
+        ).subscribe(() => {
+            // Small delay to ensure DOM is ready
+            setTimeout(() => {
+                const tree = this.router.parseUrl(this.router.url);
+                if (tree.fragment) {
+                    this.viewportScroller.scrollToAnchor(tree.fragment);
+                }
+            }, 100);
+        });
     }
 
     // Responsive Menu Trigger
@@ -77,3 +92,5 @@ export class Navbar implements OnInit {
     }
 
 }
+
+
