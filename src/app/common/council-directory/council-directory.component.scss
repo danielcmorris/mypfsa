@@ -1,0 +1,243 @@
+.council-directory-container {
+  padding: 40px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.directory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.directory-header h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+.filter-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-section label {
+  font-weight: 600;
+  color: #555;
+}
+
+.filter-section select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.council-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.council-table thead {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.council-table th {
+  padding: 15px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.council-table td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+
+.council-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.council-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Column specific styles */
+.council-number {
+  width: 15%;
+  min-width: 120px;
+}
+
+.council-number strong {
+  color: #0066cc;
+  font-size: 1.05rem;
+}
+
+.council-name {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.location {
+  width: 25%;
+  min-width: 200px;
+}
+
+.meeting-location {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.address,
+.city-state {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.meeting-info {
+  width: 30%;
+  min-width: 250px;
+}
+
+.schedule {
+  margin-bottom: 8px;
+}
+
+.schedule strong {
+  color: #333;
+}
+
+.note {
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.secretary {
+  width: 30%;
+  min-width: 220px;
+}
+
+.secretary-name {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.contact {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact i {
+  font-size: 1.1rem;
+  color: #0066cc;
+}
+
+.contact a {
+  color: #0066cc;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+.council-count {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Mobile responsive */
+@media (max-width: 1024px) {
+  .council-table {
+    font-size: 0.9rem;
+  }
+  
+  .council-table th,
+  .council-table td {
+    padding: 12px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .directory-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .council-table thead {
+    display: none;
+  }
+
+  .council-table,
+  .council-table tbody,
+  .council-table tr,
+  .council-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .council-table tr {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    background: white;
+  }
+
+  .council-table td {
+    padding: 8px 0;
+    border: none;
+  }
+
+  .council-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+    color: #333;
+  }
+
+  .council-number,
+  .location,
+  .meeting-info,
+  .secretary {
+    width: 100%;
+    min-width: unset;
+  }
+}

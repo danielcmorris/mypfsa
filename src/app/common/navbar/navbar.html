@@ -22,7 +22,7 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav m-auto">
                     <li class="nav-item" *ngFor="let item of mainMenu">
-                        <a *ngIf="item.children && item.children.length > 0" href="javascript:void(0)" class="nav-link">
+                        <a *ngIf="item.children && item.children.length > 0" [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"  class="nav-link">
                             {{ item.label }} <i class="bx bx-chevron-down"></i>
                         </a>
                         <a *ngIf="!item.children || item.children.length === 0" [routerLink]="item.path" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="nav-link">

@@ -87,14 +87,14 @@ export class NavigationService {
       },
       {
         label: 'About Us',
-        path: '/about-us',
+        path: '/about-us', 
         children: [
           { label: 'Leadership', path: '/about-us', fragment: 'leadership' },
-          { label: 'Council Directory', path: '/about/council-directory' },
-          { label: 'Library', path: '/about/library' },
-          { label: 'Bylaws and Financial', path: '/about/bylaws-financial' },
-          { label: 'Meet the Staff', path: '/contact/staff' },
-          { label: 'Careers', path: '/contact/careers' }
+          { label: 'Council Directory', path: '/about-us', fragment: 'council-directory' },
+          { label: 'Library', path: '/about-us',fragment: 'library' },
+          { label: 'Bylaws and Financial', path: '/about-us',fragment: 'bylaws-financial' },
+          { label: 'Meet the Staff', path: '/about-us',fragment: 'staff' },
+          { label: 'Careers', path: '/about-us',fragment: 'careers' }
         ]
       },
     //   {

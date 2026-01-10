@@ -10,11 +10,12 @@ import { Agents } from "../../common/agents/agents";
 import { Footer } from "../../common/footer/footer";
  
 import { LeadershipComponent } from '../../common/leadership/leadership.component';
+import { CouncilDirectoryComponent } from '../../common/council-directory/council-directory.component';
 
 @Component({
     selector: 'app-about-page',
     standalone: true,
-    imports: [TopHeader, Navbar, InnerPageBanner, Funfacts, WhyChooseUs, Partners, Feedback, Agents, Footer,  LeadershipComponent ],
+    imports: [TopHeader, Navbar, InnerPageBanner, Funfacts, WhyChooseUs, Partners, Feedback, Agents, Footer,  LeadershipComponent,CouncilDirectoryComponent ],
     templateUrl: './about-page.html',
     styleUrl: './about-page.scss'
 })

@@ -1,0 +1,108 @@
+<div class="council-directory-container" id="council-directory">
+  <div class="directory-header">
+    <h2>Council Directory</h2>
+    <div class="filters-section">
+      <!-- <div class="filter-group">
+        <label for="state-filter">Filter by State:</label>
+        <select id="state-filter" [value]="selectedState" (change)="onStateChange($event)">
+          <option value="all">All States</option>
+          @for (state of uniqueStates; track state) {
+            <option [value]="state">{{ state }}</option>
+          }
+        </select>
+      </div> -->
+      
+      <div class="filter-group">
+        <label for="city-filter">Filter by City:</label>
+        <select id="city-filter" [value]="selectedCity" (change)="onCityChange($event)">
+          <option value="all">All Cities</option>
+          @for (city of uniqueCities; track city) {
+            <option [value]="city">{{ city }}</option>
+          }
+        </select>
+      </div>
+
+      @if (selectedState !== 'all' || selectedCity !== 'all') {
+        <button class="reset-btn" (click)="resetFilters()">
+          <i class="bx bx-reset"></i> Reset Filters
+        </button>
+      }
+    </div>
+  </div>
+
+  @if (loading) {
+    <div class="loading">Loading councils...</div>
+  }
+
+  @if (!loading) {
+    <div class="table-responsive">
+      <table class="council-table">
+        <thead>
+          <tr>
+            <th>Council #</th>
+            <th>Location</th>
+            <th>Meeting Information</th>
+            <th>Secretary</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (council of filteredCouncils; track council.councilNumber) {
+            <tr>
+              <td class="council-number" data-label="Council">
+                <strong>Council #{{ council.councilNumber }}</strong>
+                <div class="council-name">{{ council.councilName }}</div>
+              </td>
+              <td class="location" data-label="Location">
+                <div class="meeting-location">{{ council.meetingLocation }}</div>
+                @if (council.address) {
+                  <div class="address">{{ council.address }}</div>
+                }
+                @if (council.city || council.state) {
+                  <div class="city-state">
+                    {{ council.city }}@if (council.city && council.state) {<span>, </span>}{{ council.state }}
+                    @if (council.zipCode) {
+                      <span> {{ council.zipCode }}</span>
+                    }
+                  </div>
+                }
+              </td>
+              <td class="meeting-info" data-label="Meeting Information">
+                @if (council.meetingSchedule) {
+                  <div class="schedule">
+                    <strong>Schedule:</strong> {{ council.meetingSchedule }}
+                  </div>
+                }
+                @if (council.meetingNote) {
+                  <div class="note">{{ council.meetingNote }}</div>
+                }
+              </td>
+              <td class="secretary" data-label="Secretary">
+                @if (council.secretary.name) {
+                  <div class="secretary-name">
+                    <strong>{{ council.secretary.name }}</strong>
+                  </div>
+                }
+                @if (council.secretary.phone) {
+                  <div class="contact">
+                    <i class="bx bx-phone"></i> {{ council.secretary.phone }}
+                  </div>
+                }
+                @if (council.secretary.email) {
+                  <div class="contact">
+                    <a [href]="'mailto:' + council.secretary.email">
+                      <i class="bx bx-envelope"></i> {{ council.secretary.email }}
+                    </a>
+                  </div>
+                }
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="council-count">
+      Showing {{ filteredCouncils.length }} of {{ councils.length }} councils
+    </div>
+  }
+</div>
