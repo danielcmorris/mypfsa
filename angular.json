@@ -37,6 +37,9 @@
                             "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
                             "node_modules/boxicons/css/boxicons.min.css",
                             "public/fonts/flaticon.css",
+                            "node_modules/@fortawesome/fontawesome-free/css/all.min.css",     
+                            "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+          
                             "src/styles.scss"
                         ]
                     },

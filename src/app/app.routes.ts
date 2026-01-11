@@ -23,6 +23,8 @@ import { CarInsurancePage } from './pages/car-insurance-page/car-insurance-page'
 import { BlogGridPage } from './pages/blog-grid-page/blog-grid-page';
 import { BlogRightSidebarPage } from './pages/blog-right-sidebar-page/blog-right-sidebar-page';
 import { BlogDetailsPage } from './pages/blog-details-page/blog-details-page';
+import { IconGalleryComponent } from './tools/font-awesome.component';
+import { BootstrapIconGalleryComponent } from './tools/bootstrap-icons.component';
 
 export const routes: Routes = [
     {path: '', component: HomeDemoOne},
@@ -48,7 +50,8 @@ export const routes: Routes = [
     {path: 'blog-right-sidebar', component: BlogRightSidebarPage},
     {path: 'blog-details', component: BlogDetailsPage},
     {path: 'contact-us', component: ContactPage},
-    // Here add new component
-    
+     {path: 'contact-us', component: ContactPage},
+{ path: 'icons/font-awesome', component: IconGalleryComponent }    ,
+{path: 'icons/bootstrap', component: BootstrapIconGalleryComponent }    ,
     {path: '**', component: ErrorPage} // This line will remain down from the whole component list
 ];

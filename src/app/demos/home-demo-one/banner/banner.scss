@@ -7,23 +7,14 @@
 }
 .banner-area {
 	z-index: 1;
-	height: 780px;
+	//height: 780px;
 	position: relative;
 	background: {
 		position: center center;
 		repeat: no-repeat;
 		size: cover;
 	};
-	&::before {
-		top: 0;
-		right: 0;
-		content: "";
-		z-index: -1;
-		height: 100%;
-		width: 450px;
-		position: absolute;
-		background-color: var(--optionalColor);
-	}
+	 
 	.container-fluid {
 		padding: {
 			left: 50px;
