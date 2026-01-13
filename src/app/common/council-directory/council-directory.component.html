@@ -1,4 +1,4 @@
-<div class="council-directory-container" id="council-directory">
+<div class="council-directory-container pt-100" >
   <div class="directory-header">
     <h2>Council Directory</h2>
     <div class="filters-section">
@@ -46,7 +46,7 @@
           </tr>
         </thead>
         <tbody>
-          @for (council of filteredCouncils; track council.councilNumber) {
+          @for (council of filteredCouncils; track $index) {
             <tr>
               <td class="council-number" data-label="Council">
                 <strong>Council #{{ council.councilNumber }}</strong>

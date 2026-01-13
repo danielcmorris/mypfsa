@@ -92,6 +92,20 @@
 
 }
 
+.future-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.future-link:hover .single-future-box {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+
+
 /* Min width 576px to Max width 767px */
 @media only screen and (min-width: 576px) and (max-width: 767px) {}
 

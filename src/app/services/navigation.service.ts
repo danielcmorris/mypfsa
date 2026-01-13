@@ -92,7 +92,7 @@ export class NavigationService {
           { label: 'Leadership', path: '/about-us', fragment: 'leadership' },
           { label: 'Council Directory', path: '/about-us', fragment: 'council-directory' },
           { label: 'Library', path: '/about-us',fragment: 'library' },
-          { label: 'Bylaws and Financial', path: '/about-us',fragment: 'bylaws-financial' },
+          { label: 'Bylaws and Financial', path: '/about-us',fragment: 'bylaws' },
           { label: 'Meet the Staff', path: '/about-us',fragment: 'staff' },
           { label: 'Careers', path: '/about-us',fragment: 'careers' }
         ]

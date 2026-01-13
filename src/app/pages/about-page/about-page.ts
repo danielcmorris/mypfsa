@@ -11,11 +11,16 @@ import { Footer } from "../../common/footer/footer";
  
 import { LeadershipComponent } from '../../common/leadership/leadership.component';
 import { CouncilDirectoryComponent } from '../../common/council-directory/council-directory.component';
+import { Library } from "../../common/library/library";
+import { Bylaws } from '../../common/bylaws/bylaws';
+import { AgentListComponent } from "../../common/agent-list/agent-list.component";
+import { StaffComponent } from "../../common/staff/staff";
+import { Careers } from '../../common/careers/careers';
 
 @Component({
     selector: 'app-about-page',
     standalone: true,
-    imports: [TopHeader, Navbar, InnerPageBanner, Funfacts, WhyChooseUs, Partners, Feedback, Agents, Footer,  LeadershipComponent,CouncilDirectoryComponent ],
+    imports: [TopHeader, Navbar, InnerPageBanner,  WhyChooseUs,  Footer, LeadershipComponent, CouncilDirectoryComponent, Library, Bylaws, StaffComponent, Careers],
     templateUrl: './about-page.html',
     styleUrl: './about-page.scss'
 })
