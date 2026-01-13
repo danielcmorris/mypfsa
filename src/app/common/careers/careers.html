@@ -1,0 +1,149 @@
+<!-- CAREERS HERO / INTRO (keeps your existing template structure) -->
+<div class="why-choose-us-area bg-color" id="careers">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- LEFT: content -->
+            <div class="col-lg-6 col-md-12 p-0">
+                <div class="choose-us-content ptb-100">
+                    <span class="top-title">Careers with PFSA</span>
+                    <h2>Join Our Insurance Sales Team</h2>
+
+                    <p>
+                        Looking to represent a company that offers competitive products, state-of-the-art selling tools,
+                        and strong
+                        marketing support? PFSA is seeking career-minded individuals for both part-time and full-time
+                        positions.
+                    </p>
+                    <p>
+                        Extensive training and ongoing support are provided.
+                    </p>
+
+                    <h3 class="mt-4">What We Offer</h3>
+                    <ul>
+                        <li><i class="flaticon-tick"></i> Insurance license start-up reimbursement</li>
+                        <li><i class="flaticon-tick"></i> Errors &amp; Omissions coverage</li>
+                        <li><i class="flaticon-tick"></i> Marketing materials</li>
+                        <li><i class="flaticon-tick"></i> Customer management platform</li>
+                        <li><i class="flaticon-tick"></i> Illustration software</li>
+                        <li><i class="flaticon-tick"></i> Electronic signature for applications and most forms</li>
+                        <li><i class="flaticon-tick"></i> Marketing allowance</li>
+                        <li><i class="flaticon-tick"></i> Profitable growth bonus</li>
+                        <li><i class="flaticon-tick"></i> Recognition and travel awards for top performers</li>
+                    </ul>
+
+                    <a href="mailto:Careers@mypfsa.org" class="default-btn">
+                        Contact our Hiring Manager
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT: slider / images -->
+            <div class="col-lg-6 col-md-12 pt-100">
+                <div class="why-choose-slider-content">
+                    <div class="why-choose-us-slider">
+                        <owl-carousel-o [options]="whyChooseUsSliderOptions">
+
+                            @for (agent of agents; track agent.license) {
+                            <ng-template carouselSlide>
+                                <div class="why-choose-us-img" [style.backgroundImage]="'url(' + agent.image + ')'"
+                                    [attr.aria-label]="agent.name">
+                                </div>
+                            </ng-template>
+                            }
+
+                        </owl-carousel-o>
+
+                    </div>
+
+                    <div class="success">
+                        <span>PFSA</span>
+                        <h3>Membership Representatives</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- DETAILS SECTION (same general styling language; uses your existing classes for consistency) -->
+<div class="future-area pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <h2>Membership Representatives</h2>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-12 col-md-12">
+                <div class="single-future-box">
+                    <h3>Life Insurance and Annuities Sales</h3>
+
+                    <p>
+                        PFSA is a non-profit Portuguese fraternal benefit organization serving approximately 40,000
+                        members in
+                        California. We are seeking self-driven, relationship-focused professionals who want to make a
+                        meaningful
+                        difference in the lives of our members.
+                    </p>
+
+                    <p>
+                        In this role, you will sell, market, and service PFSA insurance products for existing clients
+                        and new
+                        customers. You will help individuals, families, and small businesses with life insurance,
+                        education savings,
+                        and retirement needs through outreach, appointments, presentations, financial analysis, and
+                        customer service.
+                    </p>
+
+                    <h4 class="mt-4">Job Responsibilities</h4>
+                    <ul>
+                        <li><i class="flaticon-tick"></i> Develop insurance quotes, deliver sales presentations, and
+                            close sales</li>
+                        <li><i class="flaticon-tick"></i> Build and maintain networking relationships with local
+                            stakeholders</li>
+                        <li><i class="flaticon-tick"></i> Treat each customer contact as a cross-sell and up-sell
+                            opportunity</li>
+                        <li><i class="flaticon-tick"></i> Follow underwriting, rating, and compliance requirements</li>
+                        <li><i class="flaticon-tick"></i> Maintain knowledge of new products</li>
+                        <li><i class="flaticon-tick"></i> Prospect and generate new business through leads and referral
+                            sources</li>
+                        <li><i class="flaticon-tick"></i> Call prospective customers and service existing customers</li>
+                        <li><i class="flaticon-tick"></i> Follow up to ensure satisfaction; respond to questions and
+                            resolve issues</li>
+                    </ul>
+
+                    <h4 class="mt-4">Job Requirements</h4>
+                    <ul>
+                        <li><i class="flaticon-tick"></i> Coachable, resourceful, and willing to learn</li>
+                        <li><i class="flaticon-tick"></i> Life insurance license required (licensing costs reimbursed
+                            after passing exam)</li>
+                        <li><i class="flaticon-tick"></i> Career-minded, long-term vision</li>
+                        <li><i class="flaticon-tick"></i> Team-oriented with a positive attitude</li>
+                        <li><i class="flaticon-tick"></i> Ability to tactfully handle stressful situations</li>
+                    </ul>
+
+                    <h4 class="mt-4">Job Types &amp; Locations</h4>
+                    <p>
+                        <strong>Full-time:</strong> Salary + Benefits + Commission — openings available in the
+                        <strong>East Bay Area</strong>.
+                    </p>
+                    <p>
+                        <strong>Part-time:</strong> Commission only — openings available in <strong>North Bay, Chico,
+                            Santa Maria,
+                            San Diego, Chino</strong> (must live within a 20-mile radius).
+                    </p>
+
+                    <h4 class="mt-4">Experience</h4>
+                    <ul>
+                        <li><i class="flaticon-tick"></i> Sales: 2 years (preferred)</li>
+                    </ul>
+
+                    <div class="mt-4">
+                        <a href="mailto:Careers@mypfsa.org" class="default-btn">
+                            Apply / Request Information
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
