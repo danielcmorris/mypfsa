@@ -46,7 +46,7 @@
           </tr>
         </thead>
         <tbody>
-          @for (council of filteredCouncils; track council.councilNumber) {
+          @for (council of filteredCouncils; track $index) {
             <tr>
               <td class="council-number" data-label="Council">
                 <strong>Council #{{ council.councilNumber }}</strong>

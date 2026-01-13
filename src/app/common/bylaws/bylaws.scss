@@ -1,0 +1,139 @@
+.future-area {
+    position: relative;
+    z-index: 1;
+
+	.section-title {
+		margin-bottom: 30px;
+	}
+}
+.single-future-box {
+	padding: 30px;
+	text-align: center;
+    position: relative;
+    margin-bottom: 30px;
+    background-color: #f1fbfc;
+	transition: var(--transition);
+
+	i {
+		font-size: 60px;
+		line-height: 1;
+		margin-bottom: 20px;
+		display: inline-block;
+		color: var(--mainColor);
+	}
+	h3 {
+		font-size: 20px;
+		margin-bottom: 15px;
+	}
+    &::before {
+        top: 15px;
+        left: 15px;
+        content: "";
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        transition: var(--transition);
+        border: {
+            top: 2px solid var(--mainColor);
+            left: 2px solid var(--mainColor);
+        };
+    }
+    &::after {
+        transition: var(--transition);
+        position: absolute;
+        bottom: 15px;
+        height: 50px;
+        right: 15px;
+        width: 50px;
+        content: "";
+        border: {
+            bottom: 2px solid var(--mainColor);
+            right: 2px solid var(--mainColor);
+        };
+    }
+	&:hover {
+        transform: translateY(-5px);
+	}
+    &.active {
+        background-color: var(--optionalColor);
+
+        i {
+            color: var(--whiteColor);
+        }
+        h3 {
+            color: var(--whiteColor);
+        }
+        p {
+            color: var(--whiteColor);
+        }
+        &::before{
+            border-color: var(--whiteColor);
+        }
+        &::after{
+            border-color: var(--whiteColor);
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+
+	.future-area {
+		padding-top: 50px;
+	}
+    .single-future-box {
+		background-color: #f1fbfc;
+        margin-bottom: 30px;
+        
+		h3 {
+			font-size: 18px;
+		}
+	}
+
+}
+
+.future-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.future-link:hover .single-future-box {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+	.future-area {
+		padding-top: 50px;
+	}
+    .single-future-box {
+		background-color: #f1fbfc;
+        margin-bottom: 30px;
+        
+		h3 {
+			font-size: 18px;
+		}
+	}
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+    .single-future-box {
+		padding: 20px;
+	}
+
+}
+
+/* Max width 1700px */
+@media only screen and (min-width: 1700px) {}
