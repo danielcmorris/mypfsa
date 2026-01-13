@@ -68,7 +68,7 @@ export class LeadershipComponent {
     let supreme2030Officers = {
       title: 'SUPREME 20-30\'s OFFICERS',
       imgPath: '/img/leadership/supreme-council-20-30-officers.jpg',
-      caption: `Top Row: Andrew Gamez, Danae Underwood, Madison Pinheiro, Angela Azevedo, Carley Azevedo, Kayleigh Gilbert, Miriam Work, Suzie Lourenco - 
+      caption: `Top Row: Andrew Gamez, Danae Underwood, Madison Pinheiro, Angela Azevedo, Carley Azevedo, Kayleigh Gilbert, Miriam Work, Suzie Lourenco -- 
       Bottom Row: Angela Seamas, Maria Helena Lopez, Arielle Costa, Danielle Seamas`,
       members: [
         { order: 2, name: 'Miriam Work', position: 'Supreme 20-30’s President', councilNumber: '99', councilName: 'Lompoc' },
@@ -93,7 +93,7 @@ export class LeadershipComponent {
     let supremeYouth = {
       title: 'Supreme Youth Officers',
       imgPath: '/img/leadership/supreme-youth-officers.jpg',
-      caption: `Top Row: Lisa Simons Kross, Paula Silva, Kayden Kross, Joseph Reyes Jr., Mia Silva, Claire Vallance, Madison Pinheiro<br>
+      caption: `Top Row: Lisa Simons Kross, Paula Silva, Kayden Kross, Joseph Reyes Jr., Mia Silva, Claire Vallance, Madison Pinheiro -- 
       Bottom Row: Cash Koch, Ruby Love Koch, Marissa Geston, Xavier Vallance`,
       members: [
         { order: 1, name: 'Joseph Reyes Jr.', position: 'Supreme Youth President', councilNumber: '44', councilName: 'San Jose' },
