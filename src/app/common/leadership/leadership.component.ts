@@ -68,7 +68,7 @@ export class LeadershipComponent {
     let supreme2030Officers = {
       title: 'SUPREME 20-30\'s OFFICERS',
       imgPath: '/img/leadership/supreme-council-20-30-officers.jpg',
-      caption: `Top Row: Andrew Gamez, Danae Underwood, Madison Pinheiro, Angela Azevedo, Carley Azevedo, Kayleigh Gilbert, Miriam Work, Suzie Lourenco<br>
+      caption: `Top Row: Andrew Gamez, Danae Underwood, Madison Pinheiro, Angela Azevedo, Carley Azevedo, Kayleigh Gilbert, Miriam Work, Suzie Lourenco - 
       Bottom Row: Angela Seamas, Maria Helena Lopez, Arielle Costa, Danielle Seamas`,
       members: [
         { order: 2, name: 'Miriam Work', position: 'Supreme 20-30’s President', councilNumber: '99', councilName: 'Lompoc' },
