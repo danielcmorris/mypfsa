@@ -1,0 +1,494 @@
+
+    <div class="linc-container">
+   
+
+      <div class="container py-5">
+        <!-- Summary Cards Row -->
+        <div class="row mb-5">
+          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+            <div class="summary-card summary-card-danger">
+              <div class="summary-icon">💳</div>
+              <div class="summary-label">Total Debts</div>
+              <div class="summary-amount">{{ getDebtsTotal() | currency:'USD':'symbol':'1.0-0' }}</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+            <div class="summary-card summary-card-warning">
+              <div class="summary-icon">💰</div>
+              <div class="summary-label">Cash Needs</div>
+              <div class="summary-amount">{{ getCashNeedsTotal() | currency:'USD':'symbol':'1.0-0' }}</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+            <div class="summary-card summary-card-info">
+              <div class="summary-icon">🎓</div>
+              <div class="summary-label">Education Fund</div>
+              <div class="summary-amount">{{ getEducationTotal() | currency:'USD':'symbol':'1.0-0' }}</div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="summary-card summary-card-primary">
+              <div class="summary-icon">🏠</div>
+              <div class="summary-label">Income Replacement</div>
+              <div class="summary-amount">{{ getIncomeTotal() | currency:'USD':'symbol':'1.0-0' }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Left Column - Inputs -->
+          <div class="col-lg-8">
+            <div class="row">
+              <!-- Contact Information Card -->
+              <div class="col-md-6 mb-4">
+                <div class="input-card">
+                  <div class="input-card-header">
+                    <span class="header-icon">👤</span>
+                    <h5>Your Contact Information</h5>
+                  </div>
+                  <div class="input-card-body">
+                    <div class="form-group-modern">
+                      <label>First Name <span style="color: #dc3545;">*</span></label>
+                      <div class="input-wrapper">
+                        <input
+                          type="text"
+                          class="form-control-modern"
+                          [(ngModel)]="userInfo.firstName"
+                          placeholder="John"
+                          required>
+                      </div>
+                    </div>
+                    <div class="form-group-modern">
+                      <label>Last Name</label>
+                      <div class="input-wrapper">
+                        <input
+                          type="text"
+                          class="form-control-modern"
+                          [(ngModel)]="userInfo.lastName"
+                          placeholder="Doe">
+                      </div>
+                    </div>
+                    <div class="form-group-modern">
+                      <label>Email <span style="color: #dc3545;">*</span></label>
+                      <div class="input-wrapper">
+                        <input
+                          type="email"
+                          class="form-control-modern"
+                          [(ngModel)]="userInfo.email"
+                          placeholder="john@example.com"
+                          required>
+                      </div>
+                    </div>
+                    <div class="form-group-modern">
+                      <label>Phone</label>
+                      <div class="input-wrapper">
+                        <input
+                          type="tel"
+                          class="form-control-modern"
+                          [(ngModel)]="userInfo.phone"
+                          placeholder="(555) 123-4567">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Debts Card -->
+              <div class="col-md-6 mb-4">
+                <div class="input-card">
+                  <div class="input-card-header">
+                    <span class="header-icon">💳</span>
+                    <h5>Outstanding Debts</h5>
+                  </div>
+                  <div class="input-card-body">
+                    <div class="form-group-modern">
+                      <label>Credit Card Balances</label>
+                      <div class="input-wrapper">
+                        <span class="input-prefix">$</span>
+                        <input
+                          type="number"
+                          class="form-control-modern"
+                          [(ngModel)]="debt.credit"
+                          (ngModelChange)="calculate()"
+                          min="0"
+                          step="1000"
+                          placeholder="0">
+                      </div>
+                    </div>
+                    <div class="form-group-modern">
+                      <label>Auto Loans</label>
+                      <div class="input-wrapper">
+                        <span class="input-prefix">$</span>
+                        <input
+                          type="number"
+                          class="form-control-modern"
+                          [(ngModel)]="debt.car"
+                          (ngModelChange)="calculate()"
+                          min="0"
+                          step="1000"
+                          placeholder="0">
+                      </div>
+                    </div>
+                    <div class="form-group-modern">
+                      <label>Mortgage Balance</label>
+                      <div class="input-wrapper">
+                        <span class="input-prefix">$</span>
+                        <input
+                          type="number"
+                          class="form-control-modern"
+                          [(ngModel)]="debt.mortgage"
+                          (ngModelChange)="calculate()"
+                          min="0"
+                          step="5000"
+                          placeholder="0">
+                      </div>
+                    </div>
+                    <div class="form-group-modern">
+                      <label>Other Debts</label>
+                      <div class="input-wrapper">
+                        <span class="input-prefix">$</span>
+                        <input
+                          type="number"
+                          class="form-control-modern"
+                          [(ngModel)]="debt.other"
+                          (ngModelChange)="calculate()"
+                          min="0"
+                          step="1000"
+                          placeholder="0">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cash Needs Card -->
+              <div class="col-md-6 mb-4">
+                <div class="input-card">
+                  <div class="input-card-header">
+                    <span class="header-icon">💰</span>
+                    <h5>Immediate Cash Needs</h5>
+                  </div>
+                  <div class="input-card-body">
+                    <div class="form-group-modern">
+                      <label>Final Expenses</label>
+                      <div class="input-wrapper">
+                        <span class="input-prefix">$</span>
+                        <input
+                          type="number"
+                          class="form-control-modern"
+                          [(ngModel)]="expense.final"
+                          (ngModelChange)="calculate()"
+                          min="0"
+                          step="1000"
+                          placeholder="0">
+                      </div>
+                    </div>
+                    <div class="form-group-modern">
+                      <label>Funeral & Burial Costs</label>
+                      <div class="input-wrapper">
+                        <span class="input-prefix">$</span>
+                        <input
+                          type="number"
+                          class="form-control-modern"
+                          [(ngModel)]="expense.funeral"
+                          (ngModelChange)="calculate()"
+                          min="0"
+                          step="1000"
+                          placeholder="0">
+                      </div>
+                    </div>
+                    <div class="form-group-modern">
+                      <label>Emergency Fund</label>
+                      <div class="input-wrapper">
+                        <span class="input-prefix">$</span>
+                        <input
+                          type="number"
+                          class="form-control-modern"
+                          [(ngModel)]="expense.other"
+                          (ngModelChange)="calculate()"
+                          min="0"
+                          step="1000"
+                          placeholder="0">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Education Card -->
+              <div class="col-md-6 mb-4">
+                <div class="input-card">
+                  <div class="input-card-header">
+                    <span class="header-icon">🎓</span>
+                    <h5>Education Planning</h5>
+                  </div>
+                  <div class="input-card-body">
+                    <div class="form-group-modern">
+                      <label>Number of Children</label>
+                      <div class="input-wrapper">
+                        <span class="input-prefix">#</span>
+                        <input
+                          type="number"
+                          class="form-control-modern"
+                          [(ngModel)]="edu.children"
+                          (ngModelChange)="calculate()"
+                          min="0"
+                          max="10"
+                          placeholder="0">
+                      </div>
+                    </div>
+                    <div class="form-group-modern">
+                      <label>Cost per Child (Total)</label>
+                      <div class="input-wrapper">
+                        <span class="input-prefix">$</span>
+                        <input
+                          type="number"
+                          class="form-control-modern"
+                          [(ngModel)]="edu.costPerChild"
+                          (ngModelChange)="calculate()"
+                          min="0"
+                          step="10000"
+                          placeholder="0">
+                      </div>
+                      <small class="form-hint">Include all years of college</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Assets Card -->
+              <div class="col-md-6 mb-4">
+                <div class="input-card">
+                  <div class="input-card-header">
+                    <span class="header-icon">📈</span>
+                    <h5>Existing Assets</h5>
+                  </div>
+                  <div class="input-card-body">
+                    <div class="form-group-modern">
+                      <label>Current Life Insurance</label>
+                      <div class="input-wrapper">
+                        <span class="input-prefix">$</span>
+                        <input
+                          type="number"
+                          class="form-control-modern"
+                          [(ngModel)]="assets.insurance"
+                          (ngModelChange)="calculate()"
+                          min="0"
+                          step="10000"
+                          placeholder="0">
+                      </div>
+                    </div>
+                    <div class="form-group-modern">
+                      <label>Savings & Checking</label>
+                      <div class="input-wrapper">
+                        <span class="input-prefix">$</span>
+                        <input
+                          type="number"
+                          class="form-control-modern"
+                          [(ngModel)]="assets.liquid"
+                          (ngModelChange)="calculate()"
+                          min="0"
+                          step="5000"
+                          placeholder="0">
+                      </div>
+                    </div>
+                    <div class="form-group-modern">
+                      <label>Investment Accounts</label>
+                      <div class="input-wrapper">
+                        <span class="input-prefix">$</span>
+                        <input
+                          type="number"
+                          class="form-control-modern"
+                          [(ngModel)]="assets.investments"
+                          (ngModelChange)="calculate()"
+                          min="0"
+                          step="5000"
+                          placeholder="0">
+                      </div>
+                    </div>
+                    <div class="form-group-modern">
+                      <label>Other Liquid Assets</label>
+                      <div class="input-wrapper">
+                        <span class="input-prefix">$</span>
+                        <input
+                          type="number"
+                          class="form-control-modern"
+                          [(ngModel)]="assets.other"
+                          (ngModelChange)="calculate()"
+                          min="0"
+                          step="5000"
+                          placeholder="0">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Income Replacement Card -->
+              <div class="col-md-6 mb-4">
+                <div class="input-card">
+                  <div class="input-card-header">
+                    <span class="header-icon">🏠</span>
+                    <h5>Income Replacement</h5>
+                  </div>
+                  <div class="input-card-body">
+                    <div class="form-group-modern">
+                      <label>Monthly Income Needed</label>
+                      <div class="input-wrapper">
+                        <span class="input-prefix">$</span>
+                        <input
+                          type="number"
+                          class="form-control-modern"
+                          [(ngModel)]="income.monthly"
+                          (ngModelChange)="calculate()"
+                          min="0"
+                          step="500"
+                          placeholder="0">
+                      </div>
+                    </div>
+                    <div class="form-group-modern">
+                      <label>Years of Support</label>
+                      <div class="input-wrapper">
+                        <span class="input-prefix">#</span>
+                        <input
+                          type="number"
+                          class="form-control-modern"
+                          [(ngModel)]="income.years"
+                          (ngModelChange)="calculate()"
+                          min="0"
+                          max="50"
+                          placeholder="0">
+                      </div>
+                      <small class="form-hint">Until youngest child is independent</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column - Visualization -->
+          <div class="col-lg-4">
+            <div class="visualization-card sticky-top">
+              <div class="viz-header">
+                <h4>Coverage Analysis</h4>
+                <p>Visual breakdown of your insurance needs</p>
+              </div>
+
+              <div class="bars-container">
+                <div class="bar-column">
+                  <div class="bar-title">Total Needs</div>
+                  <div class="bar-wrapper">
+                    <div
+                      *ngIf="debtHeight > 0"
+                      class="bar-segment bar-debt"
+                      [style.height.%]="debtHeight"
+                      [attr.data-label]="getDebtsTotal() | currency:'USD':'symbol':'1.0-0'">
+                      <div class="bar-label" *ngIf="debtHeight >= 8">
+                        <strong>Debts</strong><br>
+                        <span>{{ getDebtsTotal() | currency:'USD':'symbol':'1.0-0' }}</span>
+                      </div>
+                    </div>
+                    <div
+                      *ngIf="cashNeedsHeight > 0"
+                      class="bar-segment bar-expenses"
+                      [style.height.%]="cashNeedsHeight">
+                      <div class="bar-label" *ngIf="cashNeedsHeight >= 8">
+                        <strong>Cash</strong><br>
+                        <span>{{ getCashNeedsTotal() | currency:'USD':'symbol':'1.0-0' }}</span>
+                      </div>
+                    </div>
+                    <div
+                      *ngIf="educationHeight > 0"
+                      class="bar-segment bar-education"
+                      [style.height.%]="educationHeight">
+                      <div class="bar-label" *ngIf="educationHeight >= 8">
+                        <strong>Education</strong><br>
+                        <span>{{ getEducationTotal() | currency:'USD':'symbol':'1.0-0' }}</span>
+                      </div>
+                    </div>
+                    <div
+                      *ngIf="incomeHeight > 0"
+                      class="bar-segment bar-income"
+                      [style.height.%]="incomeHeight">
+                      <div class="bar-label" *ngIf="incomeHeight >= 8">
+                        <strong>Income</strong><br>
+                        <span>{{ getIncomeTotal() | currency:'USD':'symbol':'1.0-0' }}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bar-total">{{ getTotalNeeds() | currency:'USD':'symbol':'1.0-0' }}</div>
+                </div>
+
+                <div class="bar-column">
+                  <div class="bar-title">Coverage</div>
+                  <div class="bar-wrapper">
+                    <div
+                      *ngIf="insuranceHeight > 0"
+                      class="bar-segment bar-insurance"
+                      [style.height.%]="insuranceHeight">
+                      <div class="bar-label" *ngIf="insuranceHeight >= 8">
+                        <strong>Insurance Gap</strong><br>
+                        <span>{{ getInsuranceNeeded() | currency:'USD':'symbol':'1.0-0' }}</span>
+                      </div>
+                    </div>
+                    <div
+                      *ngIf="assetHeight > 0"
+                      class="bar-segment bar-assets"
+                      [style.height.%]="assetHeight">
+                      <div class="bar-label" *ngIf="assetHeight >= 8">
+                        <strong>Assets</strong><br>
+                        <span>{{ getAssetsTotal() | currency:'USD':'symbol':'1.0-0' }}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bar-total">{{ getTotalNeeds() | currency:'USD':'symbol':'1.0-0' }}</div>
+                </div>
+              </div>
+
+              <!-- Results -->
+              <div class="results-section">
+                <div class="result-label">Recommended Coverage</div>
+                <div class="result-amount" [class.result-zero]="getInsuranceNeeded() === 0">
+                  {{ getInsuranceNeeded() | currency:'USD':'symbol':'1.0-0' }}
+                </div>
+                <div class="result-description" *ngIf="getInsuranceNeeded() > 0">
+                  Additional life insurance protection recommended to secure your family's financial future
+                </div>
+                <div class="result-description" *ngIf="getInsuranceNeeded() === 0">
+                  Your existing assets cover your current needs. Consider future growth and inflation.
+                </div>
+              </div>
+
+              <!-- CTA Button -->
+              <button
+                class="cta-button"
+                (click)="getDetailedQuote()"
+                [disabled]="submitting || !isFormValid()">
+                <span *ngIf="!submitting && isFormValid()">
+                  <strong>Get Your Personalized Quote</strong>
+                  <small>Free consultation with a licensed agent</small>
+                </span>
+                <span *ngIf="!submitting && !isFormValid()">
+                  <strong>Complete Required Fields</strong>
+                  <small>First name and email are required</small>
+                </span>
+                <span *ngIf="submitting">
+                  <strong>Submitting Request...</strong>
+                  <small>Please wait</small>
+                </span>
+              </button>
+
+              <!-- Success message -->
+              <div class="success-message" *ngIf="success">
+                <div class="success-icon">✓</div>
+                <div class="success-text">
+                  <strong>Request Submitted!</strong>
+                  <p>A PFSA agent will contact you within 24 hours</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
