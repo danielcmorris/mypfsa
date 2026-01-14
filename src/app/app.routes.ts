@@ -25,9 +25,8 @@ import { BlogRightSidebarPage } from './pages/blog-right-sidebar-page/blog-right
 import { BlogDetailsPage } from './pages/blog-details-page/blog-details-page';
 import { IconGalleryComponent } from './tools/font-awesome.component';
 import { BootstrapIconGalleryComponent } from './tools/bootstrap-icons.component';
-import { LincComponent } from './common/linc/linc';
-import { LincPage } from './pages/linc-page/linc-page';
-
+ import { LincPage } from './pages/linc-page/linc-page';
+import { PublicationsPage } from './pages/publications-page/publications-page';
 export const routes: Routes = [
     {path: '', component: HomeDemoOne},
     {path: 'index-2', component: HomeDemoTwo},
@@ -51,9 +50,11 @@ export const routes: Routes = [
     {path: 'blog-grid', component: BlogGridPage},
     {path: 'blog-right-sidebar', component: BlogRightSidebarPage},
     {path: 'blog-details', component: BlogDetailsPage},
+    {path: 'publications', component: PublicationsPage},
+    {path: 'newsletters', component: PublicationsPage},
     {path: 'contact-us', component: ContactPage},
      {path: 'linc', component: LincPage},
-{ path: 'icons/font-awesome', component: IconGalleryComponent }    ,
+ { path: 'icons/font-awesome', component: IconGalleryComponent }    ,
 {path: 'icons/bootstrap', component: BootstrapIconGalleryComponent }    ,
     {path: '**', component: ErrorPage} // This line will remain down from the whole component list
 ];
