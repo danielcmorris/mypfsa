@@ -1,0 +1,135 @@
+.newsletter-feature {
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.current-newsletter {
+  .newsletter-image-container {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .newsletter-cover-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .newsletter-content {
+    padding-left: 2rem;
+
+    @media (max-width: 991px) {
+      padding-left: 0;
+      text-align: center;
+    }
+
+    .newsletter-heading {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 1.5rem;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    .newsletter-description {
+      font-size: 1.1rem;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .download-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+
+      i {
+        font-size: 1.2rem;
+      }
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        color: #fff;
+      }
+
+      &:active {
+        transform: translateY(-1px);
+      }
+
+      @media (max-width: 991px) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .newsletter-info {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 2px solid #f0f0f0;
+
+      .info-heading {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 1rem;
+      }
+
+      .info-text {
+        font-size: 1rem;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 0.75rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .email-link {
+        color: #667eea;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #764ba2;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+@media (max-width: 768px) {
+  .newsletter-feature {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+}

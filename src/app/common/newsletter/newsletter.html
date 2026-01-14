@@ -1,0 +1,59 @@
+<div class="newsletter-feature">
+  <div class="container py-5">
+    <!-- Loading State -->
+    <div *ngIf="loading" class="text-center py-5">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <!-- Error State -->
+    <div *ngIf="error" class="alert alert-danger text-center" role="alert">
+      <p>Unable to load the current newsletter. Please try again later.</p>
+    </div>
+
+    <!-- Current Newsletter Display -->
+    <div *ngIf="!loading && !error && currentNewsletter" class="current-newsletter">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-4 mb-lg-0">
+          <div class="newsletter-image-container">
+            <img
+              [src]="currentNewsletter.imageUrl"
+              [alt]="currentNewsletter.title"
+              class="newsletter-cover-image">
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="newsletter-content">
+            <h2 class="newsletter-heading">PFSA Newsletter</h2>
+            <p class="newsletter-description">
+              Subscribe to our Electronic Mailing List to receive the monthly newsletter and the semi-annual magazine.
+              Assist PFSA in its efforts to be environmentally friendly (Reduce, Reuse, Recycle)
+            </p>
+
+            <a
+              [href]="currentNewsletter.fileUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="download-button">
+              <i class="bi bi-download"></i>
+              Download Here
+            </a>
+
+            <div class="newsletter-info">
+              <h3 class="info-heading">Our monthly publication to keep you informed of our events and activities.</h3>
+              <p class="info-text">
+                Just click "Download Here" to get the most recent copy of our newsletter
+              </p>
+              <p class="info-text">
+                If your council has any newsworthy activities, please send us an email at
+                <a href="mailto:mypfsa@mypfsa.org" class="email-link">mypfsa@mypfsa.org</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

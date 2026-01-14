@@ -1,0 +1,135 @@
+.magazine-feature {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.current-magazine {
+  .magazine-image-container {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    }
+
+    .magazine-cover-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  .magazine-content {
+    padding-left: 2rem;
+
+    @media (max-width: 991px) {
+      padding-left: 0;
+      text-align: center;
+    }
+
+    .magazine-heading {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 1.5rem;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    .magazine-description {
+      font-size: 1.1rem;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .download-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+
+      i {
+        font-size: 1.2rem;
+      }
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+        color: #fff;
+      }
+
+      &:active {
+        transform: translateY(-1px);
+      }
+
+      @media (max-width: 991px) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .magazine-info {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 2px solid #f0f0f0;
+
+      .info-heading {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 1rem;
+      }
+
+      .info-text {
+        font-size: 1rem;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 0.75rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .email-link {
+        color: #28a745;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #20c997;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+@media (max-width: 768px) {
+  .magazine-feature {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+}

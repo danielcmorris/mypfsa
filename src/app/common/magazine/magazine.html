@@ -1,0 +1,66 @@
+<div class="magazine-feature">
+  <div class="container py-5">
+    <!-- Loading State -->
+    <div *ngIf="loading" class="text-center py-5">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+
+    <!-- Error State -->
+    <div *ngIf="error" class="alert alert-danger text-center" role="alert">
+      <p>Unable to load the current magazine. Please try again later.</p>
+    </div>
+
+    <!-- Current Magazine Display -->
+    <div *ngIf="!loading && !error && currentMagazine" class="current-magazine">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-4 mb-lg-0">
+          <div class="magazine-image-container">
+            <img
+              [src]="currentMagazine.imageUrl"
+              [alt]="currentMagazine.title"
+              class="magazine-cover-image">
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="magazine-content">
+            <h2 class="magazine-heading">PFSA Magazines</h2>
+            <p class="magazine-description">
+              Subscribe to our Electronic Mailing List to receive the monthly newsletter and the semi-annual magazine.
+              Assist PFSA in its efforts to be environmentally friendly (Reduce, Reuse, Recycle).
+            </p>
+
+            <a
+              [href]="currentMagazine.fileUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="download-button">
+              <i class="bi bi-download"></i>
+              Download Here
+            </a>
+
+            <div class="magazine-info">
+              <h3 class="info-heading">Our semi-annual publication to keep you informed of our events and activities.</h3>
+              <p class="info-text">
+                Just click "Download Here" to get the most recent copy of our magazine
+              </p>
+              <p class="info-text">
+                If your council has any newsworthy activities, please send us an email at
+                <a href="mailto:mypfsa@mypfsa.org" class="email-link">mypfsa@mypfsa.org</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- No Magazine Available -->
+    <div *ngIf="!loading && !error && !currentMagazine" class="no-magazine text-center py-5">
+      <i class="bi bi-book" style="font-size: 4rem; color: #ccc;"></i>
+      <h3 class="mt-3">No Magazine Available</h3>
+      <p class="text-muted">Check back later for the next issue.</p>
+    </div>
+  </div>
+</div>
