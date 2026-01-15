@@ -1,6 +1,6 @@
 # Revor
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.5.
+This is a great project that i totally didn't steal from a template!
 
 ## Development server
 
