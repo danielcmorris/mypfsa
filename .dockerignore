@@ -3,5 +3,6 @@ dist
 .git
 .github
 .angular
+.claude
 *.log
 .env
