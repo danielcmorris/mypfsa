@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:ssr": "ng build --configuration ssr",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:revor": "node dist/revor/server/server.mjs"
