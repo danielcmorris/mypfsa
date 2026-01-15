@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { AgentsService } from '../../services/agents.service';
+import { Agent } from '../../models/agent.model';
 
+ 
 @Component({
     selector: 'app-agents',
     standalone: true,
@@ -42,127 +45,17 @@ export class Agents {
 		}
     }
 
-	agents = [
-		{
-			name: 'Donald Costa',
-			license: 'LIC#: 0576728',
-			image: 'img/agents/donald.j.costa.jpeg',
-			contact: {
-				phone: '559-972-4693',
-				email: 'donald.costa@mypfsa.org'
-			}
-		},{
-			name: 'Joe Seamas',
-			license: 'LIC#: 0C00867',
-			image: 'img/agents/joe.seamas.jpeg',
-			contact: {
-				phone: '209-275-0200',
-				email: 'joe.seamas@mypfsa.org'
-			}
-		} ,{
-			name: 'Susan Michelle Gonzales',
-			license: 'LIC#: 0D55435',
-			image: 'img/agents/susan.michelle.gonzales.jpeg',
-			contact: {
-				phone: '',
-				email: ''
-			}
-		} ,{
-			name: 'Leonardo Xavier',
-			license: 'LIC#: 0E52410',
-			image: 'img/agents/leonardo.xavier.jpeg',
-			contact: {
-				phone: '925-726-9543',
-				email: 'Leonardo.xavier@mypfsa.org'
-			}
-		} ,{
-			name: 'Monica Cochran',
-			license: 'LIC#: 4130869',
-			image: 'img/agents/monica.chochran.jpeg',
-			contact: {
-				phone: '707-499-9821',
-				email: 'monica.cochran@mypfsa.org'
-			}
-		} ,{
-			name: 'Claudia Vargas',
-			license: 'LIC#: 2119658',
-			image: 'img/agents/caludia.vargas.jpeg',
-			contact: {
-				phone: '209-270-4348',
-				email: 'claudia.vargas@mypfsa.org'
-			}
-		} ,{
-			name: 'Nizia Hogan',
-			license: 'LIC#: 4324598',
-			image: 'img/agents/nizia.hogan.jpeg',
-			contact: {
-				phone: '530-701-0638',
-				email: 'nizia.hogan@mypfsa.org'
-			}
-		} ,{
-			name: 'Sandra Crivello',
-			license: 'LIC#: 4087078',
-			image: 'img/agents/sandra.crivello.jpeg',
-			contact: {
-				phone: '209-988-9156',
-				email: 'sandra.crivello@mypfsa.org'
-			}
-		} ,{
-			name: 'Stephanie Koch',
-			license: 'LIC#: 4059388',
-			image: 'img/agents/stephanie.koch.jpeg',
-			contact: {
-				phone: '707-498-8805',
-				email: 'stephanie.koch@mypfsa.org'
-			}
-		} ,{
-			name: 'Yeneth-Armas Jackson',
-			license: 'LIC#: 4155337',
-			image: 'img/agents/yaneth.amas.jpeg',
-			contact: {
-				phone: '408-679-5859',
-				email: 'yeneth.armas-jackson@mypfsa.org'
-			}
-		} ,{
-			name: 'Odette Pinheiro',
-			license: 'LIC#: 0B75501',
-			image: 'img/agents/odette.pinheiro.jpeg',
-			contact: {
-				phone: '707-499-9821',
-				email: 'odette.pinheiro@mypfsa.org'
-			}
-		} ,{
-			name: 'Michael Fraga',
-			license: 'LIC#: 0H21634',
-			image: 'img/agents/micheal.fraga.jpeg',
-			contact: {
-				phone: '707-499-9821',
-				email: 'mfraga1000@aol.com'
-			}
-		} ,{
-			name: 'Claudia Barajas',
-			license: 'LIC#: 4264219',
-			image: 'img/agents/caludia.barajas.jpeg',
-			contact: {
-				phone: '510-309-5669',
-				email: 'claudia.barajas@mypfsa.org'
-			}
-		} ,{
-			name: 'Jose Macias',
-			license: 'LIC#: 4264224',
-			image: 'img/agents/joe.macias.jpeg',
-			contact: {
-				phone: '209-499-0434',
-				email: 'jose.macias@mypfsa.org'
-			}
-		} ,{
-			name: 'Ashley Incitti',
-			license: 'LIC#: 4360980',
-			image: 'img/agents/ashley.incitti.jpeg',
-			contact: {
-				phone: '209-493-9090',
-				email: 'ashley.incitti@mypfsa.org'
-			}
-		} 
-	];
+	agents: Agent[] = [];
+	  
+
+	constructor(private agentService: AgentsService) {
+	}
+	
+	ngOnInit(): void {
+		 
+ 		this.agentService.getAgents().subscribe((data: Agent[]) => {
+			this.agents = data;
+		 });
+	}
+		
 }
