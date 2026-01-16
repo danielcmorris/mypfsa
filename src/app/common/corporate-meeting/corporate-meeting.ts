@@ -9,6 +9,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './corporate-meeting.scss'
 })
 export class CorporateMeetingComponent {
-  reportUrl = 'assets/documents/2024-amc-report.pdf';
-  reportImageUrl = 'assets/images/2024-amc-report.jpg';
+  reportUrl = 'https://storage.googleapis.com/pfsa-public/reports/2024-AMC.pdf';
+  reportImageUrl = 'https://storage.googleapis.com/pfsa-public/reports/2024-AMC.png';
 }

@@ -45,9 +45,11 @@ export class NavigationService {
         label: 'Events',
         path: '/events',
         children: [
-          { label: 'Calendar of Events', path: '/events' },
-          { label: 'Annual Corporate Meetings', path: '/events/annual-meetings' },
-          { label: 'Festas', path: '/events/festas-list' },
+
+
+          { label: 'Festas', path: '/events', fragment: 'festas' },
+          { label: 'Calendar of Events', path: '/events', fragment: 'calendar' },
+          { label: 'Annual Corporate Meetings', path: '/events', fragment: 'corporate-meeting' },
 
 
         ]

@@ -27,6 +27,7 @@ import { IconGalleryComponent } from './tools/font-awesome.component';
 import { BootstrapIconGalleryComponent } from './tools/bootstrap-icons.component';
  import { LincPage } from './pages/linc-page/linc-page';
 import { PublicationsPage } from './pages/publications-page/publications-page';
+import { EventsPage } from './pages/events-page/events-page';
 export const routes: Routes = [
     {path: '', component: HomeDemoOne},
     {path: 'index-2', component: HomeDemoTwo},
@@ -56,5 +57,6 @@ export const routes: Routes = [
      {path: 'linc', component: LincPage},
  { path: 'icons/font-awesome', component: IconGalleryComponent }    ,
 {path: 'icons/bootstrap', component: BootstrapIconGalleryComponent }    ,
+    {path: 'events', component: EventsPage},
     {path: '**', component: ErrorPage} // This line will remain down from the whole component list
 ];
