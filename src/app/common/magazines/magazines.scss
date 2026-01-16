@@ -1,0 +1,159 @@
+.magazines-container {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.header-section {
+  .page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  .page-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+.year-section {
+  .year-header {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .year-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #667eea;
+    margin-bottom: 1rem;
+    display: inline-block;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 100px;
+      height: 2px;
+      background: linear-gradient(to right, transparent, #667eea);
+    }
+
+    &::before {
+      right: 100%;
+      margin-right: 20px;
+      background: linear-gradient(to left, #667eea, transparent);
+    }
+
+    &::after {
+      left: 100%;
+      margin-left: 20px;
+    }
+  }
+
+  .year-divider {
+    height: 2px;
+    background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+    margin-top: -0.5rem;
+  }
+}
+
+.magazine-card {
+  display: block;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+
+    .magazine-image-wrapper {
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+      .magazine-overlay {
+        opacity: 1;
+      }
+    }
+  }
+
+  .magazine-image-wrapper {
+    position: relative;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    aspect-ratio: 8.5 / 11;
+
+    .magazine-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .magazine-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(102, 126, 234, 0.95);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      color: white;
+
+      i {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      span {
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .magazine-label {
+    text-align: center;
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+    text-transform: capitalize;
+  }
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+@media (max-width: 576px) {
+  .year-section .year-title {
+    font-size: 1.5rem;
+
+    &::before,
+    &::after {
+      width: 50px;
+    }
+  }
+
+  .magazine-card .magazine-label {
+    font-size: 0.85rem;
+  }
+}
