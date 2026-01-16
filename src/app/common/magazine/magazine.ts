@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NewsletterService } from '../../services/newsletter.service';
 import { Newsletter } from '../../models/newsletter.model';
+import { MagazineService } from '../../services/magazine.service';
 
 @Component({
   selector: 'app-magazine',
@@ -15,18 +16,18 @@ export class MagazineComponent implements OnInit {
   loading = true;
   error = false;
 
-  constructor(private newsletterService: NewsletterService) {}
+  constructor(private magazineService: MagazineService) {}
 
   ngOnInit(): void {
     this.loadCurrentMagazine();
   }
 
   loadCurrentMagazine(): void {
-    this.newsletterService.getNewsletters().subscribe({
+    this.magazineService.getMagazines().subscribe({
       next: (data) => {
         // Get the most recent magazine (looking for type='magazine')
         for (const yearGroup of data) {
-          const magazine = yearGroup.newsletters.find(item => item.type === 'magazine');
+          const magazine = yearGroup.magazines.find(item => item.type === 'magazine');
           if (magazine) {
             this.currentMagazine = magazine;
             break;

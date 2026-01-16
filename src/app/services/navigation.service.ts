@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NavigationMenu,MenuItem } from '../models/navigation.model'; 
+import { NavigationMenu, MenuItem } from '../models/navigation.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -36,18 +36,20 @@ export class NavigationService {
         label: 'Publications',
         path: '/publications',
         children: [
-          { label: 'Newsletters', path: '/publications/newsletters' },
-          { label: 'Magazines', path: '/publications/magazines' },
-          { label: 'Festas List', path: '/publications/festas-list' },
+          { label: 'Newsletters', path: '/publications', fragment: 'newsletter' },
+          { label: 'Magazines', path: '/publications', fragment: 'magazine' },
           { label: 'Mailing List', path: '/publications/mailing-list' },
-          { label: 'Annual Corporate Meetings', path: '/publications/annual-meetings' }
         ]
       },
       {
         label: 'Events',
         path: '/events',
         children: [
-          { label: 'Calendar of Events', path: '/events' }
+          { label: 'Calendar of Events', path: '/events' },
+          { label: 'Annual Corporate Meetings', path: '/events/annual-meetings' },
+          { label: 'Festas', path: '/events/festas-list' },
+
+
         ]
       },
       {
@@ -58,14 +60,14 @@ export class NavigationService {
           { label: 'Community Involvement', path: '/programs/community-involvement' }
         ]
       },
-    //   {
-    //     label: 'Services',
-    //     path: '/services',
-    //     children: [
-    //       { label: 'Forms', path: '/services/forms' },
-    //       { label: 'Claims', path: '/services/claims' }
-    //     ]
-    //   },
+      //   {
+      //     label: 'Services',
+      //     path: '/services',
+      //     children: [
+      //       { label: 'Forms', path: '/services/forms' },
+      //       { label: 'Claims', path: '/services/claims' }
+      //     ]
+      //   },
       {
         label: 'Scholarship',
         path: '/scholarship',
@@ -87,24 +89,24 @@ export class NavigationService {
       },
       {
         label: 'About Us',
-        path: '/about-us', 
+        path: '/about-us',
         children: [
           { label: 'Leadership', path: '/about-us', fragment: 'leadership' },
           { label: 'Council Directory', path: '/about-us', fragment: 'council-directory' },
-          { label: 'Library', path: '/about-us',fragment: 'library' },
-          { label: 'Bylaws and Financial', path: '/about-us',fragment: 'bylaws' },
-          { label: 'Meet the Staff', path: '/about-us',fragment: 'staff' },
-          { label: 'Careers', path: '/about-us',fragment: 'careers' }
+          { label: 'Library', path: '/about-us', fragment: 'library' },
+          { label: 'Bylaws and Financial', path: '/about-us', fragment: 'bylaws' },
+          { label: 'Meet the Staff', path: '/about-us', fragment: 'staff' },
+          { label: 'Careers', path: '/about-us', fragment: 'careers' }
         ]
       },
-    //   {
-    //     label: 'Contact Us',
-    //     path: '/contact',
-    //     children: [
-    //       { label: 'Meet the Staff', path: '/contact/staff' },
-    //       { label: 'Careers', path: '/contact/careers' }
-    //     ]
-    //   }
+      //   {
+      //     label: 'Contact Us',
+      //     path: '/contact',
+      //     children: [
+      //       { label: 'Meet the Staff', path: '/contact/staff' },
+      //       { label: 'Careers', path: '/contact/careers' }
+      //     ]
+      //   }
     ],
     socialLinks: [
       { label: 'Facebook', path: 'https://facebook.com', external: true, icon: 'facebook' },

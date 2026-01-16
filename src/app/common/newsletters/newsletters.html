@@ -6,6 +6,9 @@
       <p class="page-subtitle">Browse our newsletter archives. All of our monthly newsletters are available online. Just click on any month to read or download the document as a PDF.</p>
     </div>
 
+    <!-- THIS WORKS AND THE IMAGE IS DISPLAYED -->
+<img src="https://storage.googleapis.com/pfsa-public/newsletters/2025-06.jpg">
+
     <!-- Loading State -->
     <div *ngIf="loading" class="text-center py-5">
       <div class="spinner-border text-primary" role="status">
@@ -32,6 +35,7 @@
           <div
             *ngFor="let newsletter of yearGroup.newsletters"
             class="col-6 col-sm-4 col-md-3 col-lg-2">
+           
             <a
               [href]="newsletter.fileUrl"
               target="_blank"
@@ -42,7 +46,8 @@
                   [src]="newsletter.imageUrl"
                   [alt]="newsletter.title"
                   class="newsletter-image"
-                  loading="lazy">
+                  loading="lazy"
+                  >
                 <div class="newsletter-overlay">
                   <i class="bi bi-download"></i>
                   <span>View PDF</span>
