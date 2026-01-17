@@ -1,0 +1,380 @@
+<div class="festa-form-area pt-100 pb-70">
+  <div class="container">
+    <div class="section-title">
+      <span class="top-title">Submit Your Event</span>
+      <h2>Add Your Own Festa</h2>
+      <p>Share your Portuguese festa with the community. Fill out the form below to submit your event for listing.</p>
+    </div>
+
+    @if (submitSuccess) {
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="success-message text-center">
+            <div class="success-icon">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3>Thank You!</h3>
+            <p>Your festa has been submitted successfully. Our team will review it and add it to the schedule.</p>
+            <div class="success-actions">
+              <button class="btn btn-primary me-3" (click)="resetForm()">
+                <i class="fa-solid fa-plus"></i> Submit Another Festa
+              </button>
+              <button class="btn btn-outline-secondary" (click)="goBack()">
+                <i class="fa-solid fa-arrow-left"></i> Back to Schedule
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    } @else {
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="form-card">
+            <form [formGroup]="festaForm" (ngSubmit)="onSubmit()">
+
+              <!-- Basic Information Section -->
+              <div class="form-section">
+                <h4><i class="fa-solid fa-info-circle"></i> Basic Information</h4>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="organizationName" class="form-label">Organization Name <span class="required">*</span></label>
+                    <input
+                      type="text"
+                      id="organizationName"
+                      class="form-control"
+                      formControlName="organizationName"
+                      [class.is-invalid]="isFieldInvalid('organizationName')"
+                      placeholder="e.g., I.D.E.S., S.P.D.E.S."
+                    >
+                    @if (isFieldInvalid('organizationName')) {
+                      <div class="invalid-feedback">Organization name is required (min 2 characters)</div>
+                    }
+                  </div>
+                  <div class="col-md-6">
+                    <label for="festaName" class="form-label">Festa Name</label>
+                    <input
+                      type="text"
+                      id="festaName"
+                      class="form-control"
+                      formControlName="festaName"
+                      placeholder="e.g., Holy Ghost Festa, Queens Presentation"
+                    >
+                  </div>
+                  <div class="col-md-4">
+                    <label for="councilNumber" class="form-label">Council Number</label>
+                    <input
+                      type="text"
+                      id="councilNumber"
+                      class="form-control"
+                      formControlName="councilNumber"
+                      placeholder="e.g., 16"
+                    >
+                  </div>
+                  <div class="col-md-4">
+                    <label for="city" class="form-label">City <span class="required">*</span></label>
+                    <input
+                      type="text"
+                      id="city"
+                      class="form-control"
+                      formControlName="city"
+                      [class.is-invalid]="isFieldInvalid('city')"
+                      placeholder="e.g., Newark"
+                    >
+                    @if (isFieldInvalid('city')) {
+                      <div class="invalid-feedback">City is required</div>
+                    }
+                  </div>
+                  <div class="col-md-2">
+                    <label for="state" class="form-label">State <span class="required">*</span></label>
+                    <select id="state" class="form-select" formControlName="state">
+                      @for (state of states; track state) {
+                        <option [value]="state">{{ state }}</option>
+                      }
+                    </select>
+                  </div>
+                  <div class="col-md-2">
+                    <label for="year" class="form-label">Year <span class="required">*</span></label>
+                    <select id="year" class="form-select" formControlName="year">
+                      @for (year of years; track year) {
+                        <option [value]="year">{{ year }}</option>
+                      }
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Contact Information Section -->
+              <div class="form-section" formGroupName="contactInfo">
+                <h4><i class="fa-solid fa-address-book"></i> Contact Information</h4>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="hall" class="form-label">Hall Name & Address</label>
+                    <input
+                      type="text"
+                      id="hall"
+                      class="form-control"
+                      formControlName="hall"
+                      placeholder="e.g., 6430 Thornton Ave, Newark, CA 94560"
+                    >
+                  </div>
+                  <div class="col-md-6">
+                    <label for="address" class="form-label">Street Address</label>
+                    <input
+                      type="text"
+                      id="address"
+                      class="form-control"
+                      formControlName="address"
+                      placeholder="Street address if different from hall"
+                    >
+                  </div>
+                  <div class="col-md-6">
+                    <label for="mailingAddress" class="form-label">Mailing Address</label>
+                    <input
+                      type="text"
+                      id="mailingAddress"
+                      class="form-control"
+                      formControlName="mailingAddress"
+                      placeholder="P.O. Box or mailing address"
+                    >
+                  </div>
+                  <div class="col-md-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      class="form-control"
+                      formControlName="phone"
+                      placeholder="(555) 555-5555"
+                    >
+                  </div>
+                  <div class="col-md-3">
+                    <label for="contactEmail" class="form-label">Email</label>
+                    <input
+                      type="email"
+                      id="contactEmail"
+                      class="form-control"
+                      formControlName="email"
+                      [class.is-invalid]="isNestedFieldInvalid('contactInfo', 'email')"
+                      placeholder="contact@example.com"
+                    >
+                    @if (isNestedFieldInvalid('contactInfo', 'email')) {
+                      <div class="invalid-feedback">Please enter a valid email</div>
+                    }
+                  </div>
+                </div>
+              </div>
+
+              <!-- Event Schedule Section -->
+              <div class="form-section">
+                <div class="section-header">
+                  <h4><i class="fa-solid fa-calendar-days"></i> Event Schedule</h4>
+                  <button type="button" class="btn btn-sm btn-outline-primary" (click)="addScheduleItem()">
+                    <i class="fa-solid fa-plus"></i> Add Event
+                  </button>
+                </div>
+
+                <div formArrayName="schedule">
+                  @for (item of scheduleArray.controls; track $index; let i = $index) {
+                    <div class="schedule-item" [formGroupName]="i">
+                      <div class="row g-3 align-items-end">
+                        <div class="col-md-3">
+                          <label class="form-label">Date <span class="required">*</span></label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            formControlName="date"
+                            [class.is-invalid]="isArrayFieldInvalid('schedule', i, 'date')"
+                            placeholder="e.g., Saturday, June 15, 2025"
+                          >
+                        </div>
+                        <div class="col-md-2">
+                          <label class="form-label">Time</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            formControlName="time"
+                            placeholder="e.g., 6:00 p.m."
+                          >
+                        </div>
+                        <div class="col-md-6">
+                          <label class="form-label">Event Description <span class="required">*</span></label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            formControlName="event"
+                            [class.is-invalid]="isArrayFieldInvalid('schedule', i, 'event')"
+                            placeholder="e.g., Mass at St. Mary's Church"
+                          >
+                        </div>
+                        <div class="col-md-1">
+                          @if (scheduleArray.length > 1) {
+                            <button
+                              type="button"
+                              class="btn btn-outline-danger btn-sm"
+                              (click)="removeScheduleItem(i)"
+                              title="Remove event"
+                            >
+                              <i class="fa-solid fa-trash"></i>
+                            </button>
+                          }
+                        </div>
+                      </div>
+                    </div>
+                  }
+                </div>
+              </div>
+
+              <!-- Additional Information Section -->
+              <div class="form-section">
+                <h4><i class="fa-solid fa-file-lines"></i> Additional Information</h4>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="eventLink" class="form-label">Event Link (Tickets/Registration)</label>
+                    <input
+                      type="url"
+                      id="eventLink"
+                      class="form-control"
+                      formControlName="eventLink"
+                      placeholder="e.g., https://zeffy.com/your-event or https://eventbrite.com/..."
+                    >
+                    <small class="form-text text-muted">Link to Zeffy, Eventbrite, or other ticketing platform</small>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="additionalNotes" class="form-label">Additional Notes (Public)</label>
+                    <textarea
+                      id="additionalNotes"
+                      class="form-control"
+                      formControlName="additionalNotes"
+                      rows="2"
+                      placeholder="Any additional information for attendees..."
+                    ></textarea>
+                  </div>
+                  <div class="col-12">
+                    <label for="internalComments" class="form-label">Internal Comments (Not Published)</label>
+                    <textarea
+                      id="internalComments"
+                      class="form-control"
+                      formControlName="internalComments"
+                      rows="2"
+                      placeholder="Comments for PFSA staff only (not shown publicly)..."
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Managers Section -->
+              <div class="form-section">
+                <div class="section-header">
+                  <h4><i class="fa-solid fa-users"></i> Event Managers / Contacts</h4>
+                  <button type="button" class="btn btn-sm btn-outline-primary" (click)="addManager()">
+                    <i class="fa-solid fa-plus"></i> Add Manager
+                  </button>
+                </div>
+
+                <div formArrayName="managers">
+                  @if (managersArray.length === 0) {
+                    <p class="text-muted">No managers added yet. Click "Add Manager" to add contact persons for this event.</p>
+                  }
+
+                  @for (manager of managersArray.controls; track $index; let i = $index) {
+                    <div class="manager-item" [formGroupName]="i">
+                      <div class="manager-header">
+                        <span class="manager-number">Manager {{ i + 1 }}</span>
+                        <button
+                          type="button"
+                          class="btn btn-outline-danger btn-sm"
+                          (click)="removeManager(i)"
+                          title="Remove manager"
+                        >
+                          <i class="fa-solid fa-trash"></i>
+                        </button>
+                      </div>
+                      <div class="row g-3">
+                        <div class="col-md-3">
+                          <label class="form-label">First Name <span class="required">*</span></label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            formControlName="firstName"
+                            [class.is-invalid]="isArrayFieldInvalid('managers', i, 'firstName')"
+                            placeholder="First name"
+                          >
+                        </div>
+                        <div class="col-md-3">
+                          <label class="form-label">Last Name <span class="required">*</span></label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            formControlName="lastName"
+                            [class.is-invalid]="isArrayFieldInvalid('managers', i, 'lastName')"
+                            placeholder="Last name"
+                          >
+                        </div>
+                        <div class="col-md-2">
+                          <label class="form-label">Phone</label>
+                          <input
+                            type="tel"
+                            class="form-control"
+                            formControlName="phone"
+                            placeholder="(555) 555-5555"
+                          >
+                        </div>
+                        <div class="col-md-2">
+                          <label class="form-label">Email</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            formControlName="email"
+                            [class.is-invalid]="isArrayFieldInvalid('managers', i, 'email')"
+                            placeholder="email@example.com"
+                          >
+                        </div>
+                        <div class="col-md-2">
+                          <label class="form-label">Position</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            formControlName="position"
+                            placeholder="e.g., President"
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  }
+                </div>
+              </div>
+
+              <!-- Submit Section -->
+              <div class="form-actions">
+                @if (submitError) {
+                  <div class="alert alert-danger mb-3">
+                    <i class="fa-solid fa-exclamation-circle"></i> {{ submitError }}
+                  </div>
+                }
+
+                <div class="d-flex justify-content-between align-items-center">
+                  <button type="button" class="btn btn-outline-secondary" (click)="goBack()">
+                    <i class="fa-solid fa-arrow-left"></i> Back to Schedule
+                  </button>
+                  <div>
+                    <button type="button" class="btn btn-outline-secondary me-2" (click)="resetForm()">
+                      <i class="fa-solid fa-rotate-left"></i> Reset Form
+                    </button>
+                    <button type="submit" class="btn btn-primary" [disabled]="isSubmitting">
+                      @if (isSubmitting) {
+                        <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                        Submitting...
+                      } @else {
+                        <i class="fa-solid fa-paper-plane"></i> Submit Festa
+                      }
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
