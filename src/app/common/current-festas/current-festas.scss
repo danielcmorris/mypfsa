@@ -1,0 +1,308 @@
+.current-festas-area {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+
+    .top-title {
+      color: #0d6efd;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 14px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #212529;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #6c757d;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+
+  .festas-section {
+    margin-bottom: 50px;
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid #e9ecef;
+
+      h3 {
+        font-size: 22px;
+        font-weight: 600;
+        color: #212529;
+        margin: 0;
+
+        i {
+          margin-right: 12px;
+          color: #0d6efd;
+        }
+      }
+
+      .badge {
+        font-size: 14px;
+        padding: 8px 16px;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .festas-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .festa-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    padding: 20px 25px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+
+    &.upcoming {
+      border-left-color: #0d6efd;
+
+      &:hover {
+        transform: translateX(8px);
+        box-shadow: 0 6px 24px rgba(13, 110, 253, 0.15);
+      }
+    }
+
+    &.past {
+      border-left-color: #6c757d;
+      opacity: 0.85;
+
+      &:hover {
+        transform: translateX(8px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        opacity: 1;
+      }
+
+      .festa-title {
+        color: #495057;
+      }
+    }
+
+    .festa-date {
+      flex-shrink: 0;
+      margin-right: 25px;
+
+      .date-badge {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: #e7f1ff;
+        color: #0d6efd;
+        padding: 10px 16px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 14px;
+        min-width: 180px;
+
+        i {
+          font-size: 16px;
+        }
+
+        &.past {
+          background: #f1f3f4;
+          color: #6c757d;
+        }
+      }
+    }
+
+    .festa-content {
+      flex: 1;
+      min-width: 0;
+
+      .festa-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #212529;
+        margin-bottom: 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .festa-location,
+      .festa-council {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #6c757d;
+        font-size: 14px;
+        margin-bottom: 4px;
+
+        i {
+          width: 16px;
+          color: #0d6efd;
+        }
+      }
+
+      .festa-preview {
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid #f1f3f4;
+
+        .preview-label {
+          font-size: 12px;
+          color: #6c757d;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin-right: 8px;
+        }
+
+        .preview-text {
+          font-size: 14px;
+          color: #495057;
+        }
+      }
+    }
+
+    .festa-arrow {
+      flex-shrink: 0;
+      margin-left: 20px;
+      color: #dee2e6;
+      font-size: 20px;
+      transition: all 0.3s ease;
+    }
+
+    &:hover .festa-arrow {
+      color: #0d6efd;
+      transform: translateX(4px);
+    }
+  }
+
+  .past-festas-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .festa-card.past {
+      padding: 16px 20px;
+
+      .festa-date .date-badge {
+        min-width: 160px;
+        padding: 8px 14px;
+        font-size: 13px;
+      }
+
+      .festa-content .festa-title {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .no-festas {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+
+    i {
+      font-size: 48px;
+      color: #dee2e6;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #6c757d;
+      font-size: 16px;
+      margin: 0;
+    }
+  }
+
+  .view-all-section {
+    text-align: center;
+    margin-top: 40px;
+
+    .btn {
+      padding: 14px 35px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+
+      i {
+        margin-right: 10px;
+      }
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(13, 110, 253, 0.3);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .current-festas-area {
+    .section-title h2 {
+      font-size: 28px;
+    }
+
+    .festas-section .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+
+      h3 {
+        font-size: 18px;
+      }
+    }
+
+    .festa-card {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+
+      .festa-date {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 100%;
+
+        .date-badge {
+          width: 100%;
+          justify-content: center;
+        }
+      }
+
+      .festa-content {
+        width: 100%;
+
+        .festa-title {
+          white-space: normal;
+        }
+      }
+
+      .festa-arrow {
+        display: none;
+      }
+    }
+
+    .past-festas-list .festa-card.past {
+      .festa-date .date-badge {
+        min-width: auto;
+      }
+    }
+  }
+}

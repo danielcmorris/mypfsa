@@ -1,0 +1,110 @@
+<div class="current-festas-area pt-100 pb-70">
+  <div class="container">
+    <div class="section-title">
+      <span class="top-title">Portuguese Festas</span>
+      <h2>Upcoming Events</h2>
+      <p>Discover Portuguese festas happening soon in your community.</p>
+    </div>
+
+    @if (isLoading) {
+      <div class="text-center py-5">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-3">Loading festas...</p>
+      </div>
+    }
+
+    @if (!isLoading) {
+      <!-- Upcoming Festas -->
+      <div class="festas-section upcoming-section">
+        <div class="section-header">
+          <h3><i class="fa-solid fa-calendar-check"></i> Upcoming Festas</h3>
+          <span class="badge bg-primary">{{ upcomingFestas.length }} events</span>
+        </div>
+
+        @if (upcomingFestas.length > 0) {
+          <div class="festas-grid">
+            @for (festa of upcomingFestas; track festa.id) {
+              <div class="festa-card upcoming" (click)="viewFestaDetails(festa)">
+                <div class="festa-date">
+                  <div class="date-badge">
+                    <i class="fa-solid fa-calendar"></i>
+                    <span>{{ getFormattedDate(festa) }}</span>
+                  </div>
+                </div>
+                <div class="festa-content">
+                  <h4 class="festa-title">{{ getFestaTitle(festa) }}</h4>
+                  <div class="festa-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>{{ festa.city }}, {{ festa.state }}</span>
+                  </div>
+                  @if (festa.councilNumber) {
+                    <div class="festa-council">
+                      <i class="fa-solid fa-users"></i>
+                      <span>Council #{{ festa.councilNumber }}</span>
+                    </div>
+                  }
+                  @if (festa.schedule && festa.schedule.length > 0) {
+                    <div class="festa-preview">
+                      <span class="preview-label">First Event:</span>
+                      <span class="preview-text">{{ festa.schedule[0].event }}</span>
+                    </div>
+                  }
+                </div>
+                <div class="festa-arrow">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+              </div>
+            }
+          </div>
+        } @else {
+          <div class="no-festas">
+            <i class="fa-solid fa-calendar-xmark"></i>
+            <p>No upcoming festas scheduled at this time.</p>
+          </div>
+        }
+      </div>
+
+      <!-- Past Festas -->
+      @if (pastFestas.length > 0) {
+        <div class="festas-section past-section">
+          <div class="section-header">
+            <h3><i class="fa-solid fa-clock-rotate-left"></i> Recent Past Festas</h3>
+            <span class="badge bg-secondary">Last {{ pastFestas.length }}</span>
+          </div>
+
+          <div class="past-festas-list">
+            @for (festa of pastFestas; track festa.id) {
+              <div class="festa-card past" (click)="viewFestaDetails(festa)">
+                <div class="festa-date">
+                  <div class="date-badge past">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span>{{ getFormattedDate(festa) }}</span>
+                  </div>
+                </div>
+                <div class="festa-content">
+                  <h4 class="festa-title">{{ getFestaTitle(festa) }}</h4>
+                  <div class="festa-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>{{ festa.city }}, {{ festa.state }}</span>
+                  </div>
+                </div>
+                <div class="festa-arrow">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+
+      <!-- View All Button -->
+      <div class="view-all-section">
+        <button class="btn btn-primary btn-lg" (click)="viewAllFestas()">
+          <i class="fa-solid fa-list"></i> View Complete Festa Schedule
+        </button>
+      </div>
+    }
+  </div>
+</div>
