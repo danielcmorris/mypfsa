@@ -1,0 +1,969 @@
+[
+  {
+    "id": 10000,
+    "city": "San Francisco",
+    "state": "CA",
+    "organizationName": "Morris Development",
+    "festaName": "Taco Dinner",
+    "contactInfo": {
+      "hall": "405 Columbus Ave, CA 95336",
+      "phone": "555-555-5555"
+    },
+    "schedule": [
+      { "date": "Sunday, April 27, 2025", "time": "", "event": "TACO DINNER" }
+    ],
+    "year": 2026
+  },
+   {
+    "id": 10001,
+    "city": "Oakland",
+    "state": "CA",
+    "organizationName": "Harrison Garden",
+    "festaName": "Sandwich Lunch",
+    "contactInfo": {
+      "hall": "133 N. Grant Street, Oakland, CA 95336",
+      "phone": "666-666-666"
+    },
+    "schedule": [
+      { "date": "Thursday, April 5, 2026", "time": "", "event": "CIOPPINO DINNER" }
+    ],
+    "year": 2026
+  },
+   {
+    "id": 1,
+    "city": "Manteca",
+    "state": "CA",
+    "organizationName": "M.R.P.S.",
+    "festaName": "Cioppino Dinner",
+    "contactInfo": {
+      "hall": "133 N. Grant Street, Manteca, CA 95336",
+      "phone": "209-471-6777"
+    },
+    "schedule": [
+      { "date": "Saturday, April 5, 2025", "time": "", "event": "CIOPPINO DINNER" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 2,
+    "city": "Thornton",
+    "state": "CA",
+    "organizationName": "Our Lady of Fatima",
+    "festaName": "Steak & Oyster Dinner",
+    "contactInfo": {
+      "hall": "26500 Sacramento Blvd., Thornton, CA 95686",
+      "mailingAddress": "c/o Laura Pereira 900 Jordine Way, Galt, CA 95632"
+    },
+    "schedule": [
+      { "date": "Saturday, April 5, 2025", "time": "7:00 p.m.", "event": "Steak & Oyster Dinner" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 3,
+    "city": "Hayward",
+    "state": "CA",
+    "organizationName": "I.D.E.S. Co.5/36",
+    "festaName": "Queen's Dinner",
+    "councilNumber": "5",
+    "contactInfo": {
+      "hall": "1105 \"C\" Street, Hayward, CA 94541",
+      "phone": "510-581-8518"
+    },
+    "schedule": [
+      { "date": "Saturday, April 12, 2025", "time": "", "event": "Queen's Dinner Fundraiser" }
+    ],
+    "additionalNotes": "PLEASE CALL FOR ACTUAL TIME OF EVENTS",
+    "year": 2025
+  },
+  {
+    "id": 4,
+    "city": "Los Banos",
+    "state": "CA",
+    "organizationName": "D.E.S.",
+    "festaName": "Bullfight",
+    "contactInfo": {
+      "hall": "1155 I Street, Los Banos, CA 93635",
+      "mailingAddress": "P.O. BOX 283, Los Banos, CA 93635"
+    },
+    "schedule": [
+      { "date": "Saturday, April 12, 2025", "time": "12:00 p.m.", "event": "Bull on a Rope Bullfight at the D.E.S. Hall - Gates open, Event starts at 2pm - Entry Fee $10.00" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 5,
+    "city": "Santa Clara",
+    "state": "CA",
+    "organizationName": "Band de Santa Clara",
+    "contactInfo": {
+      "hall": "1375 Lafayette Street, Santa Clara, CA 95050",
+      "mailingAddress": "P.O. BOX 3308, Santa Clara, CA 95055",
+      "phone": "408-458-6192",
+      "email": "anargaspar73@gmail.com"
+    },
+    "schedule": [
+      { "date": "Saturday, April 12, 2025", "time": "6:30 p.m.", "event": "Event begins" },
+      { "date": "Saturday, April 12, 2025", "time": "9:00 p.m.", "event": "Dance until 12:00am" }
+    ],
+    "additionalNotes": "FOR TICKETS PLEASE CALL ANA GASPAR (408) 458-6192",
+    "year": 2025
+  },
+  {
+    "id": 6,
+    "city": "Patterson",
+    "state": "CA",
+    "organizationName": "F.D.E.S.",
+    "festaName": "Scholarship",
+    "contactInfo": {
+      "hall": "501 Ward Avenue, Patterson, CA 95363",
+      "phone": "209-620-1843"
+    },
+    "schedule": [
+      { "date": "Tuesday, April 15, 2025", "time": "", "event": "Scholarship Deadline April 15, 2025" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 7,
+    "city": "Oakley",
+    "state": "CA",
+    "organizationName": "Flor do Oakley Hall",
+    "festaName": "Queens Presentation",
+    "contactInfo": {
+      "hall": "520 - 2nd Street & Home Street, Oakley, CA 94561",
+      "phone": "925-625-9974 / 925-625-4076",
+      "mailingAddress": "P.O. Box 466, Oakley, CA 94561"
+    },
+    "schedule": [
+      { "date": "Saturday, April 19, 2025", "time": "6:00 p.m.", "event": "Queens Dinner" },
+      { "date": "Saturday, April 19, 2025", "time": "8:00 p.m.", "event": "Dance until 12am" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 8,
+    "city": "Chowchilla",
+    "state": "CA",
+    "organizationName": "Sociedade Flor Acoriana",
+    "contactInfo": {
+      "hall": "800 S. 3rd Street, Chowchilla, CA 93610",
+      "phone": "559-665-4961"
+    },
+    "schedule": [
+      { "date": "Monday, April 21, 2025 to Friday, April 25, 2025", "time": "6:30 p.m.", "event": "Rosary & Dinner" },
+      { "date": "Saturday, April 26, 2025", "time": "6:00 p.m.", "event": "Praying of the Rosary" },
+      { "date": "Saturday, April 26, 2025", "time": "7:00 p.m.", "event": "Sopas" },
+      { "date": "Saturday, April 26, 2025", "time": "8:00 p.m.", "event": "Dance - Following Presentation of the Committee & Officers & Queens" },
+      { "date": "Sunday, April 27, 2025", "time": "8:30 a.m.", "event": "Formation of the Parade" },
+      { "date": "Sunday, April 27, 2025", "time": "10:00 a.m.", "event": "Mass @ St. Columba" },
+      { "date": "Sunday, April 27, 2025", "time": "10:30 a.m.", "event": "Sopas" },
+      { "date": "Sunday, April 27, 2025", "time": "1:00 p.m.", "event": "Auction" },
+      { "date": "Sunday, April 27, 2025", "time": "6:00 p.m.", "event": "Rosary" },
+      { "date": "Sunday, April 27, 2025", "time": "7:00 p.m.", "event": "Sopas" },
+      { "date": "Sunday, April 27, 2025", "time": "8:00 p.m.", "event": "Dance" },
+      { "date": "Sunday, April 27, 2025", "time": "9:00 p.m.", "event": "Presentation of the Committee; Officers and Queens" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 9,
+    "city": "Oakdale",
+    "state": "CA",
+    "organizationName": "I.M.D.E.S.",
+    "festaName": "Festa do Espirito Santo",
+    "contactInfo": {
+      "hall": "5748 Albers Road, Oakdale, CA 95361",
+      "email": "imdesoakdale@gmail.com",
+      "phone": "209-496-1134 (Cherlyn Bairos)"
+    },
+    "schedule": [
+      { "date": "Monday, April 21, 2025 to Friday, April 25, 2025", "time": "7:00 p.m.", "event": "Recitation of the Rosary" },
+      { "date": "Saturday, April 26, 2025", "time": "4:00 p.m.", "event": "Recitation of the Rosary by Michael Silva" },
+      { "date": "Saturday, April 26, 2025", "time": "4:30 p.m.", "event": "Bode de Leite" },
+      { "date": "Saturday, April 26, 2025", "time": "5:00 p.m.", "event": "Livestock Auction" },
+      { "date": "Saturday, April 26, 2025", "time": "5:30 p.m.", "event": "Groupo Etnografico Perolas do Atlantico" },
+      { "date": "Saturday, April 26, 2025", "time": "6:00 p.m.", "event": "Thank You Dinner @ Auction" },
+      { "date": "Saturday, April 26, 2025", "time": "7:30 p.m.", "event": "Dancing with Alcides Machado" },
+      { "date": "Sunday, April 27, 2025", "time": "10:00 a.m.", "event": "Mass by Father Pacheco and Father Cordeiro" },
+      { "date": "Sunday, April 27, 2025", "time": "11:00 a.m.", "event": "Procession / Parade" },
+      { "date": "Sunday, April 27, 2025", "time": "12:00 p.m.", "event": "Sopas" },
+      { "date": "Sunday, April 27, 2025", "time": "1:30 p.m.", "event": "Auction / Bazaar and Social Time" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 10,
+    "city": "Patterson",
+    "state": "CA",
+    "organizationName": "F.D.E.S.",
+    "festaName": "Queens Presentation",
+    "contactInfo": {
+      "hall": "501 Ward Avenue, Patterson, CA 95363",
+      "phone": "209-620-1843"
+    },
+    "schedule": [
+      { "date": "Friday, April 25, 2025", "time": "", "event": "Queens Presentation" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 11,
+    "city": "Newark",
+    "state": "CA",
+    "organizationName": "P.F.S.A. Council #16",
+    "festaName": "Queens Presentation",
+    "councilNumber": "16",
+    "contactInfo": {
+      "hall": "6430 Thornton Ave, Newark, CA 94560",
+      "phone": "510-793-4062"
+    },
+    "schedule": [
+      { "date": "Friday, April 26, 2024", "time": "6:00 p.m.", "event": "No Host Social Hour - 7:00pm Dinner With Dessert Buffet, BBQ Chicken, Tri-Tip & Sides" },
+      { "date": "Friday, April 26, 2024", "time": "8:00 p.m.", "event": "Dance with Sem Duvida" }
+    ],
+    "additionalNotes": "For Tickets call: Mary Gaspar (510) 455-6386. Adult: $40 / Kids 6-12: $20",
+    "year": 2025
+  },
+  {
+    "id": 12,
+    "city": "Petaluma",
+    "state": "CA",
+    "organizationName": "Stock Auction",
+    "contactInfo": {
+      "hall": "4649 Bodega Ave., Petaluma, CA 94952",
+      "phone": "707-971-5517"
+    },
+    "schedule": [
+      { "date": "Saturday, April 26, 2025", "time": "12:00 p.m.", "event": "Lunch - Auction at 1:00pm" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 13,
+    "city": "San Luis Obispo",
+    "state": "CA",
+    "organizationName": "Night in Portugal Fundraiser",
+    "contactInfo": {
+      "hall": "6565 Edna Road, San Luis Obispo, CA 93401",
+      "phone": "805-541-3229"
+    },
+    "schedule": [
+      { "date": "Saturday, April 26, 2025", "time": "", "event": "Bar opens at 5pm - Dinner served at 6pm" }
+    ],
+    "additionalNotes": "Portuguese Feast and Store. Adults $25 - Children $10. Purchase Tickets at: TrinityHallSlo.com or call (805) 541-3229",
+    "year": 2025
+  },
+  {
+    "id": 14,
+    "city": "Antioch",
+    "state": "CA",
+    "organizationName": "Our Lady of Fatima",
+    "contactInfo": {
+      "hall": "1313 A Street, Antioch, CA 94509 (Hall behind Holy Rosary Church)",
+      "phone": "925-757-4020 or 415-269-2171"
+    },
+    "schedule": [
+      { "date": "Thursday, May 1, 2025 and Friday, May 2, 2025", "time": "7:00 p.m.", "event": "Mass: Holy Rosary Church & Rosary" },
+      { "date": "Saturday, May 3, 2025", "time": "7:00 p.m.", "event": "Mass: Holy Rosary Church & Rosary" },
+      { "date": "Sunday, May 4, 2025", "time": "10:30 a.m.", "event": "Mass at Holy Rosary Church, Followed by Lunch, Auction, Raffle Drawing and Dance" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 15,
+    "city": "Watsonville",
+    "state": "CA",
+    "organizationName": "Centro Portugues Nossa Senhora de Fatima",
+    "contactInfo": {
+      "hall": "I.S.T.W. Hall: 124 Atkinson Lane, Watsonville, CA 95076",
+      "mailingAddress": "P.O. BOX 1658 Watsonville, CA 95076",
+      "phone": "831-419-5856"
+    },
+    "schedule": [
+      { "date": "Thursday, May 1, 2025", "time": "7:00 p.m.", "event": "Rosary Prayed each evening at the hall" },
+      { "date": "Friday, May 2, 2025", "time": "5:30 p.m.", "event": "Rosary Prayed" },
+      { "date": "Friday, May 2, 2025", "time": "6:30 p.m.", "event": "Fado & Food" },
+      { "date": "Saturday, May 3, 2025", "time": "5:30 p.m.", "event": "Mass at the hall" },
+      { "date": "Saturday, May 3, 2025", "time": "7:00 p.m.", "event": "Roast beef dinner will be served" },
+      { "date": "Saturday, May 3, 2025", "time": "8:00 p.m.", "event": "Candle light Procession" },
+      { "date": "Saturday, May 3, 2025", "time": "9:00 p.m.", "event": "Music By Gilbert Amaral" },
+      { "date": "Saturday, May 3, 2025", "time": "9:30 p.m.", "event": "Presentation of the Queens & Side maids" },
+      { "date": "Sunday, May 4, 2025", "time": "9:00 a.m.", "event": "Formation and Parade" },
+      { "date": "Sunday, May 4, 2025", "time": "11:00 a.m.", "event": "Mass at St. Patrick's Church - Father Jason Simas" },
+      { "date": "Sunday, May 4, 2025", "time": "1:00 p.m.", "event": "Traditional Sopas with meat and wine followed by Auction" },
+      { "date": "Sunday, May 4, 2025", "time": "4:30 p.m.", "event": "Rosary will be prayed at the hall" },
+      { "date": "Sunday, May 4, 2025", "time": "6:00 p.m.", "event": "Music by Chico Avila" }
+    ],
+    "additionalNotes": "ART EXHIBITS WILL BE DISPLAYED THROUGHOUT THE WEEK",
+    "year": 2025
+  },
+  {
+    "id": 16,
+    "city": "Artesia",
+    "state": "CA",
+    "organizationName": "Nossa Senhora de Fatima",
+    "contactInfo": {
+      "hall": "D.E.S. Hall: 11903 Ashworth, Artesia, CA 90701",
+      "phone": "562-865-4693 or 562-865-6283"
+    },
+    "schedule": [
+      { "date": "Friday, May 2, 2025 to Thursday, May 8, 2025", "time": "7:00 p.m.", "event": "Rosary" },
+      { "date": "Friday, May 9, 2025", "time": "10:00 a.m.", "event": "Rosary and Mass for the sick and Elderly at Holy Family Catholic Church" },
+      { "date": "Friday, May 9, 2025", "time": "4:00 p.m.", "event": "Restaurant at Artesia D.E.S." },
+      { "date": "Friday, May 9, 2025", "time": "6:30 p.m.", "event": "Living Rosary in the Artesia D.E.S. Courtyard" },
+      { "date": "Friday, May 9, 2025", "time": "7:30 p.m.", "event": "Vacada in the Artesia D.E.S bull arena" },
+      { "date": "Friday, May 9, 2025", "time": "9:00 p.m.", "event": "Entertainment by DJ Chuck" },
+      { "date": "Saturday, May 10, 2025", "time": "6:00 p.m.", "event": "Bilingual Mass at Holy Family Catholic Church - Candlelight Procession" },
+      { "date": "Saturday, May 10, 2025", "time": "8:30 p.m.", "event": "Reception with Refreshments and Sweet Bread" },
+      { "date": "Saturday, May 10, 2025", "time": "9:00 p.m.", "event": "Live entertainment by 562 - Vigil of Our Lady of Fatima" },
+      { "date": "Sunday, May 11, 2025", "time": "1:00 p.m.", "event": "First serving of Sopas, Celebration Mass, Procession, Auction, Concerts" },
+      { "date": "Sunday, May 11, 2025", "time": "6:00 p.m.", "event": "Rosary and Farewell to Our Lady" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 17,
+    "city": "Manteca",
+    "state": "CA",
+    "organizationName": "M.R.P.S.",
+    "festaName": "Scholarship - Rib Dinner",
+    "contactInfo": {
+      "hall": "133 N. Grant Street, Manteca, CA 95336"
+    },
+    "schedule": [
+      { "date": "Saturday, May 3, 2025", "time": "", "event": "SCHOLARSHIP - Rib Dinner" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 18,
+    "city": "Oakdale",
+    "state": "CA",
+    "organizationName": "Our Lady of Fatima",
+    "contactInfo": {
+      "hall": "1225 Olive Street, Oakdale, CA 95361",
+      "mailingAddress": "P.O. BOX 984, Oakdale, CA 95361"
+    },
+    "schedule": [
+      { "date": "Monday, May 12, 2025 to May 16, 2025", "time": "7:00 p.m.", "event": "Rosary - In front of Fatima Shrine" },
+      { "date": "Saturday, May 17, 2025", "time": "7:00 p.m.", "event": "Mass followed by Candlelight Procession - Meal following procession" },
+      { "date": "Sunday, May 18, 2025", "time": "12:00 p.m.", "event": "Festa Mass Followed by Procession - Luncheon & Live Auction" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 19,
+    "city": "Buhach",
+    "state": "CA",
+    "organizationName": "Festa do Senhor Santo Cristo",
+    "contactInfo": {
+      "hall": "Buhach Hall: 2889 Buhach Road, Atwater, CA 95301"
+    },
+    "schedule": [
+      { "date": "Friday, May 16, 2025", "time": "5:30 p.m.", "event": "Confessions in Portuguese and English" },
+      { "date": "Friday, May 16, 2025", "time": "6:00 p.m.", "event": "Rosary and Mass celebrated by Father Marc Valadao" },
+      { "date": "Friday, May 16, 2025", "time": "9:00 p.m.", "event": "Dance with DJ Roger Dinis, Bazaar, and folklore dancing by Mar Alto" },
+      { "date": "Saturday, May 17, 2025", "time": "10:30 a.m.", "event": "Formation of the Bodo de Leite with traditional carts and oxen" },
+      { "date": "Saturday, May 17, 2025", "time": "1:00 p.m.", "event": "Auction of donated animals and Bazaar. Lunch will be served" },
+      { "date": "Saturday, May 17, 2025", "time": "4:30 p.m.", "event": "Confessions in Portuguese and English" },
+      { "date": "Saturday, May 17, 2025", "time": "5:30 p.m.", "event": "Mass celebrated by Father Marc Valadao" },
+      { "date": "Saturday, May 17, 2025", "time": "6:30 p.m.", "event": "Movement of the Statue - Dinner of beef stew will be served" },
+      { "date": "Saturday, May 17, 2025", "time": "9:00 p.m.", "event": "Dance with Alma" },
+      { "date": "Saturday, May 17, 2025", "time": "9:30 p.m.", "event": "Presentation of Queens and committee members" },
+      { "date": "Sunday, May 18, 2025", "time": "10:00 a.m.", "event": "Formation of procession" },
+      { "date": "Sunday, May 18, 2025", "time": "11:00 a.m.", "event": "Solemn mass - Sopas shall be served" },
+      { "date": "Sunday, May 18, 2025", "time": "6:30 p.m.", "event": "Recitation of the Rosary" },
+      { "date": "Sunday, May 18, 2025", "time": "7:00 p.m.", "event": "Sopas will be served" },
+      { "date": "Sunday, May 18, 2025", "time": "8:00 p.m.", "event": "Dance with Chico Avila" },
+      { "date": "Sunday, May 18, 2025", "time": "9:00 p.m.", "event": "Presentation of Queens and committee members" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 20,
+    "city": "Hayward",
+    "state": "CA",
+    "organizationName": "Nossa Senhora de Fatima",
+    "contactInfo": {
+      "hall": "Bom Jesus Milagroso 21160 Ocean View Drive, Hayward, CA 94541",
+      "phone": "510-581-4034"
+    },
+    "schedule": [
+      { "date": "Saturday, May 17, 2025", "time": "7:00 p.m.", "event": "Candlelight Procession, followed by Dance 7-11pm" },
+      { "date": "Sunday, May 18, 2025", "time": "12:00 p.m.", "event": "Mass and Procession, followed by Auction and Dance 5-9pm" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 21,
+    "city": "Petaluma",
+    "state": "CA",
+    "organizationName": "Senhor Santo Cristo Society",
+    "contactInfo": {
+      "mailingAddress": "P.O. BOX 750937, Petaluma, CA 94975-0937"
+    },
+    "schedule": [
+      { "date": "Saturday, May 17, 2025", "time": "6:00 p.m.", "event": "Novena and Mass followed by Candle Procession and Refreshments" },
+      { "date": "Sunday, May 18, 2025", "time": "10:30 a.m.", "event": "Mass at St. Vincent Catholic Church Petaluma" },
+      { "date": "Sunday, May 18, 2025", "time": "11:30 a.m.", "event": "Senhor Santo Cristo Procession" },
+      { "date": "Sunday, May 18, 2025", "time": "2:00 p.m.", "event": "Lunch" },
+      { "date": "Sunday, May 18, 2025", "time": "4:00 p.m.", "event": "Filarmonica Concert" },
+      { "date": "Sunday, May 18, 2025", "time": "6:00 p.m.", "event": "Dance" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 22,
+    "city": "Union City",
+    "state": "CA",
+    "organizationName": "S.D.E.S.",
+    "councilNumber": "22",
+    "contactInfo": {
+      "hall": "30846 Watkins Street, Union City, CA 94587",
+      "phone": "510-928-7019",
+      "email": "sdesalvaradohall.org"
+    },
+    "schedule": [
+      { "date": "Saturday, May 17, 2025", "time": "5:00 p.m.", "event": "Queen courts to collect Holy Ghost Crowns" },
+      { "date": "Saturday, May 17, 2025", "time": "6:00 p.m.", "event": "Rosary - Followed by mass and cheese and refreshments" },
+      { "date": "Saturday, May 17, 2025", "time": "8:00 p.m.", "event": "Dance with Chico Avila" },
+      { "date": "Saturday, May 17, 2025", "time": "8:30 p.m.", "event": "Presentation of Queens" },
+      { "date": "Sunday, May 18, 2025", "time": "11:00 a.m.", "event": "Raising of Flags & Anthems" },
+      { "date": "Sunday, May 18, 2025", "time": "11:30 a.m.", "event": "Mass in upper hall w/Father Silveira" },
+      { "date": "Sunday, May 18, 2025", "time": "1:00 p.m.", "event": "Parades with all visiting organizations - Sopas served" },
+      { "date": "Sunday, May 18, 2025", "time": "3:00 p.m.", "event": "Concert w/Newark FREP" },
+      { "date": "Sunday, May 18, 2025", "time": "4:00 p.m.", "event": "Dance w/ Erminio" },
+      { "date": "Sunday, May 18, 2025", "time": "6:00 p.m.", "event": "Rosary in Capela" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 23,
+    "city": "Gilroy",
+    "state": "CA",
+    "organizationName": "I.F.D.E.S.",
+    "festaName": "Holy Ghost",
+    "contactInfo": {
+      "hall": "250 Old Gilroy Road and Monterey Streets, CA 95020",
+      "phone": "408-623-2588"
+    },
+    "schedule": [
+      { "date": "Sunday, May 18, 2025 to Friday, May 23, 2025", "time": "7:00 p.m.", "event": "Rosary at the I.F.D.E.S. chapel followed by refreshments" },
+      { "date": "Saturday, May 24, 2025", "time": "8:30 p.m.", "event": "Dance by Chico Avila and 9:30pm Presentation of Queens" },
+      { "date": "Sunday, May 25, 2025", "time": "9:30 a.m.", "event": "The parade starts forming at the I.F.D.E.S. Lodge" },
+      { "date": "Sunday, May 25, 2025", "time": "11:00 a.m.", "event": "Mass at Saint Mary's Church" },
+      { "date": "Sunday, May 25, 2025", "time": "2:30 p.m.", "event": "Auction" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 24,
+    "city": "San Leandro",
+    "state": "CA",
+    "organizationName": "I.D.E.S.",
+    "councilNumber": "24",
+    "contactInfo": {
+      "hall": "790 Antonio Street - P.O. Box 781, San Leandro 94577",
+      "phone": "510-586-2661"
+    },
+    "schedule": [
+      { "date": "Sunday, May 18, 2025 to May 23, 2025", "time": "7:00 p.m.", "event": "Rosary" },
+      { "date": "Saturday, May 24, 2025", "time": "5:00 p.m.", "event": "Rosary & Blessing of the meat, bread & wine Ceremony" },
+      { "date": "Saturday, May 24, 2025", "time": "7:00 p.m.", "event": "Dinner & Dance - COST $25.00 - Beef Stew - Wine - Desert" },
+      { "date": "Saturday, May 24, 2025", "time": "8:00 p.m.", "event": "Dance - Music by: Victor Silva" },
+      { "date": "Sunday, May 25, 2025", "time": "10:00 a.m.", "event": "Raising of the US & Portuguese Flags ceremony" },
+      { "date": "Sunday, May 25, 2025", "time": "11:00 a.m.", "event": "Holy Mass at IDES Hall - Assembly of procession - parade" }
+    ],
+    "additionalNotes": "AFTERNOON CONCERT PERFORMED BY THE MARCHING BAND. Saturday and Sunday programs include Bazaar, Raffle, Auction, Bar and Kitchen",
+    "year": 2025
+  },
+  {
+    "id": 25,
+    "city": "Artesia",
+    "state": "CA",
+    "organizationName": "Artesia Portuguese Festa da Bola",
+    "festaName": "Soccer Club Tournament",
+    "contactInfo": {
+      "hall": "D.E.S. 11903 East Ashworth, Artesia, CA 90701",
+      "email": "melinda@borbarealty.com",
+      "phone": "562-865-4693"
+    },
+    "schedule": [
+      { "date": "Thursday, May 22, 2025 to May 26, 2025", "time": "", "event": "Soccer Tournament" }
+    ],
+    "additionalNotes": "PLEASE CALL FOR MORE INFORMATION",
+    "year": 2025
+  },
+  {
+    "id": 26,
+    "city": "Stratford",
+    "state": "CA",
+    "organizationName": "I.D.E.S.",
+    "contactInfo": {
+      "hall": "I.D.E.S. 19617 Empire, Stratford, CA 93266",
+      "phone": "559-381-0875 (Cindy Rodrigues)"
+    },
+    "schedule": [
+      { "date": "Friday, May 23, 2025 to May 30, 2025", "time": "7:00 p.m.", "event": "Rosary" },
+      { "date": "Saturday, May 31, 2025", "time": "7:00 p.m.", "event": "Rosary - Dance and Grand March" },
+      { "date": "Sunday, June 1, 2025", "time": "9:30 a.m.", "event": "Parade formation at the hall" },
+      { "date": "Sunday, June 1, 2025", "time": "10:30 a.m.", "event": "Mass at St. Joseph's Church" },
+      { "date": "Sunday, June 1, 2025", "time": "11:00 a.m.", "event": "Sopas will be served for lunch, followed by Auction" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 27,
+    "city": "Dos Palos",
+    "state": "CA",
+    "organizationName": "D.E.S",
+    "festaName": "Festa do Espirito Santo",
+    "contactInfo": {
+      "hall": "1357 Elgin Avenue, Dos Palos, CA 93620"
+    },
+    "schedule": [
+      { "date": "Saturday, May 24, 2025", "time": "11:00 a.m.", "event": "Bode de Leite" },
+      { "date": "Sunday, May 25, 2025", "time": "10:00 a.m.", "event": "Parade" },
+      { "date": "Sunday, May 25, 2025", "time": "11:00 a.m.", "event": "Mass Sacred Heart Church" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 28,
+    "city": "South San Francisco",
+    "state": "CA",
+    "organizationName": "Senhor Santo Cristo",
+    "contactInfo": {
+      "hall": "41 Oak Avenue, South San Francisco, CA 94080",
+      "phone": "650-873-6124"
+    },
+    "schedule": [
+      { "date": "Saturday, May 24, 2025", "time": "6:00 p.m.", "event": "Rosary" },
+      { "date": "Saturday, May 24, 2025", "time": "7:00 p.m.", "event": "Hors d'oeuvres and sweets will be served" },
+      { "date": "Saturday, May 24, 2025", "time": "8:00 p.m.", "event": "Confirmation of the Queens and Celebration-Music" },
+      { "date": "Sunday, May 25, 2025", "time": "8:45 a.m.", "event": "Parade forms at Santo Cristo Hall" },
+      { "date": "Sunday, May 25, 2025", "time": "9:00 a.m.", "event": "Parade begins to Mater Dolorosa Catholic Church" },
+      { "date": "Sunday, May 25, 2025", "time": "10:00 a.m.", "event": "Mass at Mater Dolorosa Catholic Church" },
+      { "date": "Sunday, May 25, 2025", "time": "11:15 a.m.", "event": "Parade processes back to Santo Cristo Hall" },
+      { "date": "Sunday, May 25, 2025", "time": "12:30 p.m.", "event": "Sopas e Carne is served for lunch" },
+      { "date": "Sunday, May 25, 2025", "time": "2:30 p.m.", "event": "Auction, dancing and more!" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 29,
+    "city": "Elk Grove",
+    "state": "CA",
+    "organizationName": "Festa do Espirito Santo",
+    "contactInfo": {
+      "hall": "S.E.S. Hall: 10427 E. Stockton Blvd. Elk Grove, CA 95624"
+    },
+    "schedule": [
+      { "date": "Sunday, May 25, 2025 to Thursday, May 29, 2025", "time": "7:00 p.m.", "event": "Praying of the Rosary" },
+      { "date": "Friday, May 30, 2025", "time": "7:00 p.m.", "event": "Praying the Rosary & Activities following" },
+      { "date": "Saturday, May 31, 2025", "time": "7:00 p.m.", "event": "Praying the Rosary followed by Cacoila Dinner & Dance with 526" },
+      { "date": "Saturday, May 31, 2025", "time": "9:00 p.m.", "event": "Presentation of the Fest Committee & Queens" },
+      { "date": "Sunday, June 1, 2025", "time": "9:00 a.m.", "event": "Line up for parade & Mass at 11:00 am. Sopas following parade" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 30,
+    "city": "Mountain View",
+    "state": "CA",
+    "organizationName": "I.F.E.S. Portuguese Association",
+    "contactInfo": {
+      "hall": "432 Sterling Road, Mt. View, CA 94043",
+      "phone": "650-967-2759"
+    },
+    "schedule": [
+      { "date": "Sunday, May 25, 2025 to Friday, May 30, 2025", "time": "7:00 p.m.", "event": "Praying of the Rosary" },
+      { "date": "Saturday, May 31, 2025", "time": "6:00 p.m.", "event": "Rosary followed by Presentation of Queens, board & Dance" },
+      { "date": "Sunday, June 1, 2025", "time": "11:00 a.m.", "event": "Mass at small hall I.F.E.S. grounds" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 31,
+    "city": "Crows Landing",
+    "state": "CA",
+    "organizationName": "Crows Landing Pentecost Association",
+    "contactInfo": {
+      "hall": "C.P.C.A. Hall: 4th & G Street",
+      "mailingAddress": "P.O. Box 1180, Hilmar, CA 95324",
+      "phone": "209-535-2182"
+    },
+    "schedule": [
+      { "date": "Wednesday, May 28, 2025 to June 1, 2025", "time": "6:30 p.m.", "event": "Praying of the Rosary" },
+      { "date": "Saturday, May 31, 2025", "time": "10:00 a.m.", "event": "Bodo de Leite with traditional Pezinho" },
+      { "date": "Saturday, May 31, 2025", "time": "1:00 p.m.", "event": "Cattle Auction" },
+      { "date": "Saturday, May 31, 2025", "time": "2:30 p.m.", "event": "Cacoilha will be served" },
+      { "date": "Saturday, May 31, 2025", "time": "7:00 p.m.", "event": "Praying of the Rosary" },
+      { "date": "Saturday, May 31, 2025", "time": "8:00 p.m.", "event": "Presentation of Queens and Committee following Dance" },
+      { "date": "Sunday, June 1, 2025", "time": "10:00 a.m.", "event": "Formation of the Parade" },
+      { "date": "Sunday, June 1, 2025", "time": "11:00 a.m.", "event": "Mass at Immaculate Heart of Mary Catholic Church" },
+      { "date": "Sunday, June 1, 2025", "time": "1:30 p.m.", "event": "Auction of Gifts" },
+      { "date": "Sunday, June 1, 2025", "time": "5:00 p.m.", "event": "Serving Sopas" },
+      { "date": "Sunday, June 1, 2025", "time": "7:00 p.m.", "event": "Presentation of Queens - Following Dance with Alma Band" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 32,
+    "city": "Petaluma",
+    "state": "CA",
+    "organizationName": "Senhor Santo Cristo Society",
+    "festaName": "Stock Auction",
+    "contactInfo": {
+      "mailingAddress": "P.O. BOX 750937, Petaluma, CA 94975-0937",
+      "phone": "707-304-2819"
+    },
+    "schedule": [
+      { "date": "Friday, May 30, 2025", "time": "11:00 a.m.", "event": "Lunch - Auction" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 33,
+    "city": "Tipton",
+    "state": "CA",
+    "organizationName": "Holy Ghost Festa",
+    "contactInfo": {
+      "hall": "SPDES 200 S. Evans Road, Tipton, CA 93272",
+      "phone": "559-359-4070"
+    },
+    "schedule": [
+      { "date": "Saturday, May 31, 2025", "time": "6:00 p.m.", "event": "Vacada - Back parking lot, Presentation of Officers and Queens & Attendants" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 34,
+    "city": "Buhach",
+    "state": "CA",
+    "organizationName": "Buhach Pentecost, Inc",
+    "contactInfo": {
+      "hall": "2889 Buhach Road, Atwater, CA 95301"
+    },
+    "schedule": [
+      { "date": "Sunday, June 1, 2025 to Friday, June 6, 2025", "time": "7:00 p.m.", "event": "Praying of the rosary in the chapel" },
+      { "date": "Saturday, June 7, 2025", "time": "11:00 a.m.", "event": "Bodo de Leite, blessing of the animals" },
+      { "date": "Saturday, June 7, 2025", "time": "7:00 p.m.", "event": "Praying of the rosary in the chapel" },
+      { "date": "Saturday, June 7, 2025", "time": "7:30 p.m.", "event": "Dinner will be served" },
+      { "date": "Saturday, June 7, 2025", "time": "9:00 p.m.", "event": "Music and Dance" },
+      { "date": "Saturday, June 7, 2025", "time": "9:30 p.m.", "event": "Presentation of the Queens and Officers" },
+      { "date": "Sunday, June 8, 2025", "time": "10:00 a.m.", "event": "Formation of the parade" },
+      { "date": "Sunday, June 8, 2025", "time": "11:00 a.m.", "event": "Mass at Immaculate Conception Church" },
+      { "date": "Sunday, June 8, 2025", "time": "1:30 p.m.", "event": "Auctioning of donations" },
+      { "date": "Sunday, June 8, 2025", "time": "7:00 p.m.", "event": "Traditional sopas & meat served" },
+      { "date": "Sunday, June 8, 2025", "time": "8:00 p.m.", "event": "Music and Dance" },
+      { "date": "Sunday, June 8, 2025", "time": "9:30 p.m.", "event": "Presentation of the Queens and Officers" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 35,
+    "city": "Kerman",
+    "state": "CA",
+    "organizationName": "Festa do Espirito Santo",
+    "contactInfo": {
+      "hall": "S.B.F. Portuguese Hall: 14910 West C Street, Kerman, CA 93630"
+    },
+    "schedule": [
+      { "date": "Sunday, June 1, 2025", "time": "10:00 a.m.", "event": "Parade Gathering" },
+      { "date": "Sunday, June 1, 2025", "time": "11:00 a.m.", "event": "Mass @ St. Patrick's Church / Sopas served for Lunch" },
+      { "date": "Sunday, June 1, 2025", "time": "1:00 p.m.", "event": "Sopas served for Lunch" },
+      { "date": "Sunday, June 1, 2025", "time": "7:00 p.m.", "event": "Sopas served for Dinner" },
+      { "date": "Sunday, June 1, 2025", "time": "8:00 p.m.", "event": "Grand March & Dance" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 36,
+    "city": "Novato",
+    "state": "CA",
+    "organizationName": "IDESI",
+    "festaName": "Festa do Espirito Santo",
+    "councilNumber": "36",
+    "contactInfo": {
+      "mailingAddress": "P.O. BOX 2237, Novato, CA 94948",
+      "phone": "415-883-7354"
+    },
+    "schedule": [
+      { "date": "Sunday, June 1, 2025", "time": "9:30 a.m.", "event": "Parade" },
+      { "date": "Sunday, June 1, 2025", "time": "10:00 a.m.", "event": "Mass at Our Lady of Loretto Church" },
+      { "date": "Sunday, June 1, 2025", "time": "10:30 a.m.", "event": "Sopas and concert & dance in the afternoon" },
+      { "date": "Sunday, June 1, 2025", "time": "6:00 p.m.", "event": "Dinner and dance" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 37,
+    "city": "San Diego",
+    "state": "CA",
+    "organizationName": "U.P.S.E.S.",
+    "contactInfo": {
+      "hall": "2818 Avenida de Portugal, San Diego, CA 92106"
+    },
+    "schedule": [
+      { "date": "Sunday, June 1, 2025", "time": "6:00 p.m.", "event": "Rosary and various events until the day of Festa" },
+      { "date": "Saturday, June 6, 2025", "time": "4:30 p.m.", "event": "Mass - afternoon there will be various activities" },
+      { "date": "Sunday, June 8, 2025", "time": "10:00 a.m.", "event": "Festa Parade and Celebration" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 38,
+    "city": "Half Moon Bay",
+    "state": "CA",
+    "organizationName": "I.D.E.S. Society Inc.",
+    "contactInfo": {
+      "hall": "735 Main Street, Half Moon Bay, CA 94019"
+    },
+    "schedule": [
+      { "date": "Monday, June 2, 2025 to Friday, June 6, 2025", "time": "7:00 p.m.", "event": "Rosary" },
+      { "date": "Saturday, June 7, 2025", "time": "6:00 p.m.", "event": "Rosary @ Our Lady Of Pillar Church" },
+      { "date": "Saturday, June 7, 2025", "time": "8:00 p.m.", "event": "Dance & Presentation of Queens" },
+      { "date": "Sunday, June 8, 2025", "time": "10:45 a.m.", "event": "Parade to Our Lady of Pillar Church" },
+      { "date": "Sunday, June 8, 2025", "time": "11:30 a.m.", "event": "Mass, followed by Lunch and activities" },
+      { "date": "Monday, June 9, 2025", "time": "12:00 p.m.", "event": "Lunch & Auction" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 39,
+    "city": "Modesto",
+    "state": "CA",
+    "organizationName": "M.P.P.A.",
+    "festaName": "Festa do Espirito Santo",
+    "contactInfo": {
+      "mailingAddress": "P.O. BOX 578610, Modesto, CA 95357"
+    },
+    "schedule": [
+      { "date": "Tuesday, June 3, 2025", "time": "6:30 p.m.", "event": "Praying of the Rosary by Fr. Marc Valadao" },
+      { "date": "Wednesday, June 4, 2025", "time": "6:00 p.m.", "event": "Praying of the Rosary and Mass in honor of MPPA Past Presidents" },
+      { "date": "Thursday, June 5, 2025", "time": "6:30 p.m.", "event": "Praying of the Rosary by Fr. Marc Valadao" },
+      { "date": "Friday, June 6, 2025", "time": "6:30 p.m.", "event": "Praying of the Rosary" },
+      { "date": "Friday, June 6, 2025", "time": "7:00 p.m.", "event": "Vacada followed by dance with DJ Fabio Caetano" },
+      { "date": "Saturday, June 7, 2025", "time": "10:00 a.m.", "event": "Formation of the Bode de Leite" },
+      { "date": "Saturday, June 7, 2025", "time": "1:00 p.m.", "event": "Auction of donated livestock. Folklore Dancing" },
+      { "date": "Saturday, June 7, 2025", "time": "6:30 p.m.", "event": "Praying of the Rosary" },
+      { "date": "Saturday, June 7, 2025", "time": "8:00 p.m.", "event": "Presentation of the Queens with Dance featuring Jorge Ferreira and 562" },
+      { "date": "Sunday, June 8, 2025", "time": "8:30 a.m.", "event": "Formation of the parade" },
+      { "date": "Sunday, June 8, 2025", "time": "10:00 a.m.", "event": "Mass at St Stanislaus Catholic Church" },
+      { "date": "Sunday, June 8, 2025", "time": "2:00 p.m.", "event": "Auction of donated gifts" },
+      { "date": "Sunday, June 8, 2025", "time": "6:00 p.m.", "event": "Traditional sopas and meat served" },
+      { "date": "Sunday, June 8, 2025", "time": "8:00 p.m.", "event": "Presentation of Queens and Officers with dance by Conjunto Alma" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 40,
+    "city": "Newman",
+    "state": "CA",
+    "organizationName": "F.D.E.S.",
+    "contactInfo": {
+      "hall": "1357 R Street",
+      "mailingAddress": "P.O. Box 474 Newman, CA 95360",
+      "phone": "209-535-1769"
+    },
+    "schedule": [
+      { "date": "Thursday, June 5, 2025 to Friday, June 6, 2025", "time": "7:00 p.m.", "event": "Praying of the Rosary in the Chapel" },
+      { "date": "Saturday, June 7, 2025", "time": "11:00 a.m.", "event": "Formation of the Bodo de Leite - Following Cacoila" },
+      { "date": "Saturday, June 7, 2025", "time": "7:00 p.m.", "event": "Rosary following" },
+      { "date": "Saturday, June 7, 2025", "time": "8:00 p.m.", "event": "Dance" },
+      { "date": "Saturday, June 7, 2025", "time": "9:00 p.m.", "event": "Presentation of the Queens" },
+      { "date": "Sunday, June 8, 2025", "time": "10:00 a.m.", "event": "Formation of the parade" },
+      { "date": "Sunday, June 8, 2025", "time": "11:00 a.m.", "event": "Mass / St. Joaquim's Church - Following Sopas" },
+      { "date": "Sunday, June 8, 2025", "time": "2:30 p.m.", "event": "Auction of gifts and all day bazaar" },
+      { "date": "Sunday, June 8, 2025", "time": "7:00 p.m.", "event": "Sopas" },
+      { "date": "Sunday, June 8, 2025", "time": "8:00 p.m.", "event": "Dance" },
+      { "date": "Sunday, June 8, 2025", "time": "9:00 p.m.", "event": "Presentation of the Queens and Officers" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 41,
+    "city": "Ferndale",
+    "state": "CA",
+    "organizationName": "Eel River Valley Assn.",
+    "contactInfo": {
+      "hall": "Portuguese Hall: Ocean Avenue, Ferndale, CA",
+      "phone": "707-498-8805 (Stephanie Koch)"
+    },
+    "schedule": [
+      { "date": "Friday, June 6, 2025", "time": "5:00 p.m.", "event": "Azorean Street Fair" },
+      { "date": "Saturday, June 7, 2025", "time": "6:00 p.m.", "event": "Beans & Linguica dinner, Donation only" },
+      { "date": "Sunday, June 8, 2025", "time": "10:30 a.m.", "event": "Parade @ Crowning of Queens @ Assumption Church" },
+      { "date": "Sunday, June 8, 2025", "time": "12:00 p.m.", "event": "Sopa Alcatra" },
+      { "date": "Sunday, June 8, 2025", "time": "1:30 p.m.", "event": "Live auction" },
+      { "date": "Sunday, June 8, 2025", "time": "6:00 p.m.", "event": "Sopa dinner" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 42,
+    "city": "Fresno",
+    "state": "CA",
+    "organizationName": "C.P.D.E.S",
+    "festaName": "Fest do Espirito Santo",
+    "contactInfo": {
+      "hall": "C.P.D.E.S Hall: 172 W. Jefferson Avenue, CA 93706",
+      "phone": "559-903-2432"
+    },
+    "schedule": [
+      { "date": "Friday, June 6, 2025", "time": "6:00 p.m.", "event": "Blessing of meat" },
+      { "date": "Friday, June 6, 2025", "time": "7:00 p.m.", "event": "Rosary" },
+      { "date": "Saturday, June 7, 2025", "time": "6:30 p.m.", "event": "Presentation of Queens" },
+      { "date": "Saturday, June 7, 2025", "time": "7:00 p.m.", "event": "Bullfights" },
+      { "date": "Sunday, June 8, 2025", "time": "10:00 a.m.", "event": "Parade" },
+      { "date": "Sunday, June 8, 2025", "time": "11:00 a.m.", "event": "Mass / Sopas" }
+    ],
+    "additionalNotes": "PLEASE CALL FOR MORE INFORMATION",
+    "year": 2025
+  },
+  {
+    "id": 43,
+    "city": "Hanford",
+    "state": "CA",
+    "organizationName": "Pentecost Holy Ghost",
+    "contactInfo": {
+      "hall": "Hanford Fraternal Hall: 1015 N. 10th Avenue, Hanford, CA 93230"
+    },
+    "schedule": [
+      { "date": "Saturday, June 7, 2025", "time": "", "event": "Sopas Pans are $60 6-10 am" },
+      { "date": "Sunday, June 8, 2025", "time": "8:30 a.m.", "event": "Raising of the American and Portuguese Flag" },
+      { "date": "Sunday, June 8, 2025", "time": "9:00 a.m.", "event": "Assembling parade @ Hanford Fraternal Hall" },
+      { "date": "Sunday, June 8, 2025", "time": "10:00 a.m.", "event": "Mass @ S. Brigid's Catholic Church" }
+    ],
+    "additionalNotes": "Call Patty Williams for more info 559-362-2342",
+    "year": 2025
+  },
+  {
+    "id": 44,
+    "city": "Hollister",
+    "state": "CA",
+    "organizationName": "S.D.E.S. Portuguese Lodge",
+    "contactInfo": {
+      "hall": "695 Seventh Street, Hollister, CA 95023"
+    },
+    "schedule": [
+      { "date": "Saturday, June 7, 2025", "time": "8:00 p.m.", "event": "Dance with Sem Duvida until 12:00am" },
+      { "date": "Sunday, June 8, 2025", "time": "10:00 a.m.", "event": "Parade; Mass and Sopas" },
+      { "date": "Sunday, June 8, 2025", "time": "11:00 a.m.", "event": "Mass at Sacred Heart Church - sopas and auction" },
+      { "date": "Sunday, June 8, 2025", "time": "5:00 p.m.", "event": "Dance with Gilberto Amaral" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 45,
+    "city": "Lemoore",
+    "state": "CA",
+    "organizationName": "Lemoore Trinity Association",
+    "festaName": "LTA Festa",
+    "contactInfo": {
+      "hall": "470 Champion Ave",
+      "mailingAddress": "P.O. Box 692, Lemoore, CA 93245",
+      "phone": "559-924-1969"
+    },
+    "schedule": [
+      { "date": "Saturday, June 7, 2025 to Friday, June 14, 2025", "time": "7:00 p.m.", "event": "Novena - LTA Hall" },
+      { "date": "Sunday, June 15, 2025", "time": "9:00 a.m.", "event": "Formation of the parade - 10:00am Mass at St. Peter's Catholic Church" },
+      { "date": "Sunday, June 15, 2025", "time": "11:00 a.m.", "event": "Sopas until 2pm" },
+      { "date": "Sunday, June 15, 2025", "time": "8:00 p.m.", "event": "Grand March" }
+    ],
+    "additionalNotes": "Donations are greatly appreciated",
+    "year": 2025
+  },
+  {
+    "id": 46,
+    "city": "Mentone",
+    "state": "CA",
+    "organizationName": "P.A. Club",
+    "contactInfo": {
+      "hall": "1133 Crafton Avenue, Mentone, CA 92359"
+    },
+    "schedule": [
+      { "date": "Saturday, June 7, 2025", "time": "6:00 p.m.", "event": "Rosary followed by Meal" },
+      { "date": "Sunday, June 8, 2025", "time": "10:00 a.m.", "event": "Mass with crowning of the Queens at Holy Name of Jesus Church, followed by parade and Sopas" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 47,
+    "city": "Chico",
+    "state": "CA",
+    "organizationName": "Chico Portuguese Holy Ghost & Fatima Club",
+    "contactInfo": {
+      "hall": "1401 Bradway St, Chico, CA 95928"
+    },
+    "schedule": [
+      { "date": "Sunday, June 8, 2025", "time": "10:00 a.m.", "event": "Mass and Crowning of the Queens at St. Johns the Baptist Catholic Church" },
+      { "date": "Sunday, June 8, 2025", "time": "12:00 p.m.", "event": "Meal at the Chico Portuguese Hall" },
+      { "date": "Sunday, June 8, 2025", "time": "3:00 p.m.", "event": "Auction" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 48,
+    "city": "Santa Clara",
+    "state": "CA",
+    "organizationName": "S.E.S. Corp.",
+    "contactInfo": {
+      "hall": "1375 Lafayette Street, Santa Clara, CA 95050"
+    },
+    "schedule": [
+      { "date": "Sunday, June 8, 2025 to Friday, June 13, 2025", "time": "7:00 p.m.", "event": "Rosary at the S.E.S." },
+      { "date": "Saturday, June 14, 2025", "time": "6:30 p.m.", "event": "Rosary in the S.E.S. Hall" },
+      { "date": "Saturday, June 14, 2025", "time": "8:00 p.m.", "event": "Dance" },
+      { "date": "Saturday, June 14, 2025", "time": "9:30 p.m.", "event": "Presentation of the Board of Directors, Queens and Side maids" },
+      { "date": "Sunday, June 15, 2025", "time": "9:30 a.m.", "event": "Raising of the Flags" },
+      { "date": "Sunday, June 15, 2025", "time": "9:45 a.m.", "event": "Parade Formation" },
+      { "date": "Sunday, June 15, 2025", "time": "10:30 a.m.", "event": "Mass at St. Clare's Church" },
+      { "date": "Sunday, June 15, 2025", "time": "11:30 a.m.", "event": "Parade returns - Lunch sopas and meat, Concert" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 49,
+    "city": "Tipton",
+    "state": "CA",
+    "organizationName": "Holy Ghost Festa",
+    "contactInfo": {
+      "hall": "SPDES 200 S. Evans Road, Tipton, CA 93272"
+    },
+    "schedule": [
+      { "date": "Sunday, June 8, 2025 to Thursday, June 12, 2025", "time": "7:00 p.m.", "event": "The Holy Rosary will be recited each evening" },
+      { "date": "Friday, June 13, 2025", "time": "5:30 p.m.", "event": "Bode de Leite - Procession from St John's Church" },
+      { "date": "Friday, June 13, 2025", "time": "6:30 p.m.", "event": "The Holy Rosary" },
+      { "date": "Friday, June 13, 2025", "time": "7:30 p.m.", "event": "DJ - Portuguese Cultural Pavilion" },
+      { "date": "Friday, June 13, 2025", "time": "8:00 p.m.", "event": "The Portuguese Kids performance" },
+      { "date": "Saturday, June 14, 2025", "time": "6:45 p.m.", "event": "Presentation & Crowning of 2025 Queens" },
+      { "date": "Saturday, June 14, 2025", "time": "7:00 p.m.", "event": "The Holy Rosary for Committee Officers & Queens" },
+      { "date": "Saturday, June 14, 2025", "time": "8:00 p.m.", "event": "Dance with Chico Avila" },
+      { "date": "Sunday, June 15, 2025", "time": "9:45 a.m.", "event": "Parade forms and departs" },
+      { "date": "Sunday, June 15, 2025", "time": "10:30 a.m.", "event": "Mass at St. John's Catholic Church - Sopas served" },
+      { "date": "Sunday, June 15, 2025", "time": "11:45 a.m.", "event": "Parade returns - Second serving of Sopas" },
+      { "date": "Sunday, June 15, 2025", "time": "12:45 p.m.", "event": "Auction" },
+      { "date": "Sunday, June 15, 2025", "time": "7:00 p.m.", "event": "Evening serving of traditional Sopas" },
+      { "date": "Sunday, June 15, 2025", "time": "8:00 p.m.", "event": "Grand March - Social Hall" },
+      { "date": "Sunday, June 15, 2025", "time": "8:45 p.m.", "event": "Dance - Chico Avila" }
+    ],
+    "year": 2025
+  },
+  {
+    "id": 50,
+    "city": "Vallejo",
+    "state": "CA",
+    "organizationName": "S.C.D.E.S.",
+    "councilNumber": "50",
+    "contactInfo": {
+      "hall": "242 Contra Costa Street, P.O. Box 4207, Vallejo, CA 94590"
+    },
+    "schedule": [
+      { "date": "Sunday, June 8, 2025", "time": "10:15 a.m.", "event": "Parade followed by Mass @ 11:30 a.m. at St. Basil's Church, Sopas lunch following" }
+    ],
+    "year": 2025
+  }
+]
