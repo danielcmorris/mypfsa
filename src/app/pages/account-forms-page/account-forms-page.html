@@ -1,0 +1,62 @@
+<app-account-top-header></app-account-top-header>
+<app-account-navbar></app-account-navbar>
+
+<div class="forms-area">
+    <div class="container-fluid">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="header-content">
+                <h1><i class="bx bx-file"></i> Downloadable Forms</h1>
+                <p>Access and download the forms you need to manage your PFSA membership and policies.</p>
+            </div>
+        </div>
+
+        <!-- Forms Grid -->
+        <div class="row">
+            <div class="col-lg-6 col-xl-4 mb-4" *ngFor="let form of forms">
+                <div class="form-card">
+                    <div class="form-icon">
+                        <i [class]="form.icon"></i>
+                    </div>
+                    <div class="form-content">
+                        <h3>{{ form.name }}</h3>
+                        <p>{{ form.description }}</p>
+                        <div class="form-badges" *ngIf="form.notarized">
+                            <span class="badge-notarized">
+                                <i class="bx bx-badge-check"></i> Notarized Signature Required
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <a [href]="form.downloadUrl" target="_blank" class="download-btn">
+                            <i class="bx bx-download"></i> Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help Section -->
+        <div class="help-section">
+            <div class="help-card">
+                <div class="help-icon">
+                    <i class="bx bx-help-circle"></i>
+                </div>
+                <div class="help-content">
+                    <h3>Need Assistance?</h3>
+                    <p>If you have questions about any of these forms or need help completing them, please contact our member services team.</p>
+                    <div class="help-contacts">
+                        <a href="tel:+1-209-702-6364" class="contact-link">
+                            <i class="bx bx-phone"></i> +1 (209) 702-6364
+                        </a>
+                        <a href="mailto:mypfsa@mypfsa.org" class="contact-link">
+                            <i class="bx bx-envelope"></i> mypfsa@mypfsa.org
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

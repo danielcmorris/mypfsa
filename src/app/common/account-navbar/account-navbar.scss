@@ -1,0 +1,247 @@
+.account-navbar {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 999;
+
+    &.is-sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        animation: slideDown 0.3s ease;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.account-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 70px;
+}
+
+.account-brand {
+    img {
+        max-height: 45px;
+        width: auto;
+    }
+}
+
+.account-nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 8px;
+            color: #495057;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+
+            i {
+                font-size: 20px;
+            }
+
+            &:hover {
+                background: #f8f9fa;
+                color: var(--mainColor);
+            }
+
+            &.active {
+                background: linear-gradient(135deg, var(--mainColor) 0%, #0056b3 100%);
+                color: white;
+
+                i {
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--headingColor);
+    cursor: pointer;
+    padding: 8px;
+
+    &:hover {
+        color: var(--mainColor);
+    }
+}
+
+// Mobile Menu
+.mobile-menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.account-mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background: white;
+    z-index: 1001;
+    transition: right 0.3s ease;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+
+    &.active {
+        right: 0;
+    }
+}
+
+.mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid #e9ecef;
+
+    .mobile-logo {
+        img {
+            max-height: 40px;
+        }
+    }
+
+    .close-mobile-menu {
+        background: none;
+        border: none;
+        font-size: 28px;
+        color: #495057;
+        cursor: pointer;
+
+        &:hover {
+            color: var(--mainColor);
+        }
+    }
+}
+
+.mobile-nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+
+    li {
+        margin-bottom: 8px;
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 16px;
+            border-radius: 8px;
+            color: #495057;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+
+            i {
+                font-size: 22px;
+                width: 24px;
+            }
+
+            &:hover {
+                background: #f8f9fa;
+                color: var(--mainColor);
+            }
+
+            &.active {
+                background: linear-gradient(135deg, var(--mainColor) 0%, #0056b3 100%);
+                color: white;
+            }
+        }
+    }
+}
+
+.mobile-menu-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    border-top: 1px solid #e9ecef;
+
+    .back-to-site {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #6c757d;
+        font-weight: 600;
+        font-size: 14px;
+
+        i {
+            font-size: 18px;
+        }
+
+        &:hover {
+            color: var(--mainColor);
+        }
+    }
+}
+
+// Responsive
+@media only screen and (max-width: 991px) {
+    .account-nav-menu {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    .mobile-menu-overlay,
+    .account-mobile-menu {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .account-nav-menu {
+        gap: 4px;
+
+        li a {
+            padding: 10px 14px;
+            font-size: 14px;
+
+            i {
+                font-size: 18px;
+            }
+        }
+    }
+}

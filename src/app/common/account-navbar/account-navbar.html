@@ -1,0 +1,62 @@
+<div class="account-navbar" [ngClass]="{'is-sticky': isSticky}">
+    <div class="container-fluid">
+        <nav class="account-nav">
+            <!-- Logo -->
+            <a class="account-brand" routerLink="/">
+                <img src="img/logo.png" alt="PFSA Logo">
+            </a>
+
+            <!-- Desktop Navigation -->
+            <ul class="account-nav-menu">
+                <li *ngFor="let item of menuItems">
+                    <a [routerLink]="item.path"
+                       routerLinkActive="active"
+                       [routerLinkActiveOptions]="{exact: true}">
+                        <i [class]="item.icon"></i>
+                        <span>{{ item.label }}</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle" (click)="toggleMobileMenu()">
+                <i class="bx" [ngClass]="mobileMenuOpen ? 'bx-x' : 'bx-menu'"></i>
+            </button>
+        </nav>
+    </div>
+</div>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu-overlay"
+     [ngClass]="{'active': mobileMenuOpen}"
+     (click)="closeMobileMenu()">
+</div>
+
+<!-- Mobile Menu -->
+<div class="account-mobile-menu" [ngClass]="{'active': mobileMenuOpen}">
+    <div class="mobile-menu-header">
+        <a routerLink="/" class="mobile-logo">
+            <img src="img/logo.png" alt="PFSA Logo">
+        </a>
+        <button class="close-mobile-menu" (click)="closeMobileMenu()">
+            <i class="bx bx-x"></i>
+        </button>
+    </div>
+    <ul class="mobile-nav-list">
+        <li *ngFor="let item of menuItems">
+            <a [routerLink]="item.path"
+               routerLinkActive="active"
+               [routerLinkActiveOptions]="{exact: true}"
+               (click)="closeMobileMenu()">
+                <i [class]="item.icon"></i>
+                <span>{{ item.label }}</span>
+            </a>
+        </li>
+    </ul>
+    <div class="mobile-menu-footer">
+        <a routerLink="/" class="back-to-site" (click)="closeMobileMenu()">
+            <i class="bx bx-arrow-back"></i>
+            Back to Main Site
+        </a>
+    </div>
+</div>

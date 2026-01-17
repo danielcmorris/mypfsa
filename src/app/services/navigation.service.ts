@@ -84,9 +84,10 @@ export class NavigationService {
       },
       {
         label: 'Membership',
-        path: '/membership',
+        path: '/become-a-member',
         children: [
-          { label: 'Become a Member', path: '/membership/join' },
+          { label: 'Become a Member', path: '/become-a-member', fragment: 'becomemember' },
+          { label: 'Sign Up', path: '/become-a-member', fragment: 'signup' },
           { label: 'Refer a Friend', path: '/membership/refer-friend' },
           { label: 'Perkspot', path: '/membership/perkspot' }
         ]

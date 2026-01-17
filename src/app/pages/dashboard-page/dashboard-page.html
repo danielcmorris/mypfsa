@@ -1,0 +1,177 @@
+<app-account-top-header></app-account-top-header>
+<app-account-navbar></app-account-navbar>
+
+<div class="dashboard-area">
+    <div class="container-fluid">
+        <!-- Welcome Header -->
+        <div class="dashboard-header">
+            <div class="welcome-section">
+                <h1>Welcome back, {{ user.firstName }}!</h1>
+                <p>Here's what's happening with your PFSA membership</p>
+            </div>
+            <div class="header-actions">
+                <a routerLink="/account/profile" class="btn-edit-profile">
+                    <i class="bx bx-edit"></i> Edit Profile
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Profile Card -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="dashboard-card profile-card">
+                    <div class="card-header">
+                        <i class="bx bx-user-circle"></i>
+                        <h3>Profile Information</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="profile-avatar">
+                            <div class="avatar-circle">
+                                {{ user.firstName.charAt(0) }}{{ user.lastName.charAt(0) }}
+                            </div>
+                            <div class="avatar-info">
+                                <h4>{{ user.firstName }} {{ user.lastName }}</h4>
+                                <span class="member-badge">Active Member</span>
+                            </div>
+                        </div>
+                        <div class="profile-details">
+                            <div class="detail-item">
+                                <i class="bx bx-id-card"></i>
+                                <div>
+                                    <label>Member ID</label>
+                                    <span>{{ user.memberId }}</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="bx bx-envelope"></i>
+                                <div>
+                                    <label>Email</label>
+                                    <span>{{ user.email }}</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="bx bx-phone"></i>
+                                <div>
+                                    <label>Phone</label>
+                                    <span>{{ user.phone }}</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="bx bx-calendar"></i>
+                                <div>
+                                    <label>Member Since</label>
+                                    <span>{{ user.memberSince }}</span>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <i class="bx bx-buildings"></i>
+                                <div>
+                                    <label>Council</label>
+                                    <span>{{ user.council }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <i class="bx bx-link"></i>
+                        <h3>Quick Links</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="quick-links-grid">
+                            <a *ngFor="let link of quickLinks"
+                               [routerLink]="link.path"
+                               class="quick-link-item"
+                               [style.--link-color]="link.color">
+                                <i [class]="link.icon"></i>
+                                <span>{{ link.label }}</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="col-lg-4 col-md-12 mb-4">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <i class="bx bx-history"></i>
+                        <h3>Recent Activity</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="activity-list">
+                            <div *ngFor="let activity of recentActivity" class="activity-item">
+                                <div class="activity-icon" [style.background-color]="activity.color + '20'" [style.color]="activity.color">
+                                    <i [class]="activity.icon"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <p>{{ activity.action }}</p>
+                                    <span>{{ activity.date }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Membership Stats -->
+        <div class="row">
+            <div class="col-12">
+                <div class="dashboard-card stats-card">
+                    <div class="card-header">
+                        <i class="bx bx-bar-chart-alt-2"></i>
+                        <h3>Membership Overview</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-icon" style="background: linear-gradient(135deg, #0390ef 0%, #0056b3 100%);">
+                                    <i class="bx bx-shield-quarter"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h4>{{ user.policyCount }}</h4>
+                                    <span>Active Policies</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon" style="background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);">
+                                    <i class="bx bx-check-shield"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h4>Good Standing</h4>
+                                    <span>Account Status</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon" style="background: linear-gradient(135deg, #fd7e14 0%, #dc6502 100%);">
+                                    <i class="bx bx-calendar-star"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h4>5 Years</h4>
+                                    <span>Membership</span>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon" style="background: linear-gradient(135deg, #6f42c1 0%, #5a32a3 100%);">
+                                    <i class="bx bx-trophy"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h4>Silver</h4>
+                                    <span>Member Level</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
