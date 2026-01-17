@@ -10,26 +10,26 @@ export class NavigationService {
         label: 'Products',
         path: '/products',
         children: [
-          { label: 'Find an Agent', path: '/products/find-agent' },
+          { label: 'Find an Agent', path: '/agents' },
           {
             label: 'Life Insurance',
             path: '/products/life-insurance',
-            children: [
-              { label: 'Whole Life', path: '/products/life-insurance/whole-life' },
-              { label: 'Term Life', path: '/products/life-insurance/term-life' },
-              { label: 'Universal Life', path: '/products/life-insurance/universal-life' },
-              { label: 'Wealth Transfer', path: '/products/life-insurance/wealth-transfer' }
-            ]
+            // children: [
+            //   { label: 'Whole Life', path: '/products/life-insurance/whole-life' },
+            //   { label: 'Term Life', path: '/products/life-insurance/term-life' },
+            //   { label: 'Universal Life', path: '/products/life-insurance/universal-life' },
+            //   { label: 'Wealth Transfer', path: '/products/life-insurance/wealth-transfer' }
+            // ]
           },
           {
-            label: 'Retirement Savings',
-            path: '/products/retirement-savings',
-            children: [
-              { label: 'Annuities - IRA', path: '/products/retirement-savings/annuities-ira' },
-              { label: 'SEP IRAs', path: '/products/retirement-savings/sep-iras' }
-            ]
+            label: 'Savings & Retirement',
+            path: '/products/savings',
+            // children: [
+            //   { label: 'Annuities - IRA', path: '/products/retirement-savings/annuities-ira' },
+            //   { label: 'SEP IRAs', path: '/products/retirement-savings/sep-iras' }
+            // ]
           },
-          { label: 'Educational Savings', path: '/products/educational-savings' }
+          // { label: 'Educational Savings', path: '/products/educational-savings' }
         ]
       },
       {
@@ -58,8 +58,9 @@ export class NavigationService {
         label: 'Programs',
         path: '/programs',
         children: [
-          { label: 'Youth Sponsorship', path: '/programs/youth-sponsorship' },
-          { label: 'Community Involvement', path: '/programs/community-involvement' }
+          { label: 'Overview', path: '/programs', fragment: 'programs' },
+          { label: 'Youth Sponsorship', path: '/programs', fragment: 'youth-sponsorship' },
+          { label: 'Community Involvement', path: '/programs', fragment: 'community' }
         ]
       },
       //   {
@@ -74,10 +75,11 @@ export class NavigationService {
         label: 'Scholarship',
         path: '/scholarship',
         children: [
-          { label: 'Application and Requirements', path: '/scholarship/application' },
-          { label: 'Education Grant Program', path: '/scholarship/grant-program' },
-          { label: 'Giving', path: '/scholarship/giving' },
-          { label: 'Foundation FAQs', path: '/scholarship/faq' }
+          { label: 'Overview', path: '/scholarship', fragment: 'scholarship' },
+          { label: 'Application and Requirements', path: '/scholarship', fragment: 'application' },
+          { label: 'Education Grant Program', path: '/scholarship', fragment: 'grants' },
+          { label: 'Giving', path: '/scholarship', fragment: 'giving' },
+          { label: 'Foundation FAQs', path: '/scholarship', fragment: 'faq' }
         ]
       },
       {

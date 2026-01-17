@@ -25,38 +25,48 @@ import { BlogRightSidebarPage } from './pages/blog-right-sidebar-page/blog-right
 import { BlogDetailsPage } from './pages/blog-details-page/blog-details-page';
 import { IconGalleryComponent } from './tools/font-awesome.component';
 import { BootstrapIconGalleryComponent } from './tools/bootstrap-icons.component';
- import { LincPage } from './pages/linc-page/linc-page';
+import { LincPage } from './pages/linc-page/linc-page';
 import { PublicationsPage } from './pages/publications-page/publications-page';
 import { EventsPage } from './pages/events-page/events-page';
+import { SavingsPage } from './pages/savings-page/savings-page';
+import { ProductsPage } from './pages/products-page/products-page';
+import { ProgramsPage } from './pages/programs-page/programs-page';
+import { ScholarshipPage } from './pages/scholarship-page/scholarship-page';
 export const routes: Routes = [
-    {path: '', component: HomeDemoOne},
-    {path: 'index-2', component: HomeDemoTwo},
-    {path: 'index-3', component: HomeDemoThree},
-    {path: 'about-us', component: AboutPage},
-    {path: 'testimonials', component: TestimonialsPage},
-    {path: 'agents', component: AgentsPage},
-    {path: 'services', component: ServicesPage},
-    {path: 'service-details', component: ServiceDetailsPage},
-    {path: 'pricing', component: PricingPage},
-    {path: 'claims', component: ClaimsPage},
-    {path: 'business-insurance', component: BusinessInsurancePage},
-    {path: 'health-insurance', component: HealthInsurancePage},
-    {path: 'life-insurance', component: LifeInsurancePage},
-    {path: 'car-insurance', component: CarInsurancePage},
-    {path: 'faq', component: FaqPage},
-    {path: 'privacy-policy', component: PrivacyPolicyPage},
-    {path: 'terms-conditions', component: TermsConditionsPage},
-    {path: 'my-account', component: MyAccountPage},
-    {path: 'forgot-password', component: ForgotPasswordPage},
-    {path: 'blog-grid', component: BlogGridPage},
-    {path: 'blog-right-sidebar', component: BlogRightSidebarPage},
-    {path: 'blog-details', component: BlogDetailsPage},
-    {path: 'publications', component: PublicationsPage},
-    {path: 'newsletters', component: PublicationsPage},
-    {path: 'contact-us', component: ContactPage},
-     {path: 'linc', component: LincPage},
- { path: 'icons/font-awesome', component: IconGalleryComponent }    ,
-{path: 'icons/bootstrap', component: BootstrapIconGalleryComponent }    ,
-    {path: 'events', component: EventsPage},
-    {path: '**', component: ErrorPage} // This line will remain down from the whole component list
+    { path: '', component: HomeDemoOne },
+    { path: 'index-2', component: HomeDemoTwo },
+    { path: 'index-3', component: HomeDemoThree },
+    { path: 'about-us', component: AboutPage },
+    { path: 'testimonials', component: TestimonialsPage },
+    { path: 'agents', component: AgentsPage },
+    { path: 'services', component: ServicesPage },
+    { path: 'service-details', component: ServiceDetailsPage },
+    { path: 'pricing', component: PricingPage },
+    { path: 'claims', component: ClaimsPage },
+    { path: 'business-insurance', component: BusinessInsurancePage },
+    { path: 'health-insurance', component: HealthInsurancePage },
+    { path: 'life-insurance', component: LifeInsurancePage },
+    { path: 'car-insurance', component: CarInsurancePage },
+    { path: 'faq', component: FaqPage },
+    { path: 'privacy-policy', component: PrivacyPolicyPage },
+    { path: 'terms-conditions', component: TermsConditionsPage },
+    { path: 'my-account', component: MyAccountPage },
+    { path: 'forgot-password', component: ForgotPasswordPage },
+    { path: 'blog-grid', component: BlogGridPage },
+    { path: 'blog-right-sidebar', component: BlogRightSidebarPage },
+    { path: 'blog-details', component: BlogDetailsPage },
+    { path: 'publications', component: PublicationsPage },
+    { path: 'newsletters', component: PublicationsPage },
+    { path: 'contact-us', component: ContactPage },
+    { path: 'linc', component: LincPage },
+    { path: 'icons/font-awesome', component: IconGalleryComponent },
+    { path: 'icons/bootstrap', component: BootstrapIconGalleryComponent },
+    { path: 'events', component: EventsPage },
+    { path: 'savings', component: SavingsPage },
+    { path: 'products', component: ProductsPage },
+    { path: 'products/life-insurance', component: LifeInsurancePage },
+    { path: 'products/savings', component: SavingsPage },
+    { path: 'programs', component: ProgramsPage },
+    { path: 'scholarship', component: ScholarshipPage },
+    { path: '**', component: ErrorPage } // This line will remain down from the whole component list
 ];
