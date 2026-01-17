@@ -1,0 +1,201 @@
+<div class="festa-list-area pt-100 pb-70">
+  <div class="container">
+    <div class="section-title">
+      <span class="top-title">2025 Portuguese Festa Schedule</span>
+      <h2>Festa Events Calendar</h2>
+      <p>Browse upcoming Portuguese festas throughout California and beyond. Filter by city to find events near you.</p>
+      <div class="mt-4">
+        <button class="btn btn-primary btn-lg add-festa-btn" (click)="navigateToForm()">
+          <i class="fa-solid fa-plus-circle"></i> Add Your Own Festa
+        </button>
+      </div>
+    </div>
+
+    <!-- Filter Section -->
+    <div class="filter-section mb-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="filter-card">
+            <div class="row g-3">
+              <div class="col-md-5">
+                <label for="cityFilter" class="form-label">Filter by City</label>
+                <select
+                  id="cityFilter"
+                  class="form-select"
+                  [(ngModel)]="selectedCity"
+                  (change)="filterByCity()"
+                >
+                  <option value="">All Cities</option>
+                  @for (city of cities; track city) {
+                    <option [value]="city">{{ city }}</option>
+                  }
+                </select>
+              </div>
+              <div class="col-md-5">
+                <label for="councilFilter" class="form-label">Filter by Council Number</label>
+                <select
+                  id="councilFilter"
+                  class="form-select"
+                  [(ngModel)]="selectedCouncilNumber"
+                  (change)="filterByCouncilNumber()"
+                >
+                  <option value="">All Councils</option>
+                  @for (council of councilNumbers; track council) {
+                    <option [value]="council">Council #{{ council }}</option>
+                  }
+                </select>
+              </div>
+              <div class="col-md-2 d-flex align-items-end">
+                @if (hasActiveFilters()) {
+                  <button class="btn btn-outline-secondary w-100" type="button" (click)="clearFilter()">
+                    <i class="fa-solid fa-times"></i> Clear
+                  </button>
+                }
+              </div>
+            </div>
+            <small class="text-muted mt-3 d-block">
+              Showing {{ filteredFestas.length }} of {{ festas.length }} festas
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading State -->
+    @if (isLoading) {
+      <div class="text-center py-5">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-3">Loading festas...</p>
+      </div>
+    }
+
+    <!-- Festa Cards -->
+    @if (!isLoading) {
+      <div class="festa-cards">
+        @for (festa of filteredFestas; track festa.id) {
+          <div class="festa-card mb-4">
+            <div class="card">
+              <div
+                class="card-header"
+                (click)="toggleExpand(festa.id)"
+                [class.expanded]="isExpanded(festa.id)"
+              >
+                <div class="d-flex justify-content-between align-items-start">
+                  <div class="festa-header-info">
+                    <h5 class="mb-1">{{ getFestaTitle(festa) }}</h5>
+                    <div class="festa-meta">
+                      <span class="location">
+                        <i class="fa-solid fa-location-dot"></i>
+                        {{ festa.city }}, {{ festa.state }}
+                      </span>
+                      @if (festa.councilNumber) {
+                        <span class="council">
+                          <i class="fa-solid fa-users"></i>
+                          Council #{{ festa.councilNumber }}
+                        </span>
+                      }
+                      <span class="date">
+                        <i class="fa-solid fa-calendar"></i>
+                        {{ getFirstEventDate(festa) }}
+                      </span>
+                    </div>
+                  </div>
+                  <button class="btn btn-link expand-btn">
+                    <i class="fa-solid" [class.fa-chevron-down]="!isExpanded(festa.id)" [class.fa-chevron-up]="isExpanded(festa.id)"></i>
+                  </button>
+                </div>
+              </div>
+
+              @if (isExpanded(festa.id)) {
+                <div class="card-body">
+                  <!-- Contact Information -->
+                  <div class="contact-info mb-4">
+                    <h6><i class="fa-solid fa-address-book"></i> Contact Information</h6>
+                    <div class="info-grid">
+                      @if (festa.contactInfo.hall) {
+                        <div class="info-item">
+                          <strong>Hall:</strong>
+                          <span>{{ festa.contactInfo.hall }}</span>
+                        </div>
+                      }
+                      @if (festa.contactInfo.address) {
+                        <div class="info-item">
+                          <strong>Address:</strong>
+                          <span>{{ festa.contactInfo.address }}</span>
+                        </div>
+                      }
+                      @if (festa.contactInfo.mailingAddress) {
+                        <div class="info-item">
+                          <strong>Mailing:</strong>
+                          <span>{{ festa.contactInfo.mailingAddress }}</span>
+                        </div>
+                      }
+                      @if (festa.contactInfo.phone) {
+                        <div class="info-item">
+                          <strong>Phone:</strong>
+                          <a href="tel:{{ festa.contactInfo.phone }}">{{ festa.contactInfo.phone }}</a>
+                        </div>
+                      }
+                      @if (festa.contactInfo.email) {
+                        <div class="info-item">
+                          <strong>Email:</strong>
+                          <a href="mailto:{{ festa.contactInfo.email }}">{{ festa.contactInfo.email }}</a>
+                        </div>
+                      }
+                    </div>
+                  </div>
+
+                  <!-- Schedule -->
+                  <div class="schedule-section">
+                    <h6><i class="fa-solid fa-clock"></i> Event Schedule</h6>
+                    <div class="table-responsive">
+                      <table class="table table-striped schedule-table">
+                        <thead>
+                          <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Event</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          @for (event of festa.schedule; track $index) {
+                            <tr>
+                              <td class="date-cell">{{ event.date }}</td>
+                              <td class="time-cell">{{ event.time || '-' }}</td>
+                              <td class="event-cell">{{ event.event }}</td>
+                            </tr>
+                          }
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+
+                  <!-- Additional Notes -->
+                  @if (festa.additionalNotes) {
+                    <div class="additional-notes mt-3">
+                      <div class="alert alert-info">
+                        <i class="fa-solid fa-info-circle"></i>
+                        {{ festa.additionalNotes }}
+                      </div>
+                    </div>
+                  }
+                </div>
+              }
+            </div>
+          </div>
+        }
+
+        @if (filteredFestas.length === 0 && !isLoading) {
+          <div class="no-results text-center py-5">
+            <i class="fa-solid fa-search fa-3x mb-3 text-muted"></i>
+            <h4>No festas found</h4>
+            <p class="text-muted">Try selecting a different city or clear the filter to see all events.</p>
+            <button class="btn btn-primary" (click)="clearFilter()">Show All Festas</button>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</div>
