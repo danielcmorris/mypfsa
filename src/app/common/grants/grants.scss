@@ -1,0 +1,314 @@
+.grants-area {
+    padding: 40px 0;
+    background-color: #f8f9fa;
+
+    .container-fluid {
+        max-width: 100%;
+    }
+}
+
+.grants-content {
+    max-width: 600px;
+    margin-left: 60px;
+
+    .top-title {
+        color: var(--mainColor);
+        display: inline-block;
+        margin-bottom: 10px;
+        font: {
+            size: 16px;
+            weight: 600;
+        };
+    }
+
+    h2 {
+        font-size: 40px;
+        margin-bottom: 25px;
+    }
+
+    .some-bold {
+        font-weight: 600;
+    }
+
+    .grant-features {
+        margin: 25px 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .feature-row {
+            display: flex;
+            gap: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+
+            i {
+                font-size: 22px;
+                color: var(--mainColor);
+                margin-right: 10px;
+            }
+
+            span {
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .eligibility-box {
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+        h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            i {
+                color: var(--mainColor);
+                font-size: 20px;
+            }
+        }
+
+        ul {
+            margin: 0;
+            padding-left: 20px;
+
+            li {
+                font-size: 14px;
+                color: #555;
+                margin-bottom: 8px;
+                line-height: 1.5;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .apply-info {
+        margin-top: 25px;
+
+        .info-card {
+            display: flex;
+            align-items: flex-start;
+            padding: 20px;
+            background: var(--mainColor);
+            border-radius: 8px;
+            color: #fff;
+
+            i {
+                font-size: 32px;
+                margin-right: 15px;
+                margin-top: 5px;
+            }
+
+            strong {
+                display: block;
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+
+            p {
+                margin: 0;
+                font-size: 14px;
+                line-height: 1.6;
+                opacity: 0.9;
+            }
+        }
+    }
+}
+
+.grants-img {
+    height: 100%;
+    min-height: 650px;
+    position: relative;
+    background: {
+        position: center center;
+        repeat: no-repeat;
+        size: cover;
+    };
+
+    .trusted {
+        background-color: rgba(48, 51, 56, 0.9);
+        padding: 30px;
+        text-align: center;
+        display: inline-block;
+        max-width: 320px;
+        position: absolute;
+        bottom: 30px;
+        right: -30px;
+
+        span {
+            line-height: 1;
+            display: inline-block;
+            margin-bottom: 15px;
+            color: var(--whiteColor);
+            font: {
+                size: 50px;
+                family: var(--headingFontFamily);
+            };
+        }
+
+        h3 {
+            font-size: 18px;
+            color: var(--whiteColor);
+        }
+
+        p {
+            color: var(--whiteColor);
+            margin-bottom: 0;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+    .grants-area {
+        padding-top: 50px;
+
+        .col-lg-6.p-0 {
+            padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+            padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+        }
+    }
+
+    .grants-img {
+        height: 400px;
+        min-height: 400px;
+
+        .trusted {
+            margin: auto;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    }
+
+    .grants-content {
+        text-align: center;
+        max-width: 100%;
+        margin-left: 0;
+        padding: 50px 15px;
+
+        .top-title {
+            font-size: 15px;
+        }
+
+        h2 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .grant-features {
+            .feature-row {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .feature-item {
+                justify-content: center;
+            }
+        }
+
+        .eligibility-box {
+            text-align: left;
+        }
+
+        .apply-info {
+            .info-card {
+                flex-direction: column;
+                text-align: center;
+
+                i {
+                    margin-right: 0;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .grants-area {
+        .container-fluid {
+            max-width: 540px;
+        }
+    }
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .grants-area {
+        padding-top: 50px;
+
+        .container-fluid {
+            max-width: 720px;
+        }
+
+        .col-lg-6.p-0 {
+            padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+            padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+        }
+    }
+
+    .grants-img {
+        height: 400px;
+        min-height: 400px;
+
+        .trusted {
+            margin: auto;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    }
+
+    .grants-content {
+        text-align: center;
+        max-width: 100%;
+        margin-left: 0;
+
+        .top-title {
+            font-size: 15px;
+        }
+
+        h2 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .grant-features {
+            .feature-row {
+                justify-content: center;
+            }
+        }
+
+        .eligibility-box {
+            text-align: left;
+        }
+    }
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .grants-content {
+        margin-left: 0;
+    }
+
+    .grants-img {
+        .trusted {
+            bottom: 30px;
+            right: 30px;
+        }
+    }
+}

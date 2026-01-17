@@ -1,0 +1,245 @@
+.scholarship-area {
+    padding: 40px 0;
+
+    .container-fluid {
+        max-width: 100%;
+    }
+}
+
+.scholarship-content {
+    max-width: 600px;
+    margin-left: 60px;
+
+    .top-title {
+        color: var(--mainColor);
+        display: inline-block;
+        margin-bottom: 10px;
+        font: {
+            size: 16px;
+            weight: 600;
+        };
+    }
+
+    h2 {
+        font-size: 40px;
+        margin-bottom: 25px;
+    }
+
+    .some-bold {
+        font-weight: 600;
+    }
+
+    .mission-points {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mission-item {
+        display: flex;
+        align-items: flex-start;
+
+        .mission-icon {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            background: var(--mainColor);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+
+            i {
+                font-size: 28px;
+                color: #fff;
+            }
+        }
+
+        .mission-content {
+            h4 {
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+
+            p {
+                font-size: 14px;
+                color: #666;
+                margin-bottom: 0;
+                line-height: 1.6;
+            }
+        }
+    }
+}
+
+.scholarship-img {
+    height: 100%;
+    min-height: 600px;
+    position: relative;
+    background: {
+        position: center center;
+        repeat: no-repeat;
+        size: cover;
+    };
+
+    .trusted {
+        background-color: rgba(48, 51, 56, 0.9);
+        padding: 30px;
+        text-align: center;
+        display: inline-block;
+        max-width: 320px;
+        position: absolute;
+        bottom: 30px;
+        right: -30px;
+
+        span {
+            line-height: 1;
+            display: inline-block;
+            margin-bottom: 15px;
+            color: var(--whiteColor);
+            font: {
+                size: 50px;
+                family: var(--headingFontFamily);
+            };
+        }
+
+        h3 {
+            font-size: 18px;
+            color: var(--whiteColor);
+        }
+
+        p {
+            color: var(--whiteColor);
+            margin-bottom: 0;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+    .scholarship-area {
+        padding-top: 50px;
+
+        .col-lg-6.p-0 {
+            padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+            padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+        }
+    }
+
+    .scholarship-img {
+        height: 400px;
+        min-height: 400px;
+
+        .trusted {
+            margin: auto;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    }
+
+    .scholarship-content {
+        text-align: center;
+        max-width: 100%;
+        margin-left: 0;
+        padding: 50px 15px;
+
+        .top-title {
+            font-size: 15px;
+        }
+
+        h2 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .mission-item {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            .mission-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .scholarship-area {
+        .container-fluid {
+            max-width: 540px;
+        }
+    }
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .scholarship-area {
+        padding-top: 50px;
+
+        .container-fluid {
+            max-width: 720px;
+        }
+
+        .col-lg-6.p-0 {
+            padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+            padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+        }
+    }
+
+    .scholarship-img {
+        height: 400px;
+        min-height: 400px;
+
+        .trusted {
+            margin: auto;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    }
+
+    .scholarship-content {
+        text-align: center;
+        max-width: 100%;
+        margin-left: 0;
+
+        .top-title {
+            font-size: 15px;
+        }
+
+        h2 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .mission-item {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            .mission-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .scholarship-content {
+        margin-left: 0;
+    }
+
+    .scholarship-img {
+        .trusted {
+            bottom: 30px;
+            right: 30px;
+        }
+    }
+}
