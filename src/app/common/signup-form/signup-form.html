@@ -1,0 +1,228 @@
+<div class="signup-form-area ptb-100">
+    <div class="container">
+        <div class="section-title">
+            <span class="top-title">Join Our <strong>Family</strong></span>
+            <h2>Membership Sign-Up</h2>
+            <p>Fill out the form below and a PFSA representative will contact you to discuss membership options and benefits.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="signup-form-card">
+                    <!-- Contact Information -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <span class="header-icon"><i class="bx bx-user"></i></span>
+                            <h3>Contact Information</h3>
+                        </div>
+                        <div class="section-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group-modern">
+                                        <label>First Name <span class="required">*</span></label>
+                                        <input
+                                            type="text"
+                                            class="form-control-modern"
+                                            [(ngModel)]="formData.firstName"
+                                            placeholder="Enter your first name"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group-modern">
+                                        <label>Last Name <span class="required">*</span></label>
+                                        <input
+                                            type="text"
+                                            class="form-control-modern"
+                                            [(ngModel)]="formData.lastName"
+                                            placeholder="Enter your last name"
+                                            required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group-modern">
+                                        <label>Email Address <span class="required">*</span></label>
+                                        <input
+                                            type="email"
+                                            class="form-control-modern"
+                                            [(ngModel)]="formData.email"
+                                            placeholder="your.email@example.com"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group-modern">
+                                        <label>Phone Number</label>
+                                        <input
+                                            type="tel"
+                                            class="form-control-modern"
+                                            [(ngModel)]="formData.phone"
+                                            placeholder="(555) 123-4567">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Address Information -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <span class="header-icon"><i class="bx bx-map"></i></span>
+                            <h3>Address <span class="optional-label">(Optional)</span></h3>
+                        </div>
+                        <div class="section-body">
+                            <div class="form-group-modern">
+                                <label>Street Address</label>
+                                <input
+                                    type="text"
+                                    class="form-control-modern"
+                                    [(ngModel)]="formData.address"
+                                    placeholder="123 Main Street">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group-modern">
+                                        <label>City</label>
+                                        <input
+                                            type="text"
+                                            class="form-control-modern"
+                                            [(ngModel)]="formData.city"
+                                            placeholder="City">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group-modern">
+                                        <label>State</label>
+                                        <input
+                                            type="text"
+                                            class="form-control-modern"
+                                            [(ngModel)]="formData.state"
+                                            placeholder="CA">
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group-modern">
+                                        <label>ZIP Code</label>
+                                        <input
+                                            type="text"
+                                            class="form-control-modern"
+                                            [(ngModel)]="formData.zip"
+                                            placeholder="12345">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- What brought you to PFSA -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <span class="header-icon"><i class="bx bx-message-rounded-dots"></i></span>
+                            <h3>Tell Us About Yourself</h3>
+                        </div>
+                        <div class="section-body">
+                            <div class="form-group-modern">
+                                <label>What brought you to PFSA?</label>
+                                <textarea
+                                    class="form-control-modern textarea"
+                                    [(ngModel)]="formData.referralSource"
+                                    rows="4"
+                                    placeholder="Tell us how you heard about PFSA, your connection to Portuguese heritage, or what interests you about membership..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Family Members -->
+                    <div class="form-section">
+                        <div class="section-header">
+                            <span class="header-icon"><i class="bx bx-group"></i></span>
+                            <h3>Family Members <span class="optional-label">(Optional)</span></h3>
+                        </div>
+                        <div class="section-body">
+                            <p class="section-description">Add family members you'd like to include in your membership (children, spouse, etc.)</p>
+
+                            <div class="family-members-list" *ngIf="formData.familyMembers.length > 0">
+                                <div class="family-member-row" *ngFor="let member of formData.familyMembers; let i = index">
+                                    <div class="row align-items-end">
+                                        <div class="col-md-6">
+                                            <div class="form-group-modern">
+                                                <label>Name</label>
+                                                <input
+                                                    type="text"
+                                                    class="form-control-modern"
+                                                    [(ngModel)]="member.name"
+                                                    placeholder="Family member's name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group-modern">
+                                                <label>Age</label>
+                                                <input
+                                                    type="number"
+                                                    class="form-control-modern"
+                                                    [(ngModel)]="member.age"
+                                                    placeholder="Age"
+                                                    min="0"
+                                                    max="120">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <button type="button" class="btn-remove" (click)="removeFamilyMember(i)">
+                                                <i class="bx bx-trash"></i> Remove
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn-add-member" (click)="addFamilyMember()">
+                                <i class="bx bx-plus"></i> Add Family Member
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="form-actions">
+                        <button
+                            type="button"
+                            class="submit-btn"
+                            (click)="submitForm()"
+                            [disabled]="submitting || !isFormValid()">
+                            <span *ngIf="!submitting && isFormValid()">
+                                <i class="bx bx-send"></i> Submit Membership Inquiry
+                            </span>
+                            <span *ngIf="!submitting && !isFormValid()">
+                                <i class="bx bx-error-circle"></i> Please Complete Required Fields
+                            </span>
+                            <span *ngIf="submitting">
+                                <i class="bx bx-loader-alt bx-spin"></i> Submitting...
+                            </span>
+                        </button>
+
+                        <p class="required-note"><span class="required">*</span> Required fields</p>
+                    </div>
+
+                    <!-- Success Message -->
+                    <div class="success-message" *ngIf="success">
+                        <div class="success-icon"><i class="bx bx-check"></i></div>
+                        <div class="success-content">
+                            <h4>Thank You for Your Interest!</h4>
+                            <p>Your membership inquiry has been submitted successfully. A PFSA representative will contact you within 2-3 business days.</p>
+                        </div>
+                    </div>
+
+                    <!-- Error Message -->
+                    <div class="error-message" *ngIf="error">
+                        <div class="error-icon"><i class="bx bx-x"></i></div>
+                        <div class="error-content">
+                            <h4>Something Went Wrong</h4>
+                            <p>We couldn't submit your inquiry. Please try again or contact us directly at <a href="mailto:membership@mypfsa.org">membership@mypfsa.org</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
