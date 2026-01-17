@@ -1,0 +1,224 @@
+.youth-area {
+    padding: 40px 0;
+    background-color: #f8f9fa;
+
+    .container-fluid {
+        max-width: 100%;
+    }
+}
+
+.youth-content {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: 60px;
+
+    .top-title {
+        color: var(--mainColor);
+        display: inline-block;
+        margin-bottom: 10px;
+        font: {
+            size: 16px;
+            weight: 600;
+        };
+    }
+
+    h2 {
+        font-size: 40px;
+        margin-bottom: 25px;
+    }
+
+    .some-bold {
+        font-weight: 600;
+    }
+
+    .youth-features {
+        margin: 25px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+
+            i {
+                font-size: 20px;
+                color: var(--mainColor);
+                margin-right: 10px;
+            }
+
+            span {
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .default-btn {
+        margin-top: 10px;
+    }
+}
+
+.youth-img {
+    height: 100%;
+    min-height: 500px;
+    position: relative;
+    background: {
+        position: center center;
+        repeat: no-repeat;
+        size: cover;
+    };
+
+    .trusted {
+        background-color: rgba(48, 51, 56, 0.9);
+        padding: 30px;
+        text-align: center;
+        display: inline-block;
+        max-width: 320px;
+        position: absolute;
+        bottom: 30px;
+        left: -30px;
+
+        span {
+            line-height: 1;
+            display: inline-block;
+            margin-bottom: 15px;
+            color: var(--whiteColor);
+            font: {
+                size: 50px;
+                family: var(--headingFontFamily);
+            };
+        }
+
+        h3 {
+            font-size: 18px;
+            color: var(--whiteColor);
+        }
+
+        p {
+            color: var(--whiteColor);
+            margin-bottom: 0;
+        }
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width: 767px) {
+    .youth-area {
+        padding-top: 50px;
+
+        .col-lg-6.p-0 {
+            padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+            padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+        }
+    }
+
+    .youth-img {
+        height: 400px;
+        min-height: 400px;
+
+        .trusted {
+            margin: auto;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    .youth-content {
+        text-align: center;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 50px 15px;
+
+        .top-title {
+            font-size: 15px;
+        }
+
+        h2 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .youth-features {
+            grid-template-columns: 1fr;
+            text-align: left;
+        }
+    }
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .youth-area {
+        .container-fluid {
+            max-width: 540px;
+        }
+    }
+}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .youth-area {
+        padding-top: 50px;
+
+        .container-fluid {
+            max-width: 720px;
+        }
+
+        .col-lg-6.p-0 {
+            padding-left: calc(var(--bs-gutter-x) * 0.5) !important;
+            padding-right: calc(var(--bs-gutter-x) * 0.5) !important;
+        }
+    }
+
+    .youth-img {
+        height: 400px;
+        min-height: 400px;
+
+        .trusted {
+            margin: auto;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    .youth-content {
+        text-align: center;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+
+        .top-title {
+            font-size: 15px;
+        }
+
+        h2 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .youth-features {
+            grid-template-columns: 1fr;
+            text-align: left;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .youth-content {
+        margin-right: 0;
+    }
+
+    .youth-img {
+        .trusted {
+            bottom: 30px;
+            left: 30px;
+        }
+    }
+}
