@@ -1,0 +1,296 @@
+<app-top-header />
+
+<app-navbar />
+
+<app-inner-page-banner
+    [pageTitle]="'Our Products'"
+    [backgroundImage]="'img/page-bg/savings-banner.jpg'"
+/>
+
+<!-- Products Overview -->
+<div class="products-area pt-100 pb-70">
+    <div class="container">
+        <!-- Introduction -->
+        <div class="section-title">
+            <span>PFSA Products & Services</span>
+            <h2>Financial Solutions for Every Stage of Life</h2>
+            <p>
+                The Portuguese Fraternal Society of America offers a comprehensive suite of financial products designed to protect your family, secure your retirement, and invest in the next generation's education. As a fraternal organization, we're committed to helping our members achieve their financial goals.
+            </p>
+        </div>
+
+        <!-- Product Categories -->
+        <div class="row">
+            <!-- Life Insurance Card -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="product-category-card h-100">
+                    <div class="card-image">
+                        <img src="img/product-life-insurance.jpg" alt="Life Insurance - Family Protection">
+                        <div class="card-overlay">
+                            <span class="card-label">Life Insurance</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Life Insurance</h3>
+                        <p class="tagline">"Protect your family's future"</p>
+                        <p>
+                            Life insurance is a unique financial instrument that assures the creation of a desired amount of liquid capital at death. It provides essential protection for your loved ones.
+                        </p>
+                        <h5>Primary Uses:</h5>
+                        <ul>
+                            <li><i class="bx bx-check"></i> Income for surviving family members</li>
+                            <li><i class="bx bx-check"></i> Federal and state death tax payment</li>
+                            <li><i class="bx bx-check"></i> Debt repayment protection</li>
+                            <li><i class="bx bx-check"></i> Children's education funding</li>
+                            <li><i class="bx bx-check"></i> Wealth transfer between generations</li>
+                        </ul>
+                        <a routerLink="/life-insurance" class="default-btn">Learn More <i class="bx bx-right-arrow-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Retirement Savings Card -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="product-category-card h-100">
+                    <div class="card-image">
+                        <img src="img/product-retirement.jpg" alt="Retirement Savings - Happy Seniors">
+                        <div class="card-overlay">
+                            <span class="card-label">Retirement</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Retirement Savings</h3>
+                        <p class="tagline">"Safety. Guaranteed Income."</p>
+                        <p>
+                            PFSA offers both qualified and non-qualified retirement plans for long-term income generation with the power of compound interest at work. Start with as little as $100.
+                        </p>
+                        <h5>Available Plans:</h5>
+                        <ul>
+                            <li><i class="bx bx-check"></i> Flexible Payment Annuities</li>
+                            <li><i class="bx bx-check"></i> Immediate Annuities</li>
+                            <li><i class="bx bx-check"></i> Traditional IRAs</li>
+                            <li><i class="bx bx-check"></i> Roth IRAs</li>
+                            <li><i class="bx bx-check"></i> SEP IRAs</li>
+                        </ul>
+                        <a routerLink="/savings" class="default-btn">Learn More <i class="bx bx-right-arrow-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Educational Savings Card -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="product-category-card h-100">
+                    <div class="card-image">
+                        <img src="img/product-education.jpg" alt="Educational Savings - Graduation">
+                        <div class="card-overlay">
+                            <span class="card-label">Education</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Educational Savings</h3>
+                        <p class="tagline">"Invest in your child's future"</p>
+                        <p>
+                            Coverdell Education Savings Accounts help you save for education expenses with tax advantages. Contributions allowed until child turns 18 with a $2,000 annual limit.
+                        </p>
+                        <h5>Key Features:</h5>
+                        <ul>
+                            <li><i class="bx bx-check"></i> Tax-free withdrawals for education</li>
+                            <li><i class="bx bx-check"></i> Transferable to other children</li>
+                            <li><i class="bx bx-check"></i> Guaranteed cash values</li>
+                            <li><i class="bx bx-check"></i> K-12 and college expenses</li>
+                            <li><i class="bx bx-check"></i> Open with just $100</li>
+                        </ul>
+                        <a routerLink="/savings" class="default-btn">Learn More <i class="bx bx-right-arrow-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Life Insurance Products Detail -->
+        <div class="products-detail-section mt-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-12">
+                    <div class="products-detail-content">
+                        <span class="sub-title">Life Insurance Products</span>
+                        <h3>Protection for Every Stage of Life</h3>
+                        <p>
+                            PFSA offers four types of life insurance to meet your unique needs. Whether you're looking for affordable temporary coverage or permanent protection with cash value accumulation, we have the right solution for you.
+                        </p>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="product-item">
+                                    <i class="bx bx-check-circle"></i>
+                                    <div>
+                                        <h5>Whole Life</h5>
+                                        <p>Permanent coverage with cash value</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="product-item">
+                                    <i class="bx bx-check-circle"></i>
+                                    <div>
+                                        <h5>Term Life</h5>
+                                        <p>Affordable temporary protection</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="product-item">
+                                    <i class="bx bx-check-circle"></i>
+                                    <div>
+                                        <h5>Universal Life</h5>
+                                        <p>Flexible permanent insurance</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="product-item">
+                                    <i class="bx bx-check-circle"></i>
+                                    <div>
+                                        <h5>Wealth Transfer</h5>
+                                        <p>Estate planning solutions</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a routerLink="/life-insurance" class="default-btn mt-4">View Life Insurance Options <i class="bx bx-right-arrow-alt"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="products-detail-image">
+                        <img src="img/family-protection-1.jpg" alt="Life Insurance Protection" class="rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Retirement & Savings Detail -->
+        <div class="products-detail-section mt-5">
+            <div class="row align-items-center flex-lg-row-reverse">
+                <div class="col-lg-6 col-md-12">
+                    <div class="products-detail-content">
+                        <span class="sub-title">Retirement & Savings</span>
+                        <h3>Build Your Financial Future</h3>
+                        <p>
+                            Planning for retirement should begin early. PFSA provides members with complimentary retirement needs analysis through local representatives to help determine optimal strategies. Our savings products offer tax advantages and guaranteed returns.
+                        </p>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="product-item">
+                                    <i class="bx bx-check-circle"></i>
+                                    <div>
+                                        <h5>Annuities</h5>
+                                        <p>Guaranteed income for life</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="product-item">
+                                    <i class="bx bx-check-circle"></i>
+                                    <div>
+                                        <h5>Traditional IRA</h5>
+                                        <p>Tax-deferred retirement savings</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="product-item">
+                                    <i class="bx bx-check-circle"></i>
+                                    <div>
+                                        <h5>SEP IRA</h5>
+                                        <p>For self-employed individuals</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="product-item">
+                                    <i class="bx bx-check-circle"></i>
+                                    <div>
+                                        <h5>Coverdell ESA</h5>
+                                        <p>Tax-free education savings</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a routerLink="/savings" class="default-btn mt-4">View Savings Options <i class="bx bx-right-arrow-alt"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="products-detail-image">
+                        <img src="img/senior-couple-retirement.jpg" alt="Retirement Planning" class="rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose PFSA -->
+        <div class="why-choose-section mt-5 pt-5">
+            <div class="section-title">
+                <span>Why Choose PFSA</span>
+                <h2>A Fraternal Organization For You</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="why-choose-card text-center">
+                        <div class="icon-box mx-auto">
+                            <i class="bx bx-group"></i>
+                        </div>
+                        <h4>Member-Focused</h4>
+                        <p>As a fraternal organization, our members are our priority. We're here to serve you.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="why-choose-card text-center">
+                        <div class="icon-box mx-auto">
+                            <i class="bx bx-support"></i>
+                        </div>
+                        <h4>Local Agents</h4>
+                        <p>Work with knowledgeable local representatives who understand your needs.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="why-choose-card text-center">
+                        <div class="icon-box mx-auto">
+                            <i class="bx bx-dollar-circle"></i>
+                        </div>
+                        <h4>Competitive Rates</h4>
+                        <p>Affordable products with guaranteed values and competitive returns.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="why-choose-card text-center">
+                        <div class="icon-box mx-auto">
+                            <i class="bx bx-heart"></i>
+                        </div>
+                        <h4>Community</h4>
+                        <p>Join a community with scholarship programs and involvement opportunities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="cta-section mt-5 p-5 rounded" style="background: linear-gradient(135deg, var(--mainColor) 0%, #1a3a5c 100%);">
+            <div class="row align-items-center">
+                <div class="col-lg-8 col-md-12">
+                    <h3 class="text-white mb-2">Ready to Get Started?</h3>
+                    <p class="text-white mb-0">Contact us today for a complimentary needs analysis and find the right products for you.</p>
+                </div>
+                <div class="col-lg-4 col-md-12 text-lg-end mt-3 mt-lg-0">
+                    <a routerLink="/contact-us" class="default-btn btn-white">Contact Us <i class="bx bx-right-arrow-alt"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info-section mt-5 text-center">
+            <p class="mb-1"><strong>Phone:</strong> 1.866.687.7372 or (209) 702-6364</p>
+            <p class="mb-1"><strong>Email:</strong> mypfsa&#64;mypfsa.org</p>
+            <p class="mb-0"><strong>Address:</strong> 1100 14th Street, Suite E, Modesto, CA 95354</p>
+        </div>
+    </div>
+</div>
+<!-- End Products Overview -->
+
+<app-footer />
