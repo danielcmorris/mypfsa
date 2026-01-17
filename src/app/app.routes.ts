@@ -32,6 +32,12 @@ import { SavingsPage } from './pages/savings-page/savings-page';
 import { ProductsPage } from './pages/products-page/products-page';
 import { ProgramsPage } from './pages/programs-page/programs-page';
 import { ScholarshipPage } from './pages/scholarship-page/scholarship-page';
+import { BecomeMemberPage } from './pages/become-member-page/become-member-page';
+import { DashboardPage } from './pages/dashboard-page/dashboard-page';
+import { AccountFormsPage } from './pages/account-forms-page/account-forms-page';
+import { FestaSchedulePage } from './pages/festa-schedule-page/festa-schedule-page';
+import { FestaFormPage } from './pages/festa-form-page/festa-form-page';
+import { FestasPage } from './pages/festas-page/festas-page';
 export const routes: Routes = [
     { path: '', component: HomeDemoOne },
     { path: 'index-2', component: HomeDemoTwo },
@@ -68,5 +74,16 @@ export const routes: Routes = [
     { path: 'products/savings', component: SavingsPage },
     { path: 'programs', component: ProgramsPage },
     { path: 'scholarship', component: ScholarshipPage },
+    { path: 'become-a-member', component: BecomeMemberPage },
+    { path: 'festas', component: FestasPage },
+    { path: 'festa-schedule', component: FestaSchedulePage },
+    // Account routes
+    { path: 'account/dashboard', component: DashboardPage },
+    { path: 'account/tools', component: DashboardPage }, // Placeholder - will be replaced
+    { path: 'account/forms', component: AccountFormsPage },
+    { path: 'account/festas', component: FestaSchedulePage },
+    { path: 'account/festa-submit', component: FestaFormPage },
+    { path: 'account/council', component: DashboardPage }, // Placeholder - will be replaced
+    { path: 'account/profile', component: DashboardPage }, // Placeholder - will be replaced
     { path: '**', component: ErrorPage } // This line will remain down from the whole component list
 ];
