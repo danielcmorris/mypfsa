@@ -1,0 +1,54 @@
+<app-account-top-header></app-account-top-header>
+<app-account-navbar></app-account-navbar>
+
+<div class="tools-area">
+    <div class="container-fluid">
+        <!-- Page Header -->
+        <div class="tools-header">
+            <div class="header-content">
+                <h1><i class="bx bx-wrench"></i> Member Tools</h1>
+                <p>Access helpful calculators, resources, and services available to PFSA members</p>
+            </div>
+        </div>
+
+        <!-- Tools Grid -->
+        <div class="tools-grid">
+            <a *ngFor="let tool of tools"
+               [routerLink]="tool.path"
+               class="tool-card"
+               [style.--tool-color]="tool.color">
+                <div class="tool-icon">
+                    <i [class]="tool.icon"></i>
+                </div>
+                <div class="tool-content">
+                    <div class="tool-header">
+                        <h3>{{ tool.title }}</h3>
+                        <span *ngIf="tool.badge" class="tool-badge">{{ tool.badge }}</span>
+                    </div>
+                    <p>{{ tool.description }}</p>
+                </div>
+                <div class="tool-arrow">
+                    <i class="bx bx-chevron-right"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- Help Section -->
+        <div class="help-section">
+            <div class="help-card">
+                <div class="help-icon">
+                    <i class="bx bx-help-circle"></i>
+                </div>
+                <div class="help-content">
+                    <h4>Need Assistance?</h4>
+                    <p>Our team is here to help you make the most of your PFSA membership. Contact us if you have questions about any of our tools or services.</p>
+                    <a routerLink="/contact-us" class="help-link">
+                        <i class="bx bx-envelope"></i> Contact Support
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -109,6 +109,7 @@ export class NavigationService {
         path: '/account/dashboard',
         children: [
           { label: 'Dashboard', path: '/account/dashboard' },
+          { label: 'Tools', path: '/account/tools' },
           { label: 'Festas', path: '/account/festas' },
           { label: 'Submit a Festa', path: '/account/festa-submit' },
           { label: 'Forms', path: '/account/forms' },
