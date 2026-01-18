@@ -255,8 +255,31 @@
         }
     }
 
-    &:focus-within i {
+    &:focus-within i:first-of-type {
         color: var(--mainColor);
+    }
+
+    .password-toggle {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        color: #adb5bd;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: var(--mainColor);
+        }
+
+        i {
+            position: static;
+            transform: none;
+            font-size: 20px;
+        }
     }
 }
 

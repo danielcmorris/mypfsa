@@ -17,6 +17,12 @@ export class MyAccountPage implements OnInit {
     private router = inject(Router);
     private route = inject(ActivatedRoute);
 
+    // Form fields
+    email = '';
+    password = '';
+    showPassword = false;
+    rememberMe = false;
+
     isLoading = false;
     errorMessage = '';
 
@@ -36,15 +42,30 @@ export class MyAccountPage implements OnInit {
         });
     }
 
-    login(): void {
+    loginWithEmail(): void {
+        if (!this.email || !this.password) {
+            this.errorMessage = 'Please enter your email and password.';
+            return;
+        }
         this.isLoading = true;
         this.errorMessage = '';
-        this.auth.login('/account/dashboard');
+        // Redirect to Auth0 with email pre-filled using login_hint
+        this.auth.loginWithEmailHint(this.email, '/account/dashboard');
     }
 
     loginWithGoogle(): void {
-        // Auth0 handles the Google connection - same as regular login
-        // The user will be able to choose Google on the Auth0 login page
-        this.login();
+        this.isLoading = true;
+        this.errorMessage = '';
+        // Redirect to Auth0 with Google connection
+        this.auth.loginWithGoogle('/account/dashboard');
+    }
+
+    forgotPassword(): void {
+        if (this.email) {
+            // Redirect to Auth0 password reset with email hint
+            this.auth.forgotPassword(this.email);
+        } else {
+            this.errorMessage = 'Please enter your email address first.';
+        }
     }
 }

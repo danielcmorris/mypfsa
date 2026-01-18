@@ -51,20 +51,6 @@
                             <span>{{ errorMessage }}</span>
                         </div>
 
-                        <!-- Login Button -->
-                        <button
-                            type="button"
-                            class="login-submit-btn"
-                            (click)="login()"
-                            [disabled]="isLoading">
-                            <span *ngIf="!isLoading">
-                                <i class="bx bx-log-in"></i> Sign In to Your Account
-                            </span>
-                            <span *ngIf="isLoading">
-                                <i class="bx bx-loader-alt bx-spin"></i> Redirecting...
-                            </span>
-                        </button>
-
                         <!-- Google Login Button -->
                         <button
                             type="button"
@@ -79,6 +65,68 @@
                             </svg>
                             <span>Continue with Google</span>
                         </button>
+
+                        <!-- Divider -->
+                        <div class="login-divider">
+                            <span>or sign in with email</span>
+                        </div>
+
+                        <!-- Login Form -->
+                        <form (ngSubmit)="loginWithEmail()">
+                            <div class="form-group-login">
+                                <label for="email">Email Address</label>
+                                <div class="input-with-icon">
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        [(ngModel)]="email"
+                                        name="email"
+                                        placeholder="Enter your email"
+                                        required>
+                                    <i class="bx bx-envelope"></i>
+                                </div>
+                            </div>
+
+                            <div class="form-group-login">
+                                <label for="password">Password</label>
+                                <div class="input-with-icon">
+                                    <input
+                                        [type]="showPassword ? 'text' : 'password'"
+                                        id="password"
+                                        [(ngModel)]="password"
+                                        name="password"
+                                        placeholder="Enter your password"
+                                        required>
+                                    <i class="bx bx-lock-alt"></i>
+                                    <button
+                                        type="button"
+                                        class="password-toggle"
+                                        (click)="showPassword = !showPassword">
+                                        <i class="bx" [ngClass]="showPassword ? 'bx-hide' : 'bx-show'"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="form-options">
+                                <label class="remember-me">
+                                    <input type="checkbox" [(ngModel)]="rememberMe" name="rememberMe">
+                                    <span>Remember me</span>
+                                </label>
+                                <a href="javascript:void(0)" class="forgot-link" (click)="forgotPassword()">Forgot Password?</a>
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="login-submit-btn"
+                                [disabled]="isLoading">
+                                <span *ngIf="!isLoading">
+                                    <i class="bx bx-log-in"></i> Sign In
+                                </span>
+                                <span *ngIf="isLoading">
+                                    <i class="bx bx-loader-alt bx-spin"></i> Signing in...
+                                </span>
+                            </button>
+                        </form>
 
                         <p class="auth-info">
                             <i class="bx bx-shield-quarter"></i>

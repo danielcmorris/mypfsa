@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { AuthService as Auth0Service } from '@auth0/auth0-angular';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 export interface UserProfile {
     sub: string;
@@ -40,6 +41,58 @@ export class AuthService {
         this.auth0.loginWithRedirect({
             appState: { target: returnUrl || '/account/dashboard' }
         });
+    }
+
+    // Login with email hint (pre-fills email on Auth0 login page)
+    loginWithEmailHint(email: string, returnUrl?: string): void {
+        this.auth0.loginWithRedirect({
+            appState: { target: returnUrl || '/account/dashboard' },
+            authorizationParams: {
+                login_hint: email
+            }
+        });
+    }
+
+    // Login with Google connection
+    loginWithGoogle(returnUrl?: string): void {
+        this.auth0.loginWithRedirect({
+            appState: { target: returnUrl || '/account/dashboard' },
+            authorizationParams: {
+                connection: 'google-oauth2'
+            }
+        });
+    }
+
+    // Forgot password - redirect to Auth0 password reset
+    forgotPassword(email: string): void {
+        const resetUrl = `https://${environment.auth0.domain}/dbconnections/change_password`;
+        // Open password reset in new tab or redirect
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = resetUrl;
+        form.target = '_blank';
+
+        const clientIdInput = document.createElement('input');
+        clientIdInput.type = 'hidden';
+        clientIdInput.name = 'client_id';
+        clientIdInput.value = environment.auth0.clientId;
+        form.appendChild(clientIdInput);
+
+        const emailInput = document.createElement('input');
+        emailInput.type = 'hidden';
+        emailInput.name = 'email';
+        emailInput.value = email;
+        form.appendChild(emailInput);
+
+        const connectionInput = document.createElement('input');
+        connectionInput.type = 'hidden';
+        connectionInput.name = 'connection';
+        connectionInput.value = 'Username-Password-Authentication';
+        form.appendChild(connectionInput);
+
+        document.body.appendChild(form);
+        form.submit();
+        document.body.removeChild(form);
     }
 
     // Login with popup (alternative method)
