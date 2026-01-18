@@ -39,6 +39,7 @@ import { FestaSchedulePage } from './pages/festa-schedule-page/festa-schedule-pa
 import { FestaFormPage } from './pages/festa-form-page/festa-form-page';
 import { FestasPage } from './pages/festas-page/festas-page';
 import { AccountToolsPage } from './pages/account-tools-page/account-tools-page';
+import { AccountProfilePage } from './pages/account-profile-page/account-profile-page';
 export const routes: Routes = [
     { path: '', component: HomeDemoOne },
     { path: 'index-2', component: HomeDemoTwo },
@@ -85,6 +86,6 @@ export const routes: Routes = [
     { path: 'account/festas', component: FestaSchedulePage },
     { path: 'account/festa-submit', component: FestaFormPage },
     { path: 'account/council', component: DashboardPage }, // Placeholder - will be replaced
-    { path: 'account/profile', component: DashboardPage }, // Placeholder - will be replaced
+    { path: 'account/profile', component: AccountProfilePage },
     { path: '**', component: ErrorPage } // This line will remain down from the whole component list
 ];
