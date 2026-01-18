@@ -98,9 +98,11 @@
                 <a
                     *ngIf="!item.children || item.children.length === 0"
                     [routerLink]="item.path"
+                    [fragment]="item.fragment"
                     class="accordion-button without-icon d-block text-start shadow-none fw-bold border-0 transition border-radius"
                     routerLinkActive="active"
                     [routerLinkActiveOptions]="{exact: true}"
+                    (click)="toggleClass()"
                 >
                     {{ item.label }}
                 </a>
@@ -120,9 +122,11 @@
                                 <a
                                     *ngIf="!child.children || child.children.length === 0"
                                     [routerLink]="child.path"
+                                    [fragment]="child.fragment"
                                     routerLinkActive="active"
                                     [routerLinkActiveOptions]="{exact: true}"
                                     class="sidemenu-link border-radius d-block position-relative transition fw-bold"
+                                    (click)="toggleClass()"
                                 >
                                     {{ child.label }}
                                 </a>
@@ -132,9 +136,11 @@
                                             <li class="sidemenu-item" *ngFor="let grandchild of child.children">
                                                 <a
                                                     [routerLink]="grandchild.path"
+                                                    [fragment]="grandchild.fragment"
                                                     routerLinkActive="active"
                                                     [routerLinkActiveOptions]="{exact: true}"
                                                     class="sidemenu-link border-radius d-block position-relative transition fw-bold"
+                                                    (click)="toggleClass()"
                                                 >
                                                     {{ grandchild.label }}
                                                 </a>

@@ -104,14 +104,18 @@ export class NavigationService {
           { label: 'Careers', path: '/about-us', fragment: 'careers' }
         ]
       },
-      //   {
-      //     label: 'Contact Us',
-      //     path: '/contact',
-      //     children: [
-      //       { label: 'Meet the Staff', path: '/contact/staff' },
-      //       { label: 'Careers', path: '/contact/careers' }
-      //     ]
-      //   }
+      {
+        label: 'My Account',
+        path: '/account/dashboard',
+        children: [
+          { label: 'Dashboard', path: '/account/dashboard' },
+          { label: 'Festas', path: '/account/festas' },
+          { label: 'Submit a Festa', path: '/account/festa-submit' },
+          { label: 'Forms', path: '/account/forms' },
+          { label: 'Council Tools', path: '/account/council' },
+          { label: 'Profile', path: '/account/profile' }
+        ]
+      }
     ],
     socialLinks: [
       { label: 'Facebook', path: 'https://facebook.com', external: true, icon: 'facebook' },
