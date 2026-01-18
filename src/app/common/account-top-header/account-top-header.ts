@@ -1,11 +1,10 @@
-import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
 
 @Component({
     selector: 'app-account-top-header',
     standalone: true,
-    imports: [RouterLink, NgClass],
+    imports: [RouterLink],
     templateUrl: './account-top-header.html',
     styleUrl: './account-top-header.scss'
 })

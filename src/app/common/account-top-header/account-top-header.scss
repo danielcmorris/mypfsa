@@ -1,61 +1,176 @@
-// Account indicator styling - extends the base top-header
-.top-header {
-    .header-left-content {
-        .account-indicator-item {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 6px 16px 6px 32px;
-            border-radius: 20px;
-            margin-right: 20px;
+.account-top-header {
+    background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+    padding: 10px 0;
 
-            i {
-                color: var(--whiteColor) !important;
-            }
+    .container-fluid {
+        max-width: 1400px;
+        padding: 0 30px;
+    }
 
-            span {
-                display: inline !important;
-                margin-bottom: 0 !important;
-                font-weight: 600;
-                font-size: 13px;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-            }
+    .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .back-to-site {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        padding: 6px 12px;
+        border-radius: 6px;
+
+        i {
+            font-size: 18px;
+        }
+
+        &:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
         }
     }
 
-    .header-right-content {
-        .log-out {
-            display: inline-block;
+    .portal-badge {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.15);
+        padding: 6px 14px;
+        border-radius: 20px;
+        color: #ffffff;
 
-            a {
-                font-size: 15px;
-                color: var(--whiteColor);
-                display: flex;
-                align-items: center;
-                gap: 6px;
+        i {
+            font-size: 16px;
+            color: #90cdf4;
+        }
 
-                i {
-                    font-size: 18px;
-                }
+        span {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    }
 
-                &:hover {
-                    color: var(--mainColor);
-                }
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .support-link {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 13px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        padding: 6px 12px;
+        border-radius: 6px;
+
+        i {
+            font-size: 18px;
+        }
+
+        &:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    .logout-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 500;
+        padding: 6px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        i {
+            font-size: 16px;
+        }
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .account-top-header {
+        padding: 8px 0;
+
+        .container-fluid {
+            padding: 0 15px;
+        }
+
+        .header-left {
+            gap: 12px;
+        }
+
+        .back-to-site {
+            padding: 4px 8px;
+
+            span {
+                display: none;
+            }
+        }
+
+        .portal-badge {
+            padding: 4px 10px;
+
+            span {
+                font-size: 11px;
+            }
+        }
+
+        .header-right {
+            gap: 8px;
+        }
+
+        .support-link {
+            padding: 4px 8px;
+
+            span {
+                display: none;
+            }
+        }
+
+        .logout-btn {
+            padding: 4px 10px;
+
+            span {
+                display: none;
             }
         }
     }
 }
 
-/* Max width 767px */
-@media only screen and (max-width: 767px) {
-    .top-header {
-        .header-left-content {
-            .account-indicator-item {
-                padding: 4px 12px 4px 28px;
-                margin-right: 10px;
-
-                span {
-                    font-size: 12px;
-                }
+@media (max-width: 480px) {
+    .account-top-header {
+        .portal-badge {
+            i {
+                display: none;
             }
         }
     }
