@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { RouterLink, Router } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
     selector: 'app-account-top-header',
@@ -9,14 +10,9 @@ import { RouterLink, Router } from '@angular/router';
     styleUrl: './account-top-header.scss'
 })
 export class AccountTopHeader {
-
-    constructor(
-        public router: Router
-    ) {}
+    private auth = inject(AuthService);
 
     logout(): void {
-        // TODO: Implement actual logout logic
-        console.log('Logging out...');
-        this.router.navigate(['/my-account']);
+        this.auth.logout();
     }
 }

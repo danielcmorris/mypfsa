@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './guards/auth.guard';
 import { HomeDemoOne } from './demos/home-demo-one/home-demo-one';
 import { HomeDemoTwo } from './demos/home-demo-two/home-demo-two';
 import { HomeDemoThree } from './demos/home-demo-three/home-demo-three';
@@ -40,6 +41,7 @@ import { FestaFormPage } from './pages/festa-form-page/festa-form-page';
 import { FestasPage } from './pages/festas-page/festas-page';
 import { AccountToolsPage } from './pages/account-tools-page/account-tools-page';
 import { AccountProfilePage } from './pages/account-profile-page/account-profile-page';
+import { CallbackPage } from './pages/callback-page/callback-page';
 export const routes: Routes = [
     { path: '', component: HomeDemoOne },
     { path: 'index-2', component: HomeDemoTwo },
@@ -79,13 +81,15 @@ export const routes: Routes = [
     { path: 'become-a-member', component: BecomeMemberPage },
     { path: 'festas', component: FestasPage },
     { path: 'festa-schedule', component: FestaSchedulePage },
-    // Account routes
-    { path: 'account/dashboard', component: DashboardPage },
-    { path: 'account/tools', component: AccountToolsPage },
-    { path: 'account/forms', component: AccountFormsPage },
-    { path: 'account/festas', component: FestaSchedulePage },
-    { path: 'account/festa-submit', component: FestaFormPage },
-    { path: 'account/council', component: DashboardPage }, // Placeholder - will be replaced
-    { path: 'account/profile', component: AccountProfilePage },
+    // Auth callback route
+    { path: 'callback', component: CallbackPage },
+    // Account routes (protected)
+    { path: 'account/dashboard', component: DashboardPage, canActivate: [authGuard] },
+    { path: 'account/tools', component: AccountToolsPage, canActivate: [authGuard] },
+    { path: 'account/forms', component: AccountFormsPage, canActivate: [authGuard] },
+    { path: 'account/festas', component: FestaSchedulePage, canActivate: [authGuard] },
+    { path: 'account/festa-submit', component: FestaFormPage, canActivate: [authGuard] },
+    { path: 'account/council', component: DashboardPage, canActivate: [authGuard] }, // Placeholder - will be replaced
+    { path: 'account/profile', component: AccountProfilePage, canActivate: [authGuard] },
     { path: '**', component: ErrorPage } // This line will remain down from the whole component list
 ];

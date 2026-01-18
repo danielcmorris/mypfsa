@@ -64,16 +64,30 @@
                             </ul>
                         </li>
                     </ul>
-                    <div class="log-in fw-semibold">
-                        <a routerLink="/my-account">
-                            Login
-                        </a>
-                    </div>
-                    <div class="register fw-semibold">
-                        <a routerLink="/my-account">
-                            Register
-                        </a>
-                    </div>
+                    <ng-container *ngIf="auth.isAuthenticated$ | async; else notAuthenticated">
+                        <div class="log-in fw-semibold">
+                            <a (click)="goToAccount()" style="cursor: pointer;">
+                                <i class="bx bx-user-circle" style="margin-right: 4px;"></i> My Account
+                            </a>
+                        </div>
+                        <div class="register fw-semibold">
+                            <a (click)="logout()" style="cursor: pointer;">
+                                Logout
+                            </a>
+                        </div>
+                    </ng-container>
+                    <ng-template #notAuthenticated>
+                        <div class="log-in fw-semibold">
+                            <a (click)="login()" style="cursor: pointer;">
+                                Login
+                            </a>
+                        </div>
+                        <div class="register fw-semibold">
+                            <a routerLink="/become-a-member">
+                                Join
+                            </a>
+                        </div>
+                    </ng-template>
                 </div>
             </div>
         </div>

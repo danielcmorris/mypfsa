@@ -325,6 +325,22 @@
     }
 }
 
+// Auth Info
+.auth-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #6c757d;
+
+    i {
+        font-size: 16px;
+        color: #1a365d;
+    }
+}
+
 // Sign Up Prompt
 .signup-prompt {
     margin-top: 32px;
