@@ -1,26 +1,32 @@
-.tools-area {
+// Standardized Account Page Styles
+.account-page-area {
+    padding: 40px 0;
     min-height: calc(100vh - 200px);
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    padding: 30px 0 60px;
+    background: #f8f9fa;
 
     .container-fluid {
-        max-width: 1200px;
+        max-width: 1400px;
         padding: 0 30px;
     }
 }
 
-.tools-header {
-    margin-bottom: 40px;
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
 
     .header-content {
         h1 {
-            font-size: 32px;
-            font-weight: 700;
-            color: #212529;
-            margin-bottom: 10px;
+            font-size: 28px;
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 5px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
 
             i {
                 color: #0d6efd;
@@ -28,9 +34,9 @@
         }
 
         p {
-            color: #6c757d;
-            font-size: 16px;
+            color: #666;
             margin: 0;
+            font-size: 14px;
         }
     }
 }
@@ -208,21 +214,21 @@
 }
 
 @media (max-width: 768px) {
-    .tools-area {
-        padding: 20px 0 40px;
+    .account-page-area {
+        padding: 20px 0;
 
         .container-fluid {
             padding: 0 15px;
         }
     }
 
-    .tools-header .header-content {
-        h1 {
-            font-size: 24px;
-        }
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
 
-        p {
-            font-size: 14px;
+        .header-content h1 {
+            font-size: 24px;
         }
     }
 

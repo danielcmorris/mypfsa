@@ -1,41 +1,42 @@
-.forms-area {
-    background: #f5f7fa;
-    min-height: calc(100vh - 200px);
+// Standardized Account Page Styles
+.account-page-area {
     padding: 40px 0;
+    min-height: calc(100vh - 200px);
+    background: #f8f9fa;
 
     .container-fluid {
         max-width: 1400px;
+        padding: 0 30px;
     }
 }
 
-// Page Header
 .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 30px;
-    padding: 30px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e0e0;
 
     .header-content {
         h1 {
             font-size: 28px;
-            font-weight: 700;
-            color: var(--headingColor);
-            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1a365d;
+            margin-bottom: 5px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
 
             i {
-                color: var(--mainColor);
-                font-size: 32px;
+                color: #28a745;
             }
         }
 
         p {
-            color: #6c757d;
+            color: #666;
             margin: 0;
-            font-size: 15px;
+            font-size: 14px;
         }
     }
 }
@@ -223,22 +224,6 @@
 
 // Responsive
 @media only screen and (max-width: 991px) {
-    .forms-area {
-        padding: 30px 0;
-    }
-
-    .page-header {
-        padding: 24px;
-
-        .header-content h1 {
-            font-size: 24px;
-
-            i {
-                font-size: 28px;
-            }
-        }
-    }
-
     .help-card {
         flex-direction: column;
         text-align: center;
@@ -250,7 +235,7 @@
 }
 
 @media only screen and (max-width: 767px) {
-    .forms-area {
+    .account-page-area {
         padding: 20px 0;
 
         .container-fluid {
@@ -259,12 +244,12 @@
     }
 
     .page-header {
-        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
 
         .header-content h1 {
-            font-size: 22px;
-            flex-direction: column;
-            gap: 8px;
+            font-size: 24px;
         }
     }
 

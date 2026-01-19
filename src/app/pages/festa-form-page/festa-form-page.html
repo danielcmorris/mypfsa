@@ -1,12 +1,26 @@
-<app-top-header />
+<app-account-top-header></app-account-top-header>
+<app-account-navbar></app-account-navbar>
 
-<app-navbar />
+<div class="account-page-area">
+    <div class="container-fluid">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="header-content">
+                <h1><i class="bx bx-calendar-plus"></i> Submit Your Festa</h1>
+                <p>Share your upcoming festa with the PFSA community</p>
+            </div>
+            <div class="header-actions">
+                <a routerLink="/account/festas" class="btn-back">
+                    <i class="bx bx-arrow-back"></i> Back to Festas
+                </a>
+            </div>
+        </div>
 
-<app-inner-page-banner
-    [pageTitle]="'Submit Your Festa'"
-    [backgroundImage]="'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?fm=jpg&q=80&w=3000'"
-/>
+        <!-- Festa Form -->
+        <div class="page-content">
+            <app-festa-form></app-festa-form>
+        </div>
+    </div>
+</div>
 
-<app-festa-form></app-festa-form>
-
-<app-footer />
+<app-footer></app-footer>
