@@ -39,6 +39,7 @@ import { AccountFormsPage } from './pages/account-forms-page/account-forms-page'
 import { FestaSchedulePage } from './pages/festa-schedule-page/festa-schedule-page';
 import { FestaFormPage } from './pages/festa-form-page/festa-form-page';
 import { FestasPage } from './pages/festas-page/festas-page';
+import { AccountFestasPage } from './pages/account-festas-page/account-festas-page';
 import { AccountToolsPage } from './pages/account-tools-page/account-tools-page';
 import { AccountProfilePage } from './pages/account-profile-page/account-profile-page';
 import { CallbackPage } from './pages/callback-page/callback-page';
@@ -87,7 +88,7 @@ export const routes: Routes = [
     { path: 'account/dashboard', component: DashboardPage, canActivate: [authGuard] },
     { path: 'account/tools', component: AccountToolsPage, canActivate: [authGuard] },
     { path: 'account/forms', component: AccountFormsPage, canActivate: [authGuard] },
-    { path: 'account/festas', component: FestaSchedulePage, canActivate: [authGuard] },
+    { path: 'account/festas', component: AccountFestasPage, canActivate: [authGuard] },
     { path: 'account/festa-submit', component: FestaFormPage, canActivate: [authGuard] },
     { path: 'account/council', component: DashboardPage, canActivate: [authGuard] }, // Placeholder - will be replaced
     { path: 'account/profile', component: AccountProfilePage, canActivate: [authGuard] },

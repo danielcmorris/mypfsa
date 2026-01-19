@@ -1,0 +1,26 @@
+<app-account-top-header></app-account-top-header>
+<app-account-navbar></app-account-navbar>
+
+<div class="account-festas-area">
+    <div class="container-fluid">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="header-content">
+                <h1><i class="bx bx-calendar-event"></i> Festas</h1>
+                <p>Browse upcoming PFSA festas and events</p>
+            </div>
+            <div class="header-actions">
+                <a routerLink="/account/festa-submit" class="btn-submit-festa">
+                    <i class="bx bx-plus"></i> Submit a Festa
+                </a>
+            </div>
+        </div>
+
+        <!-- Festa List -->
+        <div class="festas-content">
+            <app-festa-list></app-festa-list>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
