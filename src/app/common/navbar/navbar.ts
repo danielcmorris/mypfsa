@@ -1,28 +1,42 @@
-import { NgClass, NgFor, NgIf, ViewportScroller } from '@angular/common';
-import { Component, HostListener, OnInit } from '@angular/core';
+import { NgClass, NgFor, NgIf, ViewportScroller, AsyncPipe } from '@angular/common';
+import { Component, HostListener, OnInit, inject } from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { NavigationService } from '../../services/navigation.service';
 import { MenuItem } from '../../models/navigation.model';
-import { filter } from 'rxjs';
+import { filter, map } from 'rxjs';
+import { AuthService } from '../../services/auth.service';
+import { Observable, combineLatest, of } from 'rxjs';
 
 @Component({
     selector: 'app-navbar',
     standalone: true,
-    imports: [RouterLink, RouterLinkActive, NgClass, NgFor, NgIf],
+    imports: [RouterLink, RouterLinkActive, NgClass, NgFor, NgIf, AsyncPipe],
     templateUrl: './navbar.html',
     styleUrl: './navbar.scss'
 })
 export class Navbar implements OnInit {
 
-    mainMenu: MenuItem[] = [];
+    private auth = inject(AuthService);
+    mainMenu$: Observable<MenuItem[]>;
     socialLinks: MenuItem[] = [];
 
     constructor(private navigationService: NavigationService,
         private router: Router,
         private viewportScroller: ViewportScroller
-    ) { }
+    ) {
+        // Filter menu based on authentication state
+        const allMenuItems = this.navigationService.getMainMenu();
+        this.mainMenu$ = this.auth.isAuthenticated$.pipe(
+            map(isAuthenticated => {
+                if (isAuthenticated) {
+                    return allMenuItems;
+                }
+                // Filter out "My Account" menu when not authenticated
+                return allMenuItems.filter(item => item.label !== 'My Account');
+            })
+        );
+    }
     ngOnInit() {
-        this.mainMenu = this.navigationService.getMainMenu();
         this.socialLinks = this.navigationService.getSocialLinks();
 
         this.router.events.pipe(
