@@ -44,24 +44,7 @@
       "email": "monica.cochran@mypfsa.org"
     }
   },
-  {
-    "name": "Claudia Vargas",
-    "license": "LIC#: 2119658",
-    "image": "img/agents/caludia.vargas.jpeg",
-    "contact": {
-      "phone": "209-270-4348",
-      "email": "claudia.vargas@mypfsa.org"
-    }
-  },
-  {
-    "name": "Nizia Hogan",
-    "license": "LIC#: 4324598",
-    "image": "img/agents/nizia.hogan.jpeg",
-    "contact": {
-      "phone": "530-701-0638",
-      "email": "nizia.hogan@mypfsa.org"
-    }
-  },
+   
   {
     "name": "Sandra Crivello",
     "license": "LIC#: 4087078",
@@ -97,34 +80,8 @@
       "phone": "707-499-9821",
       "email": "odette.pinheiro@mypfsa.org"
     }
-  },
-  {
-    "name": "Michael Fraga",
-    "license": "LIC#: 0H21634",
-    "image": "img/agents/micheal.fraga.jpeg",
-    "contact": {
-      "phone": "707-499-9821",
-      "email": "mfraga1000@aol.com"
-    }
-  },
-  {
-    "name": "Claudia Barajas",
-    "license": "LIC#: 4264219",
-    "image": "img/agents/caludia.barajas.jpeg",
-    "contact": {
-      "phone": "510-309-5669",
-      "email": "claudia.barajas@mypfsa.org"
-    }
-  },
-  {
-    "name": "Jose Macias",
-    "license": "LIC#: 4264224",
-    "image": "img/agents/joe.macias.jpeg",
-    "contact": {
-      "phone": "209-499-0434",
-      "email": "jose.macias@mypfsa.org"
-    }
-  },
+  }, 
+   
   {
     "name": "Ashley Incitti",
     "license": "LIC#: 4360980",
