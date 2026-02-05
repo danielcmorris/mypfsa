@@ -1,0 +1,26 @@
+.board-table {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.board-table thead {
+    background-color: #f8f9fa;
+}
+
+.board-table th {
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.board-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.board-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
