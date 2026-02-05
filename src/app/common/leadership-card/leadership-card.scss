@@ -1,26 +1,109 @@
-.board-table {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    border-collapse: collapse;
+.leadership-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+    margin-bottom: 40px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    }
 }
 
-.board-table thead {
-    background-color: #f8f9fa;
+.card-header {
+    background: var(--optionalColor, #0a2046);
+    padding: 16px 24px;
+
+    h3 {
+        color: #fff;
+        font-size: 20px;
+        margin: 0;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
 }
 
-.board-table th {
-    padding: 12px 15px;
-    text-align: left;
+.card-body {
+    padding: 24px;
+}
+
+.photo-wrapper {
+    img {
+        width: 100%;
+        border-radius: 6px;
+        object-fit: cover;
+    }
+
+    .caption {
+        margin-top: 10px;
+        font-size: 12px;
+        color: #888;
+        line-height: 1.5;
+        font-style: italic;
+    }
+}
+
+.members-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.member-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+
+    &:nth-child(even) {
+        background-color: #f7f9fc;
+    }
+
+    &:hover {
+        background-color: #edf2f9;
+    }
+}
+
+.member-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.member-name {
     font-weight: 600;
-    border-bottom: 2px solid #dee2e6;
+    color: var(--headingColor, #1a1a1a);
+    font-size: 15px;
 }
 
-.board-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #dee2e6;
+.member-position {
+    font-size: 13px;
+    color: var(--mainColor, #0390EF);
+    font-weight: 500;
 }
 
-.board-table tbody tr:hover {
-    background-color: #f8f9fa;
+.member-council {
+    font-size: 13px;
+    color: #888;
+    white-space: nowrap;
+    margin-left: 16px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 991px) {
+    .photo-wrapper {
+        margin-bottom: 20px;
+    }
+
+    .member-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+
+    .member-council {
+        margin-left: 0;
+    }
 }

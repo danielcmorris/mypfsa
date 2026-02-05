@@ -73,20 +73,14 @@
     ]
   },
   {
-    "title": "FRATERNAL ACTIVITIES COMMITTEE",
+    "title": "FRATERNAL COMMITTEE",
     "imgPath": "/img/leadership/fraternal-activities.jpg",
-    "caption": "Joseph Pinheiro, Donald J. Costa, Deolinda Faria-Pauley, Michael Fraga, Juanita Pedrozo, Jerry Escobar Terra Nessler, Angela Seamas, Bernice Armas-Martinez, Lisa Simons",
+    "caption": "Juanita Pedrozo, Donald J. Costa, Antoinette F. Duarte, Richard Castro",
     "members": [
-      { "order": 1, "name": "Jerry Escobar", "position": "Chairman", "councilNumber": "14", "councilName": "Mountain View" },
-      { "order": 2, "name": "Angela Seamas", "position": "Supreme President", "councilNumber": "200", "councilName": "Lathrop" },
-      { "order": 3, "name": "Donald J. Costa", "position": "Supreme Vice-President", "councilNumber": "46", "councilName": "Tulare" },
-      { "order": 4, "name": "Terra Nessler", "position": "Supreme Master of Ceremonies", "councilNumber": "99", "councilName": "Lompoc" },
-      { "order": 5, "name": "Angela Azevedo", "position": "Supreme 20-30s President", "councilNumber": "100", "councilName": "Oakdale, Escalon, Riverbank" },
-      { "order": 6, "name": "Lisa Simons", "position": "Supreme Marshal", "councilNumber": "5/36", "councilName": "Hayward" },
-      { "order": 7, "name": "Juanita Pedrozo", "position": "Past Supreme President", "councilNumber": "20", "councilName": "Merced" },
-      { "order": 8, "name": "Michael Fraga", "position": "Past Supreme President", "councilNumber": "4", "councilName": "Arcata" },
-      { "order": 9, "name": "Bernice Armas-Martinez", "position": "Chief Executive Officer", "councilNumber": "26", "councilName": "Stevinson/Turlock/Hilmar" },
-      { "order": 10, "name": "Deolinda Faria-Pauley", "position": "Member", "councilNumber": "13", "councilName": "Tracy" }
+      { "order": 1, "name": "Antoinette F. Duarte", "position": "Chairperson", "councilNumber": "118", "councilName": "Elk Grove" },
+      { "order": 2, "name": "Richard Castro", "position": "Member", "councilNumber": "26", "councilName": "Stevinson, Turlock, Hilmar" },
+      { "order": 3, "name": "Donald J. Costa", "position": "Member", "councilNumber": "46", "councilName": "Tulare" },
+      { "order": 4, "name": "Juanita Pedrozo", "position": "Member", "councilNumber": "20", "councilName": "Merced" }
     ]
   },
   {

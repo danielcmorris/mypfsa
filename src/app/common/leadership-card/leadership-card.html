@@ -1,20 +1,28 @@
-<div class="row">
-    <div class="col-12" style="text-align: center; margin-bottom:20px;">
-        <h2>{{title}}</h2>
+<div class="leadership-card">
+    <div class="card-header">
+        <h3>{{title}}</h3>
     </div>
-    <div class="col-lg-6 col-md-12">
-        <img src="{{imgPath}}" alt="{{title}}" class="img-fluid border-radius mb-4">
-        <div style="font-size: 10pt;">{{caption}}</div>
-    </div>
-    <div class="col-lg-6 col-md-12">
-        <table class="board-table">
-            @for (m of members; track $index) {
-            <tr>
-                <td>{{m.position}}</td>
-                <td>{{m.name}}</td>
-                <td>Co. {{m.councilNumber}}, {{m.councilName}}</td>
-            </tr>
-            }
-        </table>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-5 col-md-12">
+                <div class="photo-wrapper">
+                    <img src="{{imgPath}}" alt="{{title}}">
+                    <p class="caption">{{caption}}</p>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12">
+                <div class="members-list">
+                    @for (m of members; track $index) {
+                    <div class="member-row">
+                        <div class="member-info">
+                            <span class="member-name">{{m.name}}</span>
+                            <span class="member-position">{{m.position}}</span>
+                        </div>
+                        <span class="member-council">Co. {{m.councilNumber}}, {{m.councilName}}</span>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
     </div>
 </div>
