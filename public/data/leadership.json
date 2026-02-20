@@ -2,7 +2,7 @@
   {
     "title": "PFSA Board of Directors",
     "imgPath": "/img/leadership/board.jpg",
-    "caption": "John P. Camara, Al Furtado, Robert A. Bertao, Ted A. Pedrozo, Duane S. Oliveira, Stephanie M. Koch, Melanie M. Santos",
+    "caption": "Top row: Ted Pedrozo, Duane Oliveira, John Camara, Joseph Pinheiro; Bottom Row: Monique Vallance, Melanie Santos, Angela Seamas, Suzie Lourenco",
     "members": [
       { "order": 1, "name": "Ted A. Pedrozo", "position": "Chairman of the Board", "councilNumber": "20", "councilName": "Merced" },
       { "order": 2, "name": "Robert A. Bertao", "position": "Vice-Chairman of the Board", "councilNumber": "21", "councilName": "Los Banos-Dos Palos" },
@@ -11,7 +11,8 @@
       { "order": 5, "name": "John P. Camara", "position": "Director of the Board", "councilNumber": "46", "councilName": "Tulare" },
       { "order": 6, "name": "Melanie M. Santos", "position": "Director of the Board", "councilNumber": "20", "councilName": "Merced" },
       { "order": 7, "name": "Monique Vallance", "position": "Director of the Board", "councilNumber": "38", "councilName": "Modesto" },
-      { "order": 8, "name": "Angela Seamas", "position": "Director of the Board Ex-Officio", "councilNumber": "200", "councilName": "Lathrop" }
+      { "order": 8, "name": "Angela Seamas", "position": "Director of the Board Ex-Officio", "councilNumber": "200", "councilName": "Lathrop" },
+      { "order": 9, "name": "Suzie Lourenco", "position": "Director of the Board Ex-Officio", "councilNumber": "76", "councilName": "Artesia" }
     ]
   },
   {
@@ -38,12 +39,11 @@
   {
     "title": "SUPREME 20-30's OFFICERS",
     "imgPath": "/img/leadership/supreme-council-20-30-officers.jpg",
-    "caption": "Top Row: Andrew Gamez, Danae Underwood, Madison Pinheiro, Angela Azevedo, Carley Azevedo, Kayleigh Gilbert, Miriam Work, Suzie Lourenco -- Bottom Row: Angela Seamas, Maria Helena Lopez, Arielle Costa, Danielle Seamas",
+    "caption": "Top Row: Andrew Gamez, Danae Underwood, Madison Pinheiro, Angela Azevedo, Kayleigh Gilbert, Miriam Work, Suzie Lourenco -- Bottom Row: Angela Seamas, Maria Helena Lopez, Arielle Costa, Danielle Seamas",
     "members": [
       { "order": 1, "name": "Miriam Work", "position": "Supreme 20-30\u2019s President", "councilNumber": "99", "councilName": "Lompoc" },
       { "order": 2, "name": "Maria Helena Lopez", "position": "Supreme 20-30\u2019s Vice President", "councilNumber": "54", "councilName": "Bencia/Vallejo" },
-      { "order": 3, "name": "Carley Azevedo", "position": "Supreme 20-30\u2019s Secretary", "councilNumber": "100", "councilName": "Oakdale, Escalon, Riverbank" },
-      { "order": 4, "name": "Danae Underwood", "position": "Supreme 20-30\u2019s Treasurer", "councilNumber": "200", "councilName": "Lathrop" },
+      { "order": 4, "name": "Danae Underwood", "position": "Supreme 20-30\u2019s Secretary/Treasurer", "councilNumber": "200", "councilName": "Lathrop" },
       { "order": 5, "name": "Kayleigh Gilbert", "position": "Supreme 20-30\u2019s Mistress of Ceremonies", "councilNumber": "100", "councilName": "Oakdale, Escalon, Riverbank" },
       { "order": 6, "name": "Madison Pinheiro", "position": "Supreme 20-30\u2019s Marshal", "councilNumber": "8", "councilName": "Santa Maria" },
       { "order": 7, "name": "Arielle Costa", "position": "Supreme 20-30\u2019s Guard", "councilNumber": "21", "councilName": "Los Banos/Dos Palos" },
