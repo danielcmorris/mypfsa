@@ -46,12 +46,12 @@
   },
    
   {
-    "name": "Sandra Crivello",
-    "license": "LIC#: 4087078",
-    "image": "img/agents/sandra.crivello.jpeg",
+    "name": "Billy Gonzales",
+    "license": "LIC#: 4318139",
+    "image": "img/agents/billy.gonzales.jpg",
     "contact": {
-      "phone": "209-988-9156",
-      "email": "sandra.crivello@mypfsa.org"
+      "phone": "209-844-9351",
+      "email": "billy.gonzales@mypfsa.org"
     }
   },
   {
@@ -89,6 +89,41 @@
     "contact": {
       "phone": "209-493-9090",
       "email": "ashley.incitti@mypfsa.org"
+    }
+  }
+
+
+  , 
+   
+  {
+    "name": "Cecilia Nelson",
+    "license": "LIC#: 4434252",
+    "image": "img/agents/cecilia.nelson.png",
+    "contact": {
+      "phone": "209-595-7964",
+      "email": "cecilia.nelson@mypfsa.org"
+    }
+  }
+  , 
+   
+  {
+    "name": "Sarah Lourenzo",
+    "license": "LIC#: 4442893",
+    "image": "img/agents/sarah.lourenzo.png",
+    "contact": {
+      "phone": "707-616-5318",
+      "email": "sarah.lourenzo@mypfsa.org"
+    }
+  }
+  , 
+   
+  {
+    "name": "Moises Lourenco",
+    "license": "LIC#: 4360980",
+    "image": "img/agents/moises.lourenco.jpg",
+    "contact": {
+      "phone": "209-493-9090",
+      "email": "moiseslourenco@aol.com"
     }
   }
 ]
