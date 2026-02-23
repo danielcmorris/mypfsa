@@ -27,7 +27,7 @@ type CtaCard = {
 
         <div class="row justify-content-center">
           @for (s of staff; track s.name) {
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" style="padding-bottom: 10px;">
               <div class="single-staff-box">
                 <div class="staff-photo">
                   <img [src]="s.imageUrl" [alt]="s.alt" loading="lazy" decoding="async" />
@@ -58,8 +58,9 @@ type CtaCard = {
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-      margin-bottom: 30px;
+     
       height: 100%;
+     
     }
 
     .staff-photo{
@@ -98,16 +99,22 @@ type CtaCard = {
 })
 export class StaffComponent {
   staff: StaffMember[] = [
+     {
+      name: 'Miriam Ramos',
+      title: 'Accounts Payable',
+      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2026/02/Miriam-Ramos-CFMO-2-1-680x1024.jpg',
+      alt: 'Miriam Ramos'
+    },
     {
       name: 'Bernice Armas-Martinez',
       title: 'Chief Executive Officer',
-      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2023/03/Bernice-scaled.jpeg',
+      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2026/02/Bernice-Armas-Martinez-CEO-683x1024.png',
       alt: 'Bernice Armas-Martinez'
     },
     {
       name: 'Jerry Escobar',
       title: 'Chief Marketing Officer',
-      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2023/03/Jerry-scaled.jpeg',
+      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2026/02/Jerry-Escobar-CMO-683x1024.png',
       alt: 'Jerry Escobar'
     },
     {
@@ -119,32 +126,41 @@ export class StaffComponent {
     {
       name: 'Addie Medeiros',
       title: 'Senior Membership Services',
-      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2023/02/Addie-scaled.jpeg',
+      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2026/02/Addie-Medeiros-683x1024.png',
       alt: 'Addie Medeiros'
     },
     {
       name: 'Carley Azevedo',
       title: 'New Business/Publisher',
-      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2024/01/carley.2.jpeg',
+      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2026/02/Carley-Azevedo-683x1024.png',
       alt: 'Carley Azevedo'
     },
     {
       name: 'Billy Gonzales',
       title: 'Accounting Clerk/Agent',
-      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2024/07/billy.png',
+      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2026/02/Billy-Gonzales-683x1024.png',
       alt: 'Billy Gonzales'
     },
-    {
-      name: 'Miriam Ramos',
-      title: 'Accounts Payable',
-      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2024/11/Miriam_Ramos-scaled.jpeg',
-      alt: 'Miriam Ramos'
-    },
+   
     {
       name: 'Maricarmen Aguilar',
       title: 'Data Entry Clerk',
-      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2024/11/Maricarmen_Aguilar-scaled.jpeg',
+      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2026/02/Maricarmen-Aguilar_-1-683x1024.jpg',
       alt: 'Maricarmen Aguilar'
+    }
+    ,
+    {
+      name: 'Hailey Magana',
+      title: 'Data Entry Clerk',
+      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2026/02/Hailey-Magana-683x1024.png',
+      alt: 'Hailey Magana'
+    }
+    ,
+    {
+      name: 'Erica Calderon',
+      title: 'Data Entry Clerk',
+      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2026/02/Erica-Calderon-683x1024.png',
+      alt: 'Erica Calderon'
     }
   ];
 
