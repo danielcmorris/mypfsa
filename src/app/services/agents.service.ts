@@ -15,7 +15,7 @@ export class AgentsService {
 
   getAgents(): Observable<Agent[]> {
     if (!this.agents$) {
-      this.agents$ = this.http.get<Agent[]>(`${this.server}/api/agents`).pipe(
+      this.agents$ = this.http.get<Agent[]>(`${this.server}/api/agent`).pipe(
         shareReplay(1)
       );
     }
