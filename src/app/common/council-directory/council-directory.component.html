@@ -11,7 +11,7 @@
           }
         </select>
       </div> -->
-      
+
       <div class="filter-group">
         <label for="city-filter">Filter by City:</label>
         <select id="city-filter" [value]="selectedCity" (change)="onCityChange($event)">
@@ -41,39 +41,27 @@
           <tr>
             <th>Council #</th>
             <th>Location</th>
-            <th>Meeting Information</th>
             <th>Secretary</th>
           </tr>
         </thead>
         <tbody>
-          @for (council of filteredCouncils; track $index) {
+          @for (council of filteredCouncils; track council.councilID) {
             <tr>
               <td class="council-number" data-label="Council">
-                <strong>Council #{{ council.councilNumber }}</strong>
-                <div class="council-name">{{ council.councilName }}</div>
+                <strong>Council #{{ council.code }}</strong>
+                <div class="council-name">{{ council.name }}</div>
               </td>
               <td class="location" data-label="Location">
-                <div class="meeting-location">{{ council.meetingLocation }}</div>
-                @if (council.address) {
-                  <div class="address">{{ council.address }}</div>
+                @if (council.address1) {
+                  <div class="address">{{ council.address1 }}</div>
+                }
+                @if (council.address2) {
+                  <div class="address">{{ council.address2 }}</div>
                 }
                 @if (council.city || council.state) {
                   <div class="city-state">
                     {{ council.city }}@if (council.city && council.state) {<span>, </span>}{{ council.state }}
-                    @if (council.zipCode) {
-                      <span> {{ council.zipCode }}</span>
-                    }
                   </div>
-                }
-              </td>
-              <td class="meeting-info" data-label="Meeting Information">
-                @if (council.meetingSchedule) {
-                  <div class="schedule">
-                    <strong>Schedule:</strong> {{ council.meetingSchedule }}
-                  </div>
-                }
-                @if (council.meetingNote) {
-                  <div class="note">{{ council.meetingNote }}</div>
                 }
               </td>
               <td class="secretary" data-label="Secretary">

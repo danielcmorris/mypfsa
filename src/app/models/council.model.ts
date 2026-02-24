@@ -1,17 +1,14 @@
-
 export interface Council {
-  councilNumber: string;
-  councilName: string;
-  meetingLocation: string;
-  address: string;
-  city: string;
-  state: string;
-  zipCode: string;
-  meetingSchedule: string;
-  meetingNote: string;
+  councilID: number;
+  code: string;
+  name: string;
+  address1: string | null;
+  address2: string | null;
+  city: string | null;
+  state: string | null;
   secretary: {
-    name: string;
-    phone: string;
-    email: string;
+    name: string | null;
+    phone: string | null;
+    email: string | null;
   };
 }

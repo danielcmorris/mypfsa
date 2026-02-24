@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, PLATFORM_ID, inject } from '@angular/core';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { CouncilDirectoryService } from '../../services/council-directory.service';
 import { Council } from '../../models/council.model';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-council-directory',
@@ -14,25 +14,28 @@ export class CouncilDirectoryComponent {
   councils: Council[] = [];
   filteredCouncils: Council[] = [];
   loading = true;
-  
+
   uniqueStates: string[] = [];
   uniqueCities: string[] = [];
-  
+
   selectedState = 'all';
   selectedCity = 'all';
+
+  private platformId = inject(PLATFORM_ID);
 
   constructor(private councilService: CouncilDirectoryService) {}
 
   ngOnInit() {
-    this.councilService.getCouncils().subscribe(data => {
-      this.councils = data;
-      this.filteredCouncils = data;
-      this.loading = false;
-      
-      // Extract unique states and cities
-      this.uniqueStates = [...new Set(data.map(c => c.state).filter(s => s))].sort();
-      this.uniqueCities = [...new Set(data.map(c => c.city).filter(c => c))].sort();
-    });
+    if (isPlatformBrowser(this.platformId)) {
+      this.councilService.getCouncils().subscribe(data => {
+        this.councils = data;
+        this.filteredCouncils = data;
+        this.loading = false;
+
+        this.uniqueStates = [...new Set(data.map(c => c.state).filter((s): s is string => !!s))].sort();
+        this.uniqueCities = [...new Set(data.map(c => c.city).filter((c): c is string => !!c))].sort();
+      });
+    }
   }
 
   onStateChange(event: Event) {
