@@ -43,7 +43,7 @@
                     <div class="why-choose-us-slider">
                         <owl-carousel-o [options]="whyChooseUsSliderOptions">
 
-                            @for (agent of agents; track agent.license) {
+                            @for (agent of agents; track $index) {
                             <ng-template carouselSlide>
                                 <div class="why-choose-us-img" [style.backgroundImage]="'url(' + agent.image + ')'"
                                     [attr.aria-label]="agent.name">

@@ -1,22 +1,12 @@
-import { Component } from '@angular/core';
-
-type StaffMember = {
-  name: string;
-  title: string;
-  imageUrl: string;
-  alt: string;
-};
-
-type CtaCard = {
-  title: string;
-  href: string;
-  iconClass: string;
-  text: string;
-};
+import { Component, OnInit, PLATFORM_ID, inject } from '@angular/core';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
+import { StaffService } from '../../services/staff.service';
+import { Staff } from '../../models/staff.model';
 
 @Component({
   selector: 'app-staff',
   standalone: true,
+  imports: [CommonModule],
   template: `
     <div class="staff-area pt-100 pb-70" id="staff">
       <div class="container">
@@ -26,23 +16,21 @@ type CtaCard = {
         </div>
 
         <div class="row justify-content-center">
-          @for (s of staff; track s.name) {
+          @for (s of staff; track s.staffID) {
             <div class="col-lg-4 col-md-6" style="padding-bottom: 10px;">
               <div class="single-staff-box">
                 <div class="staff-photo">
-                  <img [src]="s.imageUrl" [alt]="s.alt" loading="lazy" decoding="async" />
+                  <img [src]="s.imgUri" [alt]="s.firstName + ' ' + s.lastName" loading="lazy" decoding="async" />
                 </div>
 
                 <div class="staff-content">
-                  <h3>{{ s.name }}</h3>
+                  <h3>{{ s.firstName }} {{ s.lastName }}</h3>
                   <p class="title">{{ s.title }}</p>
                 </div>
               </div>
             </div>
           }
         </div>
-
-       
 
       </div>
     </div>
@@ -58,9 +46,9 @@ type CtaCard = {
       border-radius: 10px;
       overflow: hidden;
       box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-     
+
       height: 100%;
-     
+
     }
 
     .staff-photo{
@@ -92,81 +80,20 @@ type CtaCard = {
       opacity: 0.8;
       font-size: 15px;
     }
-
-    .clickable { cursor: pointer; }
-    .clickable:focus { outline: 2px solid rgba(30,115,190,0.35); outline-offset: 3px; }
   `]
 })
-export class StaffComponent {
-  staff: StaffMember[] = [
-     {
-      name: 'Miriam Ramos',
-      title: 'Accounts Payable',
-      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2026/02/Miriam-Ramos-CFMO-2-1-680x1024.jpg',
-      alt: 'Miriam Ramos'
-    },
-    {
-      name: 'Bernice Armas-Martinez',
-      title: 'Chief Executive Officer',
-      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2026/02/Bernice-Armas-Martinez-CEO-683x1024.png',
-      alt: 'Bernice Armas-Martinez'
-    },
-    {
-      name: 'Jerry Escobar',
-      title: 'Chief Marketing Officer',
-      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2026/02/Jerry-Escobar-CMO-683x1024.png',
-      alt: 'Jerry Escobar'
-    },
-    {
-      name: 'Helen Crockett',
-      title: 'Senior Accountant',
-      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2024/07/helen-crockett.png',
-      alt: 'Helen Crockett'
-    },
-    {
-      name: 'Addie Medeiros',
-      title: 'Senior Membership Services',
-      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2026/02/Addie-Medeiros-683x1024.png',
-      alt: 'Addie Medeiros'
-    },
-    {
-      name: 'Carley Azevedo',
-      title: 'New Business/Publisher',
-      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2026/02/Carley-Azevedo-683x1024.png',
-      alt: 'Carley Azevedo'
-    },
-    {
-      name: 'Billy Gonzales',
-      title: 'Accounting Clerk/Agent',
-      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2026/02/Billy-Gonzales-683x1024.png',
-      alt: 'Billy Gonzales'
-    },
-   
-    {
-      name: 'Maricarmen Aguilar',
-      title: 'Data Entry Clerk',
-      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2026/02/Maricarmen-Aguilar_-1-683x1024.jpg',
-      alt: 'Maricarmen Aguilar'
-    }
-    ,
-    {
-      name: 'Hailey Magana',
-      title: 'Data Entry Clerk',
-      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2026/02/Hailey-Magana-683x1024.png',
-      alt: 'Hailey Magana'
-    }
-    ,
-    {
-      name: 'Erica Calderon',
-      title: 'Data Entry Clerk',
-      imageUrl: 'https://www.mypfsa.org/wp-content/uploads/2026/02/Erica-Calderon-683x1024.png',
-      alt: 'Erica Calderon'
-    }
-  ];
+export class StaffComponent implements OnInit {
+  staff: Staff[] = [];
 
-  
+  private platformId = inject(PLATFORM_ID);
 
-  open(url: string): void {
-    window.open(url, '_self');
+  constructor(private staffService: StaffService) {}
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.staffService.getStaff().subscribe(data => {
+        this.staff = data;
+      });
+    }
   }
 }
