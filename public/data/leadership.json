@@ -21,7 +21,9 @@
     "caption": "Bernice Armas-Martinez, Jerry Escobar",
     "members": [
       { "order": 1, "name": "Bernice Armas-Martinez", "position": "Chief Executive Officer", "councilNumber": "26", "councilName": "Stevinson/Turlock/Hilmar" },
-      { "order": 2, "name": "Jerry Escobar", "position": "Chief Marketing Officer", "councilNumber": "14", "councilName": "Mt. View" }
+      { "order": 2, "name": "Jerry Escobar", "position": "Chief Marketing Officer", "councilNumber": "14", "councilName": "Mt. View" },
+      { "order": 3, "name": "Miriam Ramos", "position": "Interim CFMO", "councilNumber": "", "councilName": "" }
+
     ]
   },
   {
