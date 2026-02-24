@@ -1,5 +1,5 @@
-import { Component, OnInit, PLATFORM_ID, inject } from '@angular/core';
-import { isPlatformBrowser, CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { StaffService } from '../../services/staff.service';
 import { Staff } from '../../models/staff.model';
 
@@ -85,15 +85,11 @@ import { Staff } from '../../models/staff.model';
 export class StaffComponent implements OnInit {
   staff: Staff[] = [];
 
-  private platformId = inject(PLATFORM_ID);
-
   constructor(private staffService: StaffService) {}
 
   ngOnInit(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      this.staffService.getStaff().subscribe(data => {
-        this.staff = data;
-      });
-    }
+    this.staffService.getStaff().subscribe(data => {
+      this.staff = data;
+    });
   }
 }

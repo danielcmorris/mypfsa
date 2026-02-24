@@ -1,5 +1,5 @@
-import { Component, PLATFORM_ID, inject } from '@angular/core';
-import { isPlatformBrowser, CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { CouncilDirectoryService } from '../../services/council-directory.service';
 import { Council } from '../../models/council.model';
 
@@ -21,21 +21,17 @@ export class CouncilDirectoryComponent {
   selectedState = 'all';
   selectedCity = 'all';
 
-  private platformId = inject(PLATFORM_ID);
-
   constructor(private councilService: CouncilDirectoryService) {}
 
   ngOnInit() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.councilService.getCouncils().subscribe(data => {
-        this.councils = data;
-        this.filteredCouncils = data;
-        this.loading = false;
+    this.councilService.getCouncils().subscribe(data => {
+      this.councils = data;
+      this.filteredCouncils = data;
+      this.loading = false;
 
-        this.uniqueStates = [...new Set(data.map(c => c.state).filter((s): s is string => !!s))].sort();
-        this.uniqueCities = [...new Set(data.map(c => c.city).filter((c): c is string => !!c))].sort();
-      });
-    }
+      this.uniqueStates = [...new Set(data.map(c => c.state).filter((s): s is string => !!s))].sort();
+      this.uniqueCities = [...new Set(data.map(c => c.city).filter((c): c is string => !!c))].sort();
+    });
   }
 
   onStateChange(event: Event) {

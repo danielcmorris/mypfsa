@@ -1,5 +1,4 @@
-import { Component, OnInit, PLATFORM_ID, inject } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { AgentsService } from '../../services/agents.service';
 import { Agent } from '../../models/agent.model';
@@ -28,16 +27,12 @@ export class Careers implements OnInit {
     agents: Agent[] = [];
     loading = true;
 
-    private platformId = inject(PLATFORM_ID);
-
     constructor(private agentsService: AgentsService) {}
 
     ngOnInit() {
-        if (isPlatformBrowser(this.platformId)) {
-            this.agentsService.getAgents().subscribe(data => {
-                this.agents = data;
-                this.loading = false;
-            });
-        }
+        this.agentsService.getAgents().subscribe(data => {
+            this.agents = data;
+            this.loading = false;
+        });
     }
 }
