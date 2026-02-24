@@ -1,9 +1,15 @@
 export interface Agent {
-  name: string;
+  agentID: number;
+  firstName: string;
+  lastName: string;
   license: string;
-  image: string;
-  contact: {
-    phone: string;
-    email: string;
-  };
+  phone: string | null;
+  email: string | null;
+  imgUri: string | null;
+  councilID: number | null;
+  officeHours: string | null;
+  languages: string | null;
+  facebook: string | null;
+  linkedIn: string | null;
+  fax: string | null;
 }

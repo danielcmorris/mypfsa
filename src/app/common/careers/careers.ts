@@ -1,39 +1,43 @@
-import { Component } from '@angular/core';
- 
+import { Component, OnInit, PLATFORM_ID, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { AgentsService } from '../../services/agents.service';
+import { Agent } from '../../models/agent.model';
 
 @Component({
     selector: 'app-careers',
     standalone: true,
-    imports: [ CarouselModule],
+    imports: [CarouselModule],
     templateUrl: './careers.html',
     styleUrl: './careers.scss'
 })
-export class Careers {
+export class Careers implements OnInit {
 
-    // Owl Carousel
     whyChooseUsSliderOptions: OwlOptions = {
-        items:1,
+        items: 1,
         loop: true,
         nav: false,
         dots: true,
         autoplay: true,
-		smartSpeed: 500,
-		animateIn: 'fadeIn',
-		animateOut: 'fadeOut',
+        smartSpeed: 500,
+        animateIn: 'fadeIn',
+        animateOut: 'fadeOut',
         autoplayHoverPause: true
-    }
+    };
 
-    agents: any[] = [];
-    loading = true; 
-  constructor(private agentsService: AgentsService) {}
+    agents: Agent[] = [];
+    loading = true;
 
+    private platformId = inject(PLATFORM_ID);
+
+    constructor(private agentsService: AgentsService) {}
 
     ngOnInit() {
-          this.agentsService.getAgents().subscribe(data => {
-      this.agents = data;
-      this.loading = false;
-    });
-    }   
+        if (isPlatformBrowser(this.platformId)) {
+            this.agentsService.getAgents().subscribe(data => {
+                this.agents = data;
+                this.loading = false;
+            });
+        }
+    }
 }

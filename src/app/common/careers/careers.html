@@ -45,8 +45,8 @@
 
                             @for (agent of agents; track $index) {
                             <ng-template carouselSlide>
-                                <div class="why-choose-us-img" [style.backgroundImage]="'url(' + agent.image + ')'"
-                                    [attr.aria-label]="agent.name">
+                                <div class="why-choose-us-img" [style.backgroundImage]="'url(' + (agent.imgUri || '') + ')'"
+                                    [attr.aria-label]="agent.firstName + ' ' + agent.lastName">
                                 </div>
                             </ng-template>
                             }

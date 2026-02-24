@@ -6,31 +6,24 @@
         </div>
         <div class="team-slider">
             <owl-carousel-o [options]="teamSlidesOptions">
-                @for (a of agents; track $index) {
+                @for (a of agents; track a.agentID) {
                    <ng-template carouselSlide>
                     <div class="single-team">
                         <div class="team-img">
-                            <img src="{{a.image}}" alt="{{a.name}}" loading="lazy">
-                            <!-- <ul class="team-link">
-                                <li><a href="#" target="_blank"><i class="bx bxl-facebook"></i></a></li>
-                                <li><a href="#" target="_blank"><i class="bx bxl-twitter"></i></a></li>
-                                <li><a href="#" target="_blank"><i class="bx bxl-pinterest-alt"></i></a></li>
-                                <li><a href="#" target="_blank"><i class="bx bxl-instagram"></i></a></li>
-                            </ul> -->
+                            <img [src]="a.imgUri || 'img/agents/default.png'" [alt]="a.firstName + ' ' + a.lastName" loading="lazy">
                         </div>
                         <div class="team-content">
-                            <h3>{{a.name}}</h3>
-                            <span>{{a.license}}</span>
+                            <h3>{{a.firstName}} {{a.lastName}}</h3>
+                            <span>LIC#: {{a.license}}</span>
                           <div style="text-align: left;border-top: solid 1px darkgray;padding:10px;margin:10px">
-
                             <ul>
-                                <li>Direct Line: {{a.contact.phone}}</li>
-                                <li>Email: {{a.contact.email}}</li>
+                                <li>Direct Line: {{a.phone}}</li>
+                                <li>Email: {{a.email}}</li>
                             </ul>
                         </div>
                         </div>
                     </div>
-                </ng-template>  
+                </ng-template>
                 }
             </owl-carousel-o>
         </div>

@@ -10,26 +10,26 @@
 
   @if (!loading) {
     <div class="agents-grid">
-      @for (agent of agents; track agent.name) {
+      @for (agent of agents; track agent.agentID) {
         <div class="agent-card">
           <div class="agent-image-wrapper">
-            <img [src]="agent.image" [alt]="agent.name" class="agent-image">
+            <img [src]="agent.imgUri || 'img/agents/default.png'" [alt]="agent.firstName + ' ' + agent.lastName" class="agent-image">
           </div>
           <div class="agent-info">
-            <h3 class="agent-name">{{ agent.name }}</h3>
-            <p class="agent-license">{{ agent.license }}</p>
-            
+            <h3 class="agent-name">{{ agent.firstName }} {{ agent.lastName }}</h3>
+            <p class="agent-license">LIC#: {{ agent.license }}</p>
+
             <div class="agent-contact">
-              @if (agent.contact.phone) {
+              @if (agent.phone) {
                 <div class="contact-item">
                   <i class="bx bx-phone"></i>
-                  <a [href]="'tel:' + agent.contact.phone">{{ agent.contact.phone }}</a>
+                  <a [href]="'tel:' + agent.phone">{{ agent.phone }}</a>
                 </div>
               }
-              @if (agent.contact.email) {
+              @if (agent.email) {
                 <div class="contact-item">
                   <i class="bx bx-envelope"></i>
-                  <a [href]="'mailto:' + agent.contact.email">{{ agent.contact.email }}</a>
+                  <a [href]="'mailto:' + agent.email">{{ agent.email }}</a>
                 </div>
               }
             </div>
