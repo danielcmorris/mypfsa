@@ -16,7 +16,7 @@ import { Observable, combineLatest, of } from 'rxjs';
 })
 export class Navbar implements OnInit {
 
-    private auth = inject(AuthService);
+    auth = inject(AuthService);
     mainMenu$: Observable<MenuItem[]>;
     socialLinks: MenuItem[] = [];
 
@@ -103,6 +103,14 @@ export class Navbar implements OnInit {
     }
     isSectionOpen3(index: number): boolean {
         return this.openSectionIndex3 === index;
+    }
+
+    login(): void {
+        this.auth.login();
+    }
+
+    logout(): void {
+        this.auth.logout();
     }
 
 }

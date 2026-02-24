@@ -48,18 +48,20 @@
                     </li>
                 </ul>
                 <div class="others-option">
-                    <!-- <form class="search-box">
-                        <input type="text" name="Search" placeholder="Search for..." class="form-control">
-                        <button type="submit" class="search-btn"><i class="bx bx-search"></i></button>
-                        <button type="submit" class="close-btn"><i class="bx bx-x"></i></button>
-                    </form> -->
-                    <!-- <div class="call-us">
-                        <i class="bx bx-phone-call"></i>
-                        <a href="tel:+1-(514)-312-5678">+1 (514) 312-5678</a>
-                    </div> -->
-                    <!-- <div class="get-quote">
-                        <a routerLink="/pricing" class="default-btn">Get a Quote</a>
-                    </div> -->
+                    <ng-container *ngIf="auth.isAuthenticated$ | async; else navNotAuthenticated">
+                        <div class="get-quote">
+                            <a (click)="logout()" class="default-btn" style="cursor: pointer;">
+                                <i class="bx bx-log-out" style="margin-right: 4px;"></i> Log Out
+                            </a>
+                        </div>
+                    </ng-container>
+                    <ng-template #navNotAuthenticated>
+                        <div class="get-quote">
+                            <a (click)="login()" class="default-btn" style="cursor: pointer;">
+                                <i class="bx bx-log-in" style="margin-right: 4px;"></i> Log In
+                            </a>
+                        </div>
+                    </ng-template>
                 </div>
             </div>
         </nav>
@@ -155,20 +157,17 @@
             </div>
         </div>
         <div class="others-option">
-            <div class="option-item">
-                <form class="search-box">
-                    <input type="text" class="input-search" placeholder="Search here...">
-                    <button type="submit">
-                        <i class='bx bx-search'></i>
-                    </button>
-                </form>
-            </div>
             <div class="option-item d-flex align-items-center">
-                <!-- <a routerLink="/pricing" class="default-btn">Get a Quote</a> -->
-                <div class="call-us">
-                    <i class="bx bx-phone-call"></i>
-                    <a href="tel:+1-(514)-312-5678">+1 (514) 312-5678</a>
-                </div>
+                <ng-container *ngIf="auth.isAuthenticated$ | async; else mobileNotAuthenticated">
+                    <a (click)="logout(); toggleClass()" class="default-btn" style="cursor: pointer; width: 100%;">
+                        <i class="bx bx-log-out" style="margin-right: 4px;"></i> Log Out
+                    </a>
+                </ng-container>
+                <ng-template #mobileNotAuthenticated>
+                    <a (click)="login()" class="default-btn" style="cursor: pointer; width: 100%;">
+                        <i class="bx bx-log-in" style="margin-right: 4px;"></i> Log In
+                    </a>
+                </ng-template>
             </div>
         </div>
     </div>
