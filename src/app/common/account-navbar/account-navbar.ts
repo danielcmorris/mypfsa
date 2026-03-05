@@ -24,6 +24,7 @@ export class AccountNavbar {
         { label: 'Tools', path: '/account/tools', icon: 'bx bx-wrench' },
         { label: 'Forms', path: '/account/forms', icon: 'bx bx-file' },
         { label: 'Festas', path: '/account/festas', icon: 'bx bx-calendar-event' },
+        { label: 'Agents', path: '/account/agents', icon: 'bx bx-user-pin' },
         { label: 'Council', path: '/account/council', icon: 'bx bx-group' },
         { label: 'Profile', path: '/account/profile', icon: 'bx bx-user' }
     ];

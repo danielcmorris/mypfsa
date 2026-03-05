@@ -1,0 +1,62 @@
+<app-account-top-header></app-account-top-header>
+<app-account-navbar></app-account-navbar>
+
+<div class="account-agents-area">
+    <div class="container-fluid">
+        <div class="page-header">
+            <div class="header-content">
+                <h1><i class="bx bx-user-pin"></i> Agents</h1>
+                <p>PFSA licensed insurance agents</p>
+            </div>
+        </div>
+
+        <div class="agents-content">
+            <!-- Loading -->
+            <div *ngIf="loading" class="state-message">
+                <i class="bx bx-loader-alt bx-spin"></i>
+                <span>Loading agents...</span>
+            </div>
+
+            <!-- Error -->
+            <div *ngIf="error" class="state-message error">
+                <i class="bx bx-error-circle"></i>
+                <span>Failed to load agents. Please try again later.</span>
+            </div>
+
+            <!-- Agent Table -->
+            <div *ngIf="!loading && !error" class="table-responsive">
+                <table class="agents-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>License</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Languages</th>
+                            <th>Office Hours</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let agent of agents" [routerLink]="['/account/agents', agent.agentID]" class="clickable-row">
+                            <td class="agent-name">
+                                <span class="avatar">{{ agent.firstName.charAt(0) }}{{ agent.lastName.charAt(0) }}</span>
+                                {{ agent.firstName }} {{ agent.lastName }}
+                            </td>
+                            <td><span class="badge">{{ agent.license }}</span></td>
+                            <td>
+                                <a [href]="'tel:' + agent.phone">{{ agent.phone }}</a>
+                            </td>
+                            <td>
+                                <a [href]="'mailto:' + agent.email">{{ agent.email }}</a>
+                            </td>
+                            <td>{{ agent.languages }}</td>
+                            <td class="office-hours">{{ agent.officeHours }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

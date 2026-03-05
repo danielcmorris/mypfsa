@@ -8,7 +8,7 @@ export const environment = {
   // Auth0 SPA application - new app created to debug 500 error
   auth0: {
     domain: 'pfsa.auth0.com',
-    clientId: '6zwN2Y86t4gaccYLPopYrIMSFLXJVwO1', // New SPA app
+    clientId: 'lXAacDYLliyoQDKu2UJXegLnYRhBqnNi', // New SPA app
     authorizationParams: {
       redirect_uri: 'http://localhost:4200/callback'
     }

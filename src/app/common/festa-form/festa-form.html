@@ -1,10 +1,21 @@
 <div class="festa-form-area pt-100 pb-70">
   <div class="container">
-    <div class="section-title">
-      <span class="top-title">Submit Your Event</span>
-      <h2>Add Your Own Festa</h2>
-      <p>Share your Portuguese festa with the community. Fill out the form below to submit your event for listing.</p>
-    </div>
+    @if (!isEditMode) {
+      <div class="section-title">
+        <span class="top-title">Submit Your Event</span>
+        <h2>Add Your Own Festa</h2>
+        <p>Share your Portuguese festa with the community. Fill out the form below to submit your event for listing.</p>
+      </div>
+    }
+
+    @if (isLoadingData) {
+      <div class="text-center py-5">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="mt-3">Loading festa data...</p>
+      </div>
+    }
 
     @if (submitSuccess) {
       <div class="row justify-content-center">
@@ -13,20 +24,33 @@
             <div class="success-icon">
               <i class="fa-solid fa-circle-check"></i>
             </div>
-            <h3>Thank You!</h3>
-            <p>Your festa has been submitted successfully. Our team will review it and add it to the schedule.</p>
-            <div class="success-actions">
-              <button class="btn btn-primary me-3" (click)="resetForm()">
-                <i class="fa-solid fa-plus"></i> Submit Another Festa
-              </button>
-              <button class="btn btn-outline-secondary" (click)="goBack()">
-                <i class="fa-solid fa-arrow-left"></i> Back to Schedule
-              </button>
-            </div>
+            @if (isEditMode) {
+              <h3>Festa Updated!</h3>
+              <p>The festa has been saved successfully.</p>
+              <div class="success-actions">
+                <button class="btn btn-primary me-3" (click)="resetForm()">
+                  <i class="fa-solid fa-pen"></i> Keep Editing
+                </button>
+                <button class="btn btn-outline-secondary" (click)="goBack()">
+                  <i class="fa-solid fa-arrow-left"></i> Back to Festas
+                </button>
+              </div>
+            } @else {
+              <h3>Thank You!</h3>
+              <p>Your festa has been submitted successfully. Our team will review it and add it to the schedule.</p>
+              <div class="success-actions">
+                <button class="btn btn-primary me-3" (click)="resetForm()">
+                  <i class="fa-solid fa-plus"></i> Submit Another Festa
+                </button>
+                <button class="btn btn-outline-secondary" (click)="goBack()">
+                  <i class="fa-solid fa-arrow-left"></i> Back to Schedule
+                </button>
+              </div>
+            }
           </div>
         </div>
       </div>
-    } @else {
+    } @else if (!isLoadingData) {
       <div class="row justify-content-center">
         <div class="col-lg-10">
           <div class="form-card">
@@ -180,20 +204,18 @@
                         <div class="col-md-3">
                           <label class="form-label">Date <span class="required">*</span></label>
                           <input
-                            type="text"
+                            type="date"
                             class="form-control"
                             formControlName="date"
                             [class.is-invalid]="isArrayFieldInvalid('schedule', i, 'date')"
-                            placeholder="e.g., Saturday, June 15, 2025"
                           >
                         </div>
                         <div class="col-md-2">
                           <label class="form-label">Time</label>
                           <input
-                            type="text"
+                            type="time"
                             class="form-control"
                             formControlName="time"
-                            placeholder="e.g., 6:00 p.m."
                           >
                         </div>
                         <div class="col-md-6">
@@ -363,7 +385,9 @@
                     <button type="submit" class="btn btn-primary" [disabled]="isSubmitting">
                       @if (isSubmitting) {
                         <span class="spinner-border spinner-border-sm me-2" role="status"></span>
-                        Submitting...
+                        {{ isEditMode ? 'Saving...' : 'Submitting...' }}
+                      } @else if (isEditMode) {
+                        <i class="fa-solid fa-floppy-disk"></i> Save Changes
                       } @else {
                         <i class="fa-solid fa-paper-plane"></i> Submit Festa
                       }

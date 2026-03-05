@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, shareReplay, map } from 'rxjs';
-import { Festa } from '../models/festa.model';
+import { Festa, ApiFestaRequest, ApiFestaResponse } from '../models/festa.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FestaService {
   private festas$?: Observable<Festa[]>;
+  private apiBase = `${environment.server}/api/Festas`;
 
   constructor(private http: HttpClient) { }
 
@@ -33,5 +35,21 @@ export class FestaService {
     return this.getFestas().pipe(
       map(festas => festas.filter(f => f.city.toLowerCase() === city.toLowerCase()))
     );
+  }
+
+  getApiFestaList(): Observable<ApiFestaResponse[]> {
+    return this.http.get<ApiFestaResponse[]>(this.apiBase);
+  }
+
+  getFestaById(id: number): Observable<ApiFestaResponse> {
+    return this.http.get<ApiFestaResponse>(`${this.apiBase}/${id}`);
+  }
+
+  createFesta(festa: ApiFestaRequest): Observable<unknown> {
+    return this.http.post(this.apiBase, festa);
+  }
+
+  updateFesta(id: number, festa: ApiFestaRequest): Observable<unknown> {
+    return this.http.put(`${this.apiBase}/${id}`, festa);
   }
 }

@@ -40,8 +40,12 @@ import { FestaSchedulePage } from './pages/festa-schedule-page/festa-schedule-pa
 import { FestaFormPage } from './pages/festa-form-page/festa-form-page';
 import { FestasPage } from './pages/festas-page/festas-page';
 import { AccountFestasPage } from './pages/account-festas-page/account-festas-page';
+import { FestaEditPage } from './pages/festa-edit-page/festa-edit-page';
 import { AccountToolsPage } from './pages/account-tools-page/account-tools-page';
 import { AccountProfilePage } from './pages/account-profile-page/account-profile-page';
+import { AccountAgentsPage } from './pages/account-agents-page/account-agents-page';
+import { AccountAgentDetailPage } from './pages/account-agent-detail-page/account-agent-detail-page';
+import { AccountAgentEditPage } from './pages/account-agent-edit-page/account-agent-edit-page';
 import { CallbackPage } from './pages/callback-page/callback-page';
 export const routes: Routes = [
     { path: '', component: HomeDemoOne },
@@ -89,8 +93,12 @@ export const routes: Routes = [
     { path: 'account/tools', component: AccountToolsPage, canActivate: [authGuard] },
     { path: 'account/forms', component: AccountFormsPage, canActivate: [authGuard] },
     { path: 'account/festas', component: AccountFestasPage, canActivate: [authGuard] },
+    { path: 'account/festas/:id/edit', component: FestaEditPage, canActivate: [authGuard] },
     { path: 'account/festa-submit', component: FestaFormPage, canActivate: [authGuard] },
     { path: 'account/council', component: DashboardPage, canActivate: [authGuard] }, // Placeholder - will be replaced
+    { path: 'account/agents', component: AccountAgentsPage, canActivate: [authGuard] },
+    { path: 'account/agents/:id', component: AccountAgentDetailPage, canActivate: [authGuard] },
+    { path: 'account/agents/:id/edit', component: AccountAgentEditPage, canActivate: [authGuard] },
     { path: 'account/profile', component: AccountProfilePage, canActivate: [authGuard] },
     { path: '**', component: ErrorPage } // This line will remain down from the whole component list
 ];

@@ -1,0 +1,97 @@
+<app-account-top-header></app-account-top-header>
+<app-account-navbar></app-account-navbar>
+
+<div class="account-agent-detail-area">
+    <div class="container-fluid">
+
+        <!-- Back link -->
+        <div class="top-bar">
+            <a routerLink="/account/agents" class="back-link">
+                <i class="bx bx-arrow-back"></i> Back to Agents
+            </a>
+            <a *ngIf="agent" [routerLink]="['/account/agents', agent.agentID, 'edit']" class="btn-edit">
+                <i class="bx bx-edit"></i> Edit
+            </a>
+        </div>
+
+        <!-- Loading -->
+        <div *ngIf="loading" class="state-message">
+            <i class="bx bx-loader-alt bx-spin"></i>
+            <span>Loading agent...</span>
+        </div>
+
+        <!-- Error -->
+        <div *ngIf="error" class="state-message error">
+            <i class="bx bx-error-circle"></i>
+            <span>Agent not found or failed to load.</span>
+        </div>
+
+        <!-- Agent Detail -->
+        <div *ngIf="!loading && !error && agent" class="agent-card">
+
+            <!-- Header -->
+            <div class="agent-header">
+                <div class="agent-avatar">
+                    <img *ngIf="agent.imgUri" [src]="agent.imgUri" [alt]="agent.firstName + ' ' + agent.lastName">
+                    <div *ngIf="!agent.imgUri" class="avatar-placeholder"></div>
+                </div>
+                <div class="agent-title">
+                    <h1>{{ agent.firstName }} {{ agent.lastName }}</h1>
+                    <span class="license-badge">License # {{ agent.license }}</span>
+                </div>
+            </div>
+
+            <!-- Detail Grid -->
+            <div class="detail-grid">
+
+                <div class="detail-section">
+                    <h2><i class="bx bx-phone"></i> Contact</h2>
+                    <dl>
+                        <dt>Phone</dt>
+                        <dd><a [href]="'tel:' + agent.phone">{{ agent.phone }}</a></dd>
+
+                        <ng-container *ngIf="agent.fax">
+                            <dt>Fax</dt>
+                            <dd>{{ agent.fax }}</dd>
+                        </ng-container>
+
+                        <dt>Email</dt>
+                        <dd><a [href]="'mailto:' + agent.email">{{ agent.email }}</a></dd>
+                    </dl>
+                </div>
+
+                <div class="detail-section">
+                    <h2><i class="bx bx-time"></i> Office Hours</h2>
+                    <p class="office-hours-text">{{ agent.officeHours }}</p>
+                </div>
+
+                <div class="detail-section">
+                    <h2><i class="bx bx-world"></i> Languages</h2>
+                    <div class="language-tags">
+                        <span *ngFor="let lang of agent.languages.split(',')" class="lang-tag">
+                            {{ lang.trim() }}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="detail-section" *ngIf="agent.facebook || agent.linkedIn">
+                    <h2><i class="bx bx-link"></i> Social</h2>
+                    <dl>
+                        <ng-container *ngIf="agent.facebook">
+                            <dt>Facebook</dt>
+                            <dd><a [href]="agent.facebook" target="_blank" rel="noopener">{{ agent.facebook }}</a></dd>
+                        </ng-container>
+                        <ng-container *ngIf="agent.linkedIn">
+                            <dt>LinkedIn</dt>
+                            <dd><a [href]="agent.linkedIn" target="_blank" rel="noopener">{{ agent.linkedIn }}</a></dd>
+                        </ng-container>
+                    </dl>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<app-footer></app-footer>

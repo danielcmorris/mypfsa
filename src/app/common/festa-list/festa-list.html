@@ -74,26 +74,36 @@
     <!-- Festa Cards -->
     @if (!isLoading) {
       <div class="festa-cards">
-        @for (festa of filteredFestas; track festa.id) {
+        @for (festa of filteredFestas; track festa.festaID) {
           <div class="festa-card mb-4">
             <div class="card">
               <div
                 class="card-header"
-                (click)="toggleExpand(festa.id)"
-                [class.expanded]="isExpanded(festa.id)"
+                (click)="toggleExpand(festa.festaID)"
+                [class.expanded]="isExpanded(festa.festaID)"
               >
                 <div class="d-flex justify-content-between align-items-start">
                   <div class="festa-header-info">
-                    <h5 class="mb-1">{{ getFestaTitle(festa) }}</h5>
+                    <h5 class="mb-1">
+                      {{ getFestaTitle(festa) }}
+                      <a
+                        [routerLink]="['/account/festas', festa.festaID, 'edit']"
+                        class="edit-btn"
+                        title="Edit festa"
+                        (click)="$event.stopPropagation()"
+                      >
+                        <i class="fa-solid fa-pen-to-square"></i>
+                      </a>
+                    </h5>
                     <div class="festa-meta">
                       <span class="location">
                         <i class="fa-solid fa-location-dot"></i>
-                        {{ festa.city }}, {{ festa.state }}
+                        {{ festa.city }}@if (festa.state) {, {{ festa.state }}}
                       </span>
-                      @if (festa.councilNumber) {
+                      @if (festa.councilCode) {
                         <span class="council">
                           <i class="fa-solid fa-users"></i>
-                          Council #{{ festa.councilNumber }}
+                          Council #{{ festa.councilCode }}
                         </span>
                       }
                       <span class="date">
@@ -103,81 +113,89 @@
                     </div>
                   </div>
                   <button class="btn btn-link expand-btn">
-                    <i class="fa-solid" [class.fa-chevron-down]="!isExpanded(festa.id)" [class.fa-chevron-up]="isExpanded(festa.id)"></i>
+                    <i class="fa-solid" [class.fa-chevron-down]="!isExpanded(festa.festaID)" [class.fa-chevron-up]="isExpanded(festa.festaID)"></i>
                   </button>
                 </div>
               </div>
 
-              @if (isExpanded(festa.id)) {
+              @if (isExpanded(festa.festaID)) {
                 <div class="card-body">
                   <!-- Contact Information -->
                   <div class="contact-info mb-4">
                     <h6><i class="fa-solid fa-address-book"></i> Contact Information</h6>
                     <div class="info-grid">
-                      @if (festa.contactInfo.hall) {
+                      @if (festa.locationName) {
                         <div class="info-item">
                           <strong>Hall:</strong>
-                          <span>{{ festa.contactInfo.hall }}</span>
+                          <span>{{ festa.locationName }}</span>
                         </div>
                       }
-                      @if (festa.contactInfo.address) {
+                      @if (festa.streetAddress) {
                         <div class="info-item">
                           <strong>Address:</strong>
-                          <span>{{ festa.contactInfo.address }}</span>
+                          <span>{{ festa.streetAddress }}</span>
                         </div>
                       }
-                      @if (festa.contactInfo.mailingAddress) {
+                      @if (festa.mailingAddress) {
                         <div class="info-item">
                           <strong>Mailing:</strong>
-                          <span>{{ festa.contactInfo.mailingAddress }}</span>
+                          <span>{{ festa.mailingAddress }}</span>
                         </div>
                       }
-                      @if (festa.contactInfo.phone) {
+                      @if (festa.phone) {
                         <div class="info-item">
                           <strong>Phone:</strong>
-                          <a href="tel:{{ festa.contactInfo.phone }}">{{ festa.contactInfo.phone }}</a>
+                          <a href="tel:{{ festa.phone }}">{{ festa.phone }}</a>
                         </div>
                       }
-                      @if (festa.contactInfo.email) {
+                      @if (festa.email) {
                         <div class="info-item">
                           <strong>Email:</strong>
-                          <a href="mailto:{{ festa.contactInfo.email }}">{{ festa.contactInfo.email }}</a>
+                          <a href="mailto:{{ festa.email }}">{{ festa.email }}</a>
+                        </div>
+                      }
+                      @if (festa.eventLink) {
+                        <div class="info-item">
+                          <strong>Event Link:</strong>
+                          <a [href]="festa.eventLink" target="_blank" rel="noopener">{{ festa.eventLink }}</a>
                         </div>
                       }
                     </div>
                   </div>
 
                   <!-- Schedule -->
-                  <div class="schedule-section">
-                    <h6><i class="fa-solid fa-clock"></i> Event Schedule</h6>
-                    <div class="table-responsive">
-                      <table class="table table-striped schedule-table">
-                        <thead>
-                          <tr>
-                            <th>Date</th>
-                            <th>Time</th>
-                            <th>Event</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          @for (event of festa.schedule; track $index) {
+                  @if (festa.schedules && festa.schedules.length > 0) {
+                    <div class="schedule-section">
+                      <h6><i class="fa-solid fa-clock"></i> Event Schedule</h6>
+                      <div class="table-responsive">
+                        <table class="table table-striped schedule-table">
+                          <thead>
                             <tr>
-                              <td class="date-cell">{{ event.date }}</td>
-                              <td class="time-cell">{{ event.time || '-' }}</td>
-                              <td class="event-cell">{{ event.event }}</td>
+                              <th>Date</th>
+                              <th>Time</th>
+                              <th>Event</th>
                             </tr>
-                          }
-                        </tbody>
-                      </table>
+                          </thead>
+                          <tbody>
+                            @for (event of festa.schedules; track event.festaScheduleID) {
+                              <tr>
+                                <td class="date-cell">{{ formatDate(event.eventDate) }}</td>
+                                <td class="time-cell">{{ formatTime(event.eventTime) }}</td>
+                                <td class="event-cell">{{ event.description }}</td>
+                              </tr>
+                            }
+                          </tbody>
+                        </table>
+                      </div>
                     </div>
-                  </div>
+                  }
 
                   <!-- Additional Notes -->
-                  @if (festa.additionalNotes) {
+                  @if (festa.publicNotes) {
                     <div class="additional-notes mt-3">
                       <div class="alert alert-info">
                         <i class="fa-solid fa-info-circle"></i>
-                        {{ festa.additionalNotes }}
+                        {{ festa.publicNotes }}
                       </div>
                     </div>
                   }

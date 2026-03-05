@@ -1,0 +1,26 @@
+<app-account-top-header></app-account-top-header>
+<app-account-navbar></app-account-navbar>
+
+<div class="account-page-area">
+    <div class="container-fluid">
+        <div class="page-header">
+            <div class="header-content">
+                <h1><i class="bx bx-edit"></i> Edit Festa</h1>
+                <p>Update the details for this festa listing</p>
+            </div>
+            <div class="header-actions">
+                <a routerLink="/account/festas" class="btn-back">
+                    <i class="bx bx-arrow-back"></i> Back to Festas
+                </a>
+            </div>
+        </div>
+
+        <div class="page-content">
+            @if (festaId) {
+                <app-festa-form [festaId]="festaId"></app-festa-form>
+            }
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
