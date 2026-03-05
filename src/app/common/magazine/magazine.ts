@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NewsletterService } from '../../services/newsletter.service';
-import { Newsletter } from '../../models/newsletter.model';
+import { Magazine } from '../../models/magazine.model';
 import { MagazineService } from '../../services/magazine.service';
 
 @Component({
@@ -12,7 +11,7 @@ import { MagazineService } from '../../services/magazine.service';
   styleUrl: './magazine.scss'
 })
 export class MagazineComponent implements OnInit {
-  currentMagazine: Newsletter | null = null;
+  currentMagazine: Magazine | null = null;
   loading = true;
   error = false;
 
