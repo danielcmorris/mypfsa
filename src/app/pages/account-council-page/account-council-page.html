@@ -1,0 +1,76 @@
+<app-account-top-header></app-account-top-header>
+<app-account-navbar></app-account-navbar>
+
+<div class="account-council-area">
+    <div class="container-fluid">
+        <div class="page-header">
+            <div class="header-content">
+                <h1><i class="bx bx-group"></i> Councils</h1>
+                <p>PFSA council directory</p>
+            </div>
+        </div>
+
+        <div class="council-content">
+            <!-- Loading -->
+            <div *ngIf="loading" class="state-message">
+                <i class="bx bx-loader-alt bx-spin"></i>
+                <span>Loading councils...</span>
+            </div>
+
+            <!-- Error -->
+            <div *ngIf="error" class="state-message error">
+                <i class="bx bx-error-circle"></i>
+                <span>Failed to load councils. Please try again later.</span>
+            </div>
+
+            <!-- Table -->
+            <div *ngIf="!loading && !error" class="table-responsive">
+                <table class="council-table">
+                    <thead>
+                        <tr>
+                            <th class="col-code">#</th>
+                            <th>Council Name</th>
+                            <th>City</th>
+                            <th>Address</th>
+                            <th>Secretary</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let c of councils">
+                            <td class="col-code">
+                                <span class="code-badge">{{ c.code }}</span>
+                            </td>
+                            <td class="col-name">{{ c.name }}</td>
+                            <td class="col-city">{{ c.city }}<span *ngIf="c.state">, {{ c.state }}</span></td>
+                            <td class="col-address">
+                                <span *ngIf="c.address1">{{ c.address1 }}</span>
+                                <span *ngIf="c.address2"><br>{{ c.address2 }}</span>
+                                <span *ngIf="!c.address1" class="text-muted">—</span>
+                            </td>
+                            <td class="col-secretary">
+                                <span *ngIf="c.secretary?.name">{{ c.secretary!.name }}</span>
+                                <span *ngIf="!c.secretary?.name" class="text-muted">—</span>
+                            </td>
+                            <td class="col-phone">
+                                <a *ngIf="c.secretary?.phone" [href]="'tel:' + c.secretary!.phone">
+                                    {{ c.secretary!.phone }}
+                                </a>
+                                <span *ngIf="!c.secretary?.phone" class="text-muted">—</span>
+                            </td>
+                            <td class="col-email">
+                                <a *ngIf="c.secretary?.email" [href]="'mailto:' + c.secretary!.email">
+                                    {{ c.secretary!.email }}
+                                </a>
+                                <span *ngIf="!c.secretary?.email" class="text-muted">—</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

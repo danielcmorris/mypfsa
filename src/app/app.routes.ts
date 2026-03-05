@@ -46,6 +46,7 @@ import { AccountProfilePage } from './pages/account-profile-page/account-profile
 import { AccountAgentsPage } from './pages/account-agents-page/account-agents-page';
 import { AccountAgentDetailPage } from './pages/account-agent-detail-page/account-agent-detail-page';
 import { AccountAgentEditPage } from './pages/account-agent-edit-page/account-agent-edit-page';
+import { AccountCouncilPage } from './pages/account-council-page/account-council-page';
 import { AccountNewslettersPage } from './pages/account-newsletters-page/account-newsletters-page';
 import { AccountNewsletterEditPage } from './pages/account-newsletter-edit-page/account-newsletter-edit-page';
 import { CallbackPage } from './pages/callback-page/callback-page';
@@ -97,7 +98,7 @@ export const routes: Routes = [
     { path: 'account/festas', component: AccountFestasPage, canActivate: [authGuard] },
     { path: 'account/festas/:id/edit', component: FestaEditPage, canActivate: [authGuard] },
     { path: 'account/festa-submit', component: FestaFormPage, canActivate: [authGuard] },
-    { path: 'account/council', component: DashboardPage, canActivate: [authGuard] }, // Placeholder - will be replaced
+    { path: 'account/council', component: AccountCouncilPage, canActivate: [authGuard] },
     { path: 'account/agents', component: AccountAgentsPage, canActivate: [authGuard] },
     { path: 'account/agents/new', component: AccountAgentEditPage, canActivate: [authGuard] },
     { path: 'account/agents/:id', component: AccountAgentDetailPage, canActivate: [authGuard] },
