@@ -1,4 +1,5 @@
 export interface Newsletter {
+  newsletterID: number;
   type: string;
   releaseDate: string;
   imageUrl: string;

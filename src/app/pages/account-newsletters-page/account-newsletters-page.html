@@ -1,0 +1,78 @@
+<app-account-top-header></app-account-top-header>
+<app-account-navbar></app-account-navbar>
+
+<div class="account-newsletters-area">
+    <div class="container-fluid">
+        <div class="page-header">
+            <div class="header-content">
+                <h1><i class="bx bx-news"></i> Newsletters</h1>
+                <p>PFSA newsletter archive</p>
+            </div>
+            <a [routerLink]="['/account/newsletters/new']" class="btn-add-new">
+                <i class="bx bx-plus"></i> Add New
+            </a>
+        </div>
+
+        <div class="newsletters-content">
+            <!-- Loading -->
+            <div *ngIf="loading" class="state-message">
+                <i class="bx bx-loader-alt bx-spin"></i>
+                <span>Loading newsletters...</span>
+            </div>
+
+            <!-- Error -->
+            <div *ngIf="error" class="state-message error">
+                <i class="bx bx-error-circle"></i>
+                <span>Failed to load newsletters. Please try again later.</span>
+            </div>
+
+            <!-- Empty -->
+            <div *ngIf="!loading && !error && newsletters.length === 0" class="state-message">
+                <i class="bx bx-file"></i>
+                <span>No newsletters found.</span>
+            </div>
+
+            <!-- Table -->
+            <div *ngIf="!loading && !error && newsletters.length > 0" class="table-responsive">
+                <table class="newsletters-table">
+                    <thead>
+                        <tr>
+                            <th class="col-thumb"></th>
+                            <th>Title</th>
+                            <th>Type</th>
+                            <th>Release Date</th>
+                            <th class="col-actions"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let n of newsletters">
+                            <td class="col-thumb">
+                                <img *ngIf="n.imageUrl" [src]="n.imageUrl" [alt]="n.title" class="thumb">
+                                <div *ngIf="!n.imageUrl" class="thumb-placeholder">
+                                    <i class="bx bx-news"></i>
+                                </div>
+                            </td>
+                            <td class="col-title">
+                                <a *ngIf="n.fileUrl" [href]="n.fileUrl" target="_blank" rel="noopener" class="pdf-link">
+                                    <i class="bx bxs-file-pdf"></i> {{ n.title }}
+                                </a>
+                                <span *ngIf="!n.fileUrl">{{ n.title }}</span>
+                            </td>
+                            <td>
+                                <span class="type-badge">{{ n.type }}</span>
+                            </td>
+                            <td class="col-date">{{ n.releaseDate }}</td>
+                            <td class="col-actions">
+                                <a [routerLink]="['/account/newsletters', n.newsletterID, 'edit']" class="btn-edit">
+                                    <i class="bx bx-edit"></i> Edit
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

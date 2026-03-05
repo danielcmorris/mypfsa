@@ -1,0 +1,159 @@
+<app-account-top-header></app-account-top-header>
+<app-account-navbar></app-account-navbar>
+
+<div class="account-newsletter-edit-area">
+    <div class="container-fluid">
+
+        <!-- Top bar -->
+        <div class="top-bar">
+            <a routerLink="/account/newsletters" class="back-link">
+                <i class="bx bx-arrow-back"></i> Back to Newsletters
+            </a>
+        </div>
+
+        <!-- Loading -->
+        <div *ngIf="loading" class="state-message">
+            <i class="bx bx-loader-alt bx-spin"></i>
+            <span>Loading newsletter...</span>
+        </div>
+
+        <!-- Load Error -->
+        <div *ngIf="loadError" class="state-message error">
+            <i class="bx bx-error-circle"></i>
+            <span>Newsletter not found or failed to load.</span>
+        </div>
+
+        <div *ngIf="!loading && !loadError && newsletter" class="edit-layout" [class.new-layout]="isNew">
+
+            <!-- Files Card (edit mode only) -->
+            <div *ngIf="!isNew" class="card files-card">
+                <h2><i class="bx bx-file"></i> Files</h2>
+
+                <!-- Image section -->
+                <div class="file-section">
+                    <div class="file-section-label">Cover Image</div>
+
+                    <div class="image-preview">
+                        <img *ngIf="imagePreview || newsletter.imageUrl" [src]="imagePreview || newsletter.imageUrl" alt="Cover image">
+                        <div *ngIf="!imagePreview && !newsletter.imageUrl" class="image-placeholder">
+                            <i class="bx bx-image"></i>
+                        </div>
+                    </div>
+
+                    <label class="file-label">
+                        <input type="file" accept="image/jpeg,image/png,image/webp" (change)="onImageSelected($event)" hidden>
+                        <i class="bx bx-upload"></i> Choose Image
+                    </label>
+                    <p class="file-hint">JPEG, PNG, or WebP — max 5MB</p>
+
+                    <div *ngIf="selectedImage" class="selected-file">
+                        <i class="bx bx-file"></i> {{ selectedImage.name }}
+                    </div>
+                    <div *ngIf="imageSuccess" class="alert alert-success mt-2">
+                        <i class="bx bx-check-circle"></i> Image uploaded.
+                    </div>
+                    <div *ngIf="imageError" class="alert alert-error mt-2">
+                        <i class="bx bx-error-circle"></i> {{ imageError }}
+                    </div>
+                </div>
+
+                <div class="file-divider"></div>
+
+                <!-- PDF section -->
+                <div class="file-section">
+                    <div class="file-section-label">Newsletter PDF</div>
+
+                    <div class="pdf-status">
+                        <a *ngIf="newsletter.fileUrl" [href]="newsletter.fileUrl" target="_blank" rel="noopener" class="pdf-current-link">
+                            <i class="bx bxs-file-pdf"></i> View current PDF
+                        </a>
+                        <span *ngIf="!newsletter.fileUrl" class="pdf-none">No PDF uploaded yet</span>
+                    </div>
+
+                    <label class="file-label mt-2">
+                        <input type="file" accept="application/pdf" (change)="onPdfSelected($event)" hidden>
+                        <i class="bx bx-upload"></i> Choose PDF
+                    </label>
+                    <p class="file-hint">PDF only — max 20MB</p>
+
+                    <div *ngIf="selectedPdf" class="selected-file">
+                        <i class="bx bx-file"></i> {{ selectedPdf.name }}
+                    </div>
+                    <div *ngIf="pdfSuccess" class="alert alert-success mt-2">
+                        <i class="bx bx-check-circle"></i> PDF uploaded.
+                    </div>
+                    <div *ngIf="pdfError" class="alert alert-error mt-2">
+                        <i class="bx bx-error-circle"></i> {{ pdfError }}
+                    </div>
+                </div>
+
+                <button class="btn-upload" (click)="uploadFiles()" [disabled]="(!selectedImage && !selectedPdf) || isUploading">
+                    <i class="bx" [ngClass]="isUploading ? 'bx-loader-alt bx-spin' : 'bx-cloud-upload'"></i>
+                    {{ isUploading ? 'Uploading...' : 'Upload Files' }}
+                </button>
+            </div>
+
+            <!-- Edit Form Card -->
+            <div class="card form-card">
+                <h2>
+                    <i class="bx" [ngClass]="isNew ? 'bx-file-plus' : 'bx-edit'"></i>
+                    {{ isNew ? 'New Newsletter' : 'Edit Newsletter' }}
+                </h2>
+
+                <form (ngSubmit)="saveNewsletter()" #nlForm="ngForm">
+
+                    <div class="form-group">
+                        <label for="formMonth">Release Month</label>
+                        <input id="formMonth" type="month" [(ngModel)]="formMonth" name="formMonth" required>
+                        <p class="field-hint">Sets the year-month for file naming (e.g. 2024-03 → 2024-03.jpg)</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="formTitle">Title</label>
+                        <input id="formTitle" type="text" [(ngModel)]="formTitle" name="formTitle" required
+                               placeholder="e.g. March 2024 Newsletter">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="formType">Type</label>
+                        <select id="formType" [(ngModel)]="formType" name="formType">
+                            <option value="Newsletter">Newsletter</option>
+                            <option value="Supplement">Supplement</option>
+                            <option value="Special Edition">Special Edition</option>
+                        </select>
+                    </div>
+
+                    <div *ngIf="saveSuccess" class="alert alert-success">
+                        <i class="bx bx-check-circle"></i> Newsletter saved successfully.
+                    </div>
+                    <div *ngIf="saveError" class="alert alert-error">
+                        <i class="bx bx-error-circle"></i> {{ saveError }}
+                    </div>
+                    <div *ngIf="deleteError" class="alert alert-error">
+                        <i class="bx bx-error-circle"></i> {{ deleteError }}
+                    </div>
+                    <div *ngIf="deleteConfirm" class="alert alert-warning">
+                        <i class="bx bx-error"></i> Are you sure? This will permanently remove the newsletter. Click Delete again to confirm.
+                    </div>
+
+                    <div class="form-actions">
+                        <button *ngIf="!isNew" type="button" class="btn-delete" (click)="deleteNewsletter()" [disabled]="deleting">
+                            <i class="bx" [ngClass]="deleting ? 'bx-loader-alt bx-spin' : 'bx-trash'"></i>
+                            {{ deleting ? 'Deleting...' : (deleteConfirm ? 'Delete' : 'Delete') }}
+                        </button>
+                        <div class="spacer"></div>
+                        <a routerLink="/account/newsletters" class="btn-cancel">Cancel</a>
+                        <button type="submit" class="btn-save" [disabled]="saving || nlForm.invalid">
+                            <i class="bx" [ngClass]="saving ? 'bx-loader-alt bx-spin' : 'bx-save'"></i>
+                            {{ saving ? 'Saving...' : (isNew ? 'Create Newsletter' : 'Save Changes') }}
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

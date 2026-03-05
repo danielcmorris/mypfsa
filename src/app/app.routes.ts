@@ -46,6 +46,8 @@ import { AccountProfilePage } from './pages/account-profile-page/account-profile
 import { AccountAgentsPage } from './pages/account-agents-page/account-agents-page';
 import { AccountAgentDetailPage } from './pages/account-agent-detail-page/account-agent-detail-page';
 import { AccountAgentEditPage } from './pages/account-agent-edit-page/account-agent-edit-page';
+import { AccountNewslettersPage } from './pages/account-newsletters-page/account-newsletters-page';
+import { AccountNewsletterEditPage } from './pages/account-newsletter-edit-page/account-newsletter-edit-page';
 import { CallbackPage } from './pages/callback-page/callback-page';
 export const routes: Routes = [
     { path: '', component: HomeDemoOne },
@@ -100,6 +102,9 @@ export const routes: Routes = [
     { path: 'account/agents/new', component: AccountAgentEditPage, canActivate: [authGuard] },
     { path: 'account/agents/:id', component: AccountAgentDetailPage, canActivate: [authGuard] },
     { path: 'account/agents/:id/edit', component: AccountAgentEditPage, canActivate: [authGuard] },
+    { path: 'account/newsletters', component: AccountNewslettersPage, canActivate: [authGuard] },
+    { path: 'account/newsletters/new', component: AccountNewsletterEditPage, canActivate: [authGuard] },
+    { path: 'account/newsletters/:id/edit', component: AccountNewsletterEditPage, canActivate: [authGuard] },
     { path: 'account/profile', component: AccountProfilePage, canActivate: [authGuard] },
     { path: '**', component: ErrorPage } // This line will remain down from the whole component list
 ];
