@@ -34,12 +34,17 @@ interface Agent {
 export class AccountAgentEditPage implements OnInit {
     agent: Agent | null = null;
     agentId!: number;
+    isNew = false;
     loading = true;
     loadError = false;
 
     saving = false;
     saveSuccess = false;
     saveError: string | null = null;
+
+    deleting = false;
+    deleteConfirm = false;
+    deleteError: string | null = null;
 
     uploading = false;
     uploadSuccess = false;
@@ -54,17 +59,38 @@ export class AccountAgentEditPage implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        this.agentId = parseInt(this.route.snapshot.paramMap.get('id')!, 10);
-        this.http.get<Agent>(`${environment.server}/api/agent/${this.agentId}`).subscribe({
-            next: (data) => {
-                this.agent = { ...data };
-                this.loading = false;
-            },
-            error: () => {
-                this.loadError = true;
-                this.loading = false;
-            }
-        });
+        const idParam = this.route.snapshot.paramMap.get('id');
+        if (!idParam || idParam === 'new') {
+            this.isNew = true;
+            this.agent = {
+                agentID: 0,
+                firstName: '',
+                lastName: '',
+                license: '',
+                phone: '',
+                email: '',
+                imgUri: null,
+                councilID: null,
+                officeHours: '',
+                languages: '',
+                facebook: null,
+                linkedIn: null,
+                fax: null
+            };
+            this.loading = false;
+        } else {
+            this.agentId = parseInt(idParam!, 10);
+            this.http.get<Agent>(`${environment.server}/api/agent/${this.agentId}`).subscribe({
+                next: (data) => {
+                    this.agent = { ...data };
+                    this.loading = false;
+                },
+                error: () => {
+                    this.loadError = true;
+                    this.loading = false;
+                }
+            });
+        }
     }
 
     onFileSelected(event: Event): void {
@@ -100,21 +126,53 @@ export class AccountAgentEditPage implements OnInit {
         });
     }
 
+    deleteAgent(): void {
+        if (!this.deleteConfirm) {
+            this.deleteConfirm = true;
+            return;
+        }
+        this.deleting = true;
+        this.deleteError = null;
+        this.http.delete(`${environment.server}/api/agent/${this.agentId}`).subscribe({
+            next: () => {
+                this.router.navigate(['/account/agents']);
+            },
+            error: (err) => {
+                this.deleting = false;
+                this.deleteConfirm = false;
+                this.deleteError = err.error?.error ?? 'Delete failed. Please try again.';
+            }
+        });
+    }
+
     saveAgent(): void {
         if (!this.agent) return;
         this.saving = true;
         this.saveError = null;
         this.saveSuccess = false;
 
-        this.http.put(`${environment.server}/api/agent/${this.agentId}`, this.agent).subscribe({
-            next: () => {
-                this.saving = false;
-                this.saveSuccess = true;
-            },
-            error: (err) => {
-                this.saving = false;
-                this.saveError = err.error?.error ?? 'Save failed. Please try again.';
-            }
-        });
+        if (this.isNew) {
+            this.http.post<Agent>(`${environment.server}/api/agent`, this.agent).subscribe({
+                next: (created) => {
+                    this.saving = false;
+                    this.router.navigate(['/account/agents', created.agentID]);
+                },
+                error: (err) => {
+                    this.saving = false;
+                    this.saveError = err.error?.error ?? 'Save failed. Please try again.';
+                }
+            });
+        } else {
+            this.http.put(`${environment.server}/api/agent/${this.agentId}`, this.agent).subscribe({
+                next: () => {
+                    this.saving = false;
+                    this.saveSuccess = true;
+                },
+                error: (err) => {
+                    this.saving = false;
+                    this.saveError = err.error?.error ?? 'Save failed. Please try again.';
+                }
+            });
+        }
     }
 }

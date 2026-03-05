@@ -97,6 +97,7 @@ export const routes: Routes = [
     { path: 'account/festa-submit', component: FestaFormPage, canActivate: [authGuard] },
     { path: 'account/council', component: DashboardPage, canActivate: [authGuard] }, // Placeholder - will be replaced
     { path: 'account/agents', component: AccountAgentsPage, canActivate: [authGuard] },
+    { path: 'account/agents/new', component: AccountAgentEditPage, canActivate: [authGuard] },
     { path: 'account/agents/:id', component: AccountAgentDetailPage, canActivate: [authGuard] },
     { path: 'account/agents/:id/edit', component: AccountAgentEditPage, canActivate: [authGuard] },
     { path: 'account/profile', component: AccountProfilePage, canActivate: [authGuard] },

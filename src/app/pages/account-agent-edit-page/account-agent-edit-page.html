@@ -6,8 +6,11 @@
 
         <!-- Top bar -->
         <div class="top-bar">
-            <a [routerLink]="['/account/agents', agentId]" class="back-link">
+            <a *ngIf="!isNew" [routerLink]="['/account/agents', agentId]" class="back-link">
                 <i class="bx bx-arrow-back"></i> Back to Agent
+            </a>
+            <a *ngIf="isNew" [routerLink]="['/account/agents']" class="back-link">
+                <i class="bx bx-arrow-back"></i> Back to Agents
             </a>
         </div>
 
@@ -23,10 +26,10 @@
             <span>Agent not found or failed to load.</span>
         </div>
 
-        <div *ngIf="!loading && !loadError && agent" class="edit-layout">
+        <div *ngIf="!loading && !loadError && agent" class="edit-layout" [class.new-layout]="isNew">
 
-            <!-- Photo Upload Card -->
-            <div class="card photo-card">
+            <!-- Photo Upload Card (edit mode only) -->
+            <div *ngIf="!isNew" class="card photo-card">
                 <h2><i class="bx bx-image"></i> Photo</h2>
 
                 <div class="photo-preview">
@@ -59,7 +62,10 @@
 
             <!-- Edit Form Card -->
             <div class="card form-card">
-                <h2><i class="bx bx-edit"></i> Edit Agent — {{ agent.firstName }} {{ agent.lastName }}</h2>
+                <h2>
+                    <i class="bx" [ngClass]="isNew ? 'bx-user-plus' : 'bx-edit'"></i>
+                    {{ isNew ? 'New Agent' : 'Edit Agent — ' + agent.firstName + ' ' + agent.lastName }}
+                </h2>
 
                 <form (ngSubmit)="saveAgent()" #agentForm="ngForm">
 
@@ -123,12 +129,24 @@
                     <div *ngIf="saveError" class="alert alert-error">
                         <i class="bx bx-error-circle"></i> {{ saveError }}
                     </div>
+                    <div *ngIf="deleteError" class="alert alert-error">
+                        <i class="bx bx-error-circle"></i> {{ deleteError }}
+                    </div>
+                    <div *ngIf="deleteConfirm" class="alert alert-warning">
+                        <i class="bx bx-error"></i> Are you sure? This will permanently remove the agent. Click Delete again to confirm.
+                    </div>
 
                     <div class="form-actions">
-                        <a [routerLink]="['/account/agents', agentId]" class="btn-cancel">Cancel</a>
+                        <button *ngIf="!isNew" type="button" class="btn-delete" (click)="deleteAgent()" [disabled]="deleting">
+                            <i class="bx" [ngClass]="deleting ? 'bx-loader-alt bx-spin' : 'bx-trash'"></i>
+                            {{ deleting ? 'Deleting...' : (deleteConfirm ? 'Delete' : 'Delete Agent') }}
+                        </button>
+                        <div class="spacer"></div>
+                        <a *ngIf="!isNew" [routerLink]="['/account/agents', agentId]" class="btn-cancel">Cancel</a>
+                        <a *ngIf="isNew" [routerLink]="['/account/agents']" class="btn-cancel">Cancel</a>
                         <button type="submit" class="btn-save" [disabled]="saving || agentForm.invalid">
                             <i class="bx" [ngClass]="saving ? 'bx-loader-alt bx-spin' : 'bx-save'"></i>
-                            {{ saving ? 'Saving...' : 'Save Changes' }}
+                            {{ saving ? 'Saving...' : (isNew ? 'Create Agent' : 'Save Changes') }}
                         </button>
                     </div>
 

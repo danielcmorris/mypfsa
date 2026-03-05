@@ -21,6 +21,10 @@ export class FestaFormComponent implements OnInit {
   submitSuccess = false;
   submitError = '';
 
+  isDeleting = false;
+  deleteConfirm = false;
+  deleteError = '';
+
   get isEditMode(): boolean { return !!this.festaId; }
 
   states = [
@@ -301,6 +305,25 @@ export class FestaFormComponent implements OnInit {
     const array = this.festaForm.get(arrayName) as FormArray;
     const field = array.at(index)?.get(fieldName);
     return field ? field.invalid && field.touched : false;
+  }
+
+  deleteFesta(): void {
+    if (!this.deleteConfirm) {
+      this.deleteConfirm = true;
+      return;
+    }
+    this.isDeleting = true;
+    this.deleteError = '';
+    this.festaService.deleteFesta(this.festaId!).subscribe({
+      next: () => {
+        this.router.navigate(['/account/festas']);
+      },
+      error: (err) => {
+        this.isDeleting = false;
+        this.deleteConfirm = false;
+        this.deleteError = err?.error?.error || 'Delete failed. Please try again.';
+      }
+    });
   }
 
   goBack(): void {

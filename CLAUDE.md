@@ -70,6 +70,9 @@ All components use Angular's **standalone component** architecture (no NgModules
 Routes are defined in `src/app/app.routes.ts` using Angular's standalone routing. The catch-all route (`**`) redirects to `ErrorPage` and must remain at the bottom of the routes array.
 
 ### Services & Data
+**API SERVER**
+- API Server is a dotnet c# webapi system.
+- Source code is here: /mnt/c/Users/dmorr/source/repos/PFSA/pfsa-api
 
 **Data Layer:**
 - Services live in `src/app/services/`

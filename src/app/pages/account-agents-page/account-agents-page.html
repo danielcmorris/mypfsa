@@ -8,6 +8,9 @@
                 <h1><i class="bx bx-user-pin"></i> Agents</h1>
                 <p>PFSA licensed insurance agents</p>
             </div>
+            <a [routerLink]="['/account/agents/new']" class="btn-add-new">
+                <i class="bx bx-plus"></i> Add New
+            </a>
         </div>
 
         <div class="agents-content">
@@ -39,7 +42,8 @@
                     <tbody>
                         <tr *ngFor="let agent of agents" [routerLink]="['/account/agents', agent.agentID]" class="clickable-row">
                             <td class="agent-name">
-                                <span class="avatar">{{ agent.firstName.charAt(0) }}{{ agent.lastName.charAt(0) }}</span>
+                                <img *ngIf="agent.imgUri" [src]="agent.imgUri" [alt]="agent.firstName + ' ' + agent.lastName" class="avatar avatar-img">
+                                <span *ngIf="!agent.imgUri" class="avatar">{{ agent.firstName.charAt(0) }}{{ agent.lastName.charAt(0) }}</span>
                                 {{ agent.firstName }} {{ agent.lastName }}
                             </td>
                             <td><span class="badge">{{ agent.license }}</span></td>

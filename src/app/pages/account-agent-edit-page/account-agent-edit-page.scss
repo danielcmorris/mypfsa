@@ -44,6 +44,10 @@
     grid-template-columns: 260px 1fr;
     gap: 24px;
     align-items: start;
+
+    &.new-layout {
+        grid-template-columns: 1fr;
+    }
 }
 
 .card {
@@ -214,15 +218,22 @@
         background: #fee2e2;
         color: #991b1b;
     }
+
+    &.alert-warning {
+        background: #fff3cd;
+        color: #856404;
+    }
 }
 
 .form-actions {
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
     gap: 12px;
     margin-top: 24px;
     padding-top: 20px;
     border-top: 1px solid #f0f0f0;
+
+    .spacer { flex: 1; }
 }
 
 .btn-cancel {
@@ -238,6 +249,31 @@
     transition: background 0.2s;
 
     &:hover { background: #dde3ef; color: #333; }
+}
+
+.btn-delete {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    background: transparent;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover:not(:disabled) {
+        background: #dc3545;
+        color: white;
+    }
+
+    &:disabled {
+        opacity: 0.55;
+        cursor: not-allowed;
+    }
 }
 
 .btn-save {

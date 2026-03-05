@@ -52,4 +52,8 @@ export class FestaService {
   updateFesta(id: number, festa: ApiFestaRequest): Observable<unknown> {
     return this.http.put(`${this.apiBase}/${id}`, festa);
   }
+
+  deleteFesta(id: number): Observable<unknown> {
+    return this.http.delete(`${this.apiBase}/${id}`);
+  }
 }
