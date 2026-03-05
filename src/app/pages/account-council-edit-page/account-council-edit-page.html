@@ -1,0 +1,132 @@
+<app-account-top-header></app-account-top-header>
+<app-account-navbar></app-account-navbar>
+
+<div class="account-council-edit-area">
+    <div class="container-fluid">
+
+        <div class="top-bar">
+            <a *ngIf="!isNew" [routerLink]="['/account/council', councilId]" class="back-link">
+                <i class="bx bx-arrow-back"></i> Back to Council
+            </a>
+            <a *ngIf="isNew" routerLink="/account/council" class="back-link">
+                <i class="bx bx-arrow-back"></i> Back to Councils
+            </a>
+        </div>
+
+        <div *ngIf="loading" class="state-message">
+            <i class="bx bx-loader-alt bx-spin"></i>
+            <span>Loading council...</span>
+        </div>
+
+        <div *ngIf="loadError" class="state-message error">
+            <i class="bx bx-error-circle"></i>
+            <span>Council not found or failed to load.</span>
+        </div>
+
+        <div *ngIf="!loading && !loadError" class="edit-layout">
+
+            <!-- Council Info Card -->
+            <div class="card">
+                <h2>
+                    <i class="bx" [ngClass]="isNew ? 'bx-plus-circle' : 'bx-edit'"></i>
+                    {{ isNew ? 'New Council' : 'Edit Council' }}
+                </h2>
+
+                <form (ngSubmit)="save()" #councilForm="ngForm">
+
+                    <div class="form-section-label">Council Details</div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="code">Council Code</label>
+                            <input id="code" type="text" [(ngModel)]="form.code" name="code" required placeholder="e.g. 13">
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Council Name</label>
+                            <input id="name" type="text" [(ngModel)]="form.name" name="name" required placeholder="e.g. Tracy">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="address1">Address Line 1</label>
+                            <input id="address1" type="text" [(ngModel)]="form.address1" name="address1" placeholder="Street address">
+                        </div>
+                        <div class="form-group">
+                            <label for="address2">Address Line 2</label>
+                            <input id="address2" type="text" [(ngModel)]="form.address2" name="address2" placeholder="Suite, PO Box, etc.">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input id="city" type="text" [(ngModel)]="form.city" name="city" placeholder="City">
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <select id="state" [(ngModel)]="form.state" name="state">
+                                <option *ngFor="let s of states" [value]="s">{{ s }}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-section-label mt">Secretary</div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="secFirst">First Name</label>
+                            <input id="secFirst" type="text" [(ngModel)]="form.secretaryFirstName" name="secretaryFirstName" placeholder="First name">
+                        </div>
+                        <div class="form-group">
+                            <label for="secLast">Last Name</label>
+                            <input id="secLast" type="text" [(ngModel)]="form.secretaryLastName" name="secretaryLastName" placeholder="Last name">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="secPhone">Phone</label>
+                            <input id="secPhone" type="text" [(ngModel)]="form.secretaryPhone" name="secretaryPhone" placeholder="e.g. 209-835-4341">
+                        </div>
+                        <div class="form-group">
+                            <label for="secEmail">Email</label>
+                            <input id="secEmail" type="email" [(ngModel)]="form.secretaryEmail" name="secretaryEmail" placeholder="email@example.com">
+                        </div>
+                    </div>
+
+                    <div *ngIf="saveSuccess" class="alert alert-success">
+                        <i class="bx bx-check-circle"></i> Council saved successfully.
+                    </div>
+                    <div *ngIf="saveError" class="alert alert-error">
+                        <i class="bx bx-error-circle"></i> {{ saveError }}
+                    </div>
+                    <div *ngIf="deleteError" class="alert alert-error">
+                        <i class="bx bx-error-circle"></i> {{ deleteError }}
+                    </div>
+                    <div *ngIf="deleteConfirm" class="alert alert-warning">
+                        <i class="bx bx-error"></i> Are you sure? This will permanently remove the council. Click Delete again to confirm.
+                    </div>
+
+                    <div class="form-actions">
+                        <button *ngIf="!isNew" type="button" class="btn-delete" (click)="deleteCouncil()" [disabled]="deleting">
+                            <i class="bx" [ngClass]="deleting ? 'bx-loader-alt bx-spin' : 'bx-trash'"></i>
+                            {{ deleting ? 'Deleting...' : (deleteConfirm ? 'Delete' : 'Delete Council') }}
+                        </button>
+                        <div class="spacer"></div>
+                        <a *ngIf="!isNew" [routerLink]="['/account/council', councilId]" class="btn-cancel">Cancel</a>
+                        <a *ngIf="isNew" routerLink="/account/council" class="btn-cancel">Cancel</a>
+                        <button type="submit" class="btn-save" [disabled]="saving || councilForm.invalid">
+                            <i class="bx" [ngClass]="saving ? 'bx-loader-alt bx-spin' : 'bx-save'"></i>
+                            {{ saving ? 'Saving...' : (isNew ? 'Create Council' : 'Save Changes') }}
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

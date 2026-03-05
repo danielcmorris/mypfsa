@@ -1,0 +1,206 @@
+.account-council-detail-area {
+    padding: 40px 0;
+    min-height: calc(100vh - 200px);
+    background: #f8f9fa;
+
+    .container-fluid {
+        max-width: 860px;
+        padding: 0 30px;
+    }
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #1a365d;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover { color: #fd7e14; }
+    i { font-size: 18px; }
+}
+
+.btn-edit {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    background: linear-gradient(135deg, #1a365d 0%, #2d5a9e 100%);
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(26, 54, 93, 0.35);
+        color: white;
+    }
+}
+
+.state-message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666;
+    font-size: 16px;
+    padding: 60px 0;
+    justify-content: center;
+
+    i { font-size: 24px; }
+    &.error { color: #dc3545; }
+}
+
+.council-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.council-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 32px 36px;
+    background: linear-gradient(135deg, #1a365d 0%, #2d5a9e 100%);
+    color: white;
+}
+
+.council-code {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: monospace;
+    color: white;
+}
+
+.council-title {
+    h1 {
+        font-size: 26px;
+        font-weight: 700;
+        margin: 0 0 6px;
+        color: white;
+    }
+}
+
+.city-label {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.detail-section {
+    padding: 28px 36px;
+    border-bottom: 1px solid #f0f0f0;
+
+    &:nth-child(odd) {
+        border-right: 1px solid #f0f0f0;
+    }
+
+    h2 {
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #888;
+        margin: 0 0 16px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+
+        i {
+            font-size: 15px;
+            color: #fd7e14;
+        }
+    }
+
+    p {
+        margin: 0 0 4px;
+        font-size: 15px;
+        color: #333;
+        line-height: 1.5;
+    }
+
+    dl {
+        margin: 0;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 8px 16px;
+        align-items: baseline;
+    }
+
+    dt {
+        font-size: 13px;
+        color: #999;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    dd {
+        margin: 0;
+        font-size: 15px;
+        color: #333;
+
+        a {
+            color: #1a365d;
+            text-decoration: none;
+            &:hover { color: #fd7e14; text-decoration: underline; }
+        }
+    }
+}
+
+.empty-field {
+    color: #bbb !important;
+    font-style: italic;
+    font-size: 14px !important;
+}
+
+@media (max-width: 768px) {
+    .account-council-detail-area {
+        padding: 20px 0;
+        .container-fluid { padding: 0 15px; }
+    }
+
+    .council-header {
+        padding: 24px 20px;
+        gap: 16px;
+    }
+
+    .council-title h1 { font-size: 20px; }
+
+    .detail-grid { grid-template-columns: 1fr; }
+
+    .detail-section {
+        padding: 20px;
+        &:nth-child(odd) { border-right: none; }
+    }
+}

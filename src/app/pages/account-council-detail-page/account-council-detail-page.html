@@ -1,0 +1,71 @@
+<app-account-top-header></app-account-top-header>
+<app-account-navbar></app-account-navbar>
+
+<div class="account-council-detail-area">
+    <div class="container-fluid">
+
+        <div class="top-bar">
+            <a routerLink="/account/council" class="back-link">
+                <i class="bx bx-arrow-back"></i> Back to Councils
+            </a>
+            <a *ngIf="council" [routerLink]="['/account/council', council.councilID, 'edit']" class="btn-edit">
+                <i class="bx bx-edit"></i> Edit
+            </a>
+        </div>
+
+        <div *ngIf="loading" class="state-message">
+            <i class="bx bx-loader-alt bx-spin"></i>
+            <span>Loading council...</span>
+        </div>
+
+        <div *ngIf="error" class="state-message error">
+            <i class="bx bx-error-circle"></i>
+            <span>Council not found or failed to load.</span>
+        </div>
+
+        <div *ngIf="!loading && !error && council" class="council-card">
+
+            <div class="council-header">
+                <div class="council-code">{{ council.code }}</div>
+                <div class="council-title">
+                    <h1>{{ council.name }}</h1>
+                    <span *ngIf="council.city" class="city-label">{{ council.city }}<span *ngIf="council.state">, {{ council.state }}</span></span>
+                </div>
+            </div>
+
+            <div class="detail-grid">
+
+                <div class="detail-section">
+                    <h2><i class="bx bx-map"></i> Address</h2>
+                    <p *ngIf="council.address1">{{ council.address1 }}</p>
+                    <p *ngIf="council.address2">{{ council.address2 }}</p>
+                    <p *ngIf="council.city">{{ council.city }}<span *ngIf="council.state">, {{ council.state }}</span></p>
+                    <p *ngIf="!council.address1 && !council.city" class="empty-field">No address on file</p>
+                </div>
+
+                <div class="detail-section">
+                    <h2><i class="bx bx-user"></i> Secretary</h2>
+                    <dl *ngIf="council.secretary?.name || council.secretary?.phone || council.secretary?.email">
+                        <ng-container *ngIf="council.secretary?.name">
+                            <dt>Name</dt>
+                            <dd>{{ council.secretary!.name }}</dd>
+                        </ng-container>
+                        <ng-container *ngIf="council.secretary?.phone">
+                            <dt>Phone</dt>
+                            <dd><a [href]="'tel:' + council.secretary!.phone">{{ council.secretary!.phone }}</a></dd>
+                        </ng-container>
+                        <ng-container *ngIf="council.secretary?.email">
+                            <dt>Email</dt>
+                            <dd><a [href]="'mailto:' + council.secretary!.email">{{ council.secretary!.email }}</a></dd>
+                        </ng-container>
+                    </dl>
+                    <p *ngIf="!council.secretary?.name && !council.secretary?.phone && !council.secretary?.email" class="empty-field">No secretary on file</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<app-footer></app-footer>

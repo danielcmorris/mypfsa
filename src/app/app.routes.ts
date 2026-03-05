@@ -47,6 +47,8 @@ import { AccountAgentsPage } from './pages/account-agents-page/account-agents-pa
 import { AccountAgentDetailPage } from './pages/account-agent-detail-page/account-agent-detail-page';
 import { AccountAgentEditPage } from './pages/account-agent-edit-page/account-agent-edit-page';
 import { AccountCouncilPage } from './pages/account-council-page/account-council-page';
+import { AccountCouncilDetailPage } from './pages/account-council-detail-page/account-council-detail-page';
+import { AccountCouncilEditPage } from './pages/account-council-edit-page/account-council-edit-page';
 import { AccountNewslettersPage } from './pages/account-newsletters-page/account-newsletters-page';
 import { AccountNewsletterEditPage } from './pages/account-newsletter-edit-page/account-newsletter-edit-page';
 import { CallbackPage } from './pages/callback-page/callback-page';
@@ -99,6 +101,9 @@ export const routes: Routes = [
     { path: 'account/festas/:id/edit', component: FestaEditPage, canActivate: [authGuard] },
     { path: 'account/festa-submit', component: FestaFormPage, canActivate: [authGuard] },
     { path: 'account/council', component: AccountCouncilPage, canActivate: [authGuard] },
+    { path: 'account/council/new', component: AccountCouncilEditPage, canActivate: [authGuard] },
+    { path: 'account/council/:id', component: AccountCouncilDetailPage, canActivate: [authGuard] },
+    { path: 'account/council/:id/edit', component: AccountCouncilEditPage, canActivate: [authGuard] },
     { path: 'account/agents', component: AccountAgentsPage, canActivate: [authGuard] },
     { path: 'account/agents/new', component: AccountAgentEditPage, canActivate: [authGuard] },
     { path: 'account/agents/:id', component: AccountAgentDetailPage, canActivate: [authGuard] },

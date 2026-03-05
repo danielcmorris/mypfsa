@@ -8,6 +8,9 @@
                 <h1><i class="bx bx-group"></i> Councils</h1>
                 <p>PFSA council directory</p>
             </div>
+            <a [routerLink]="['/account/council/new']" class="btn-add-new">
+                <i class="bx bx-plus"></i> Add New
+            </a>
         </div>
 
         <div class="council-content">
@@ -38,7 +41,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let c of councils">
+                        <tr *ngFor="let c of councils"
+                            [routerLink]="['/account/council', c.councilID]"
+                            class="clickable-row">
                             <td class="col-code">
                                 <span class="code-badge">{{ c.code }}</span>
                             </td>
@@ -54,13 +59,13 @@
                                 <span *ngIf="!c.secretary?.name" class="text-muted">—</span>
                             </td>
                             <td class="col-phone">
-                                <a *ngIf="c.secretary?.phone" [href]="'tel:' + c.secretary!.phone">
+                                <a *ngIf="c.secretary?.phone" [href]="'tel:' + c.secretary!.phone" (click)="$event.stopPropagation()">
                                     {{ c.secretary!.phone }}
                                 </a>
                                 <span *ngIf="!c.secretary?.phone" class="text-muted">—</span>
                             </td>
                             <td class="col-email">
-                                <a *ngIf="c.secretary?.email" [href]="'mailto:' + c.secretary!.email">
+                                <a *ngIf="c.secretary?.email" [href]="'mailto:' + c.secretary!.email" (click)="$event.stopPropagation()">
                                     {{ c.secretary!.email }}
                                 </a>
                                 <span *ngIf="!c.secretary?.email" class="text-muted">—</span>

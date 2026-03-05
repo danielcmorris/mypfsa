@@ -1,0 +1,211 @@
+.account-council-edit-area {
+    padding: 40px 0;
+    min-height: calc(100vh - 200px);
+    background: #f8f9fa;
+
+    .container-fluid {
+        max-width: 860px;
+        padding: 0 30px;
+    }
+}
+
+.top-bar {
+    margin-bottom: 24px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #1a365d;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover { color: #fd7e14; }
+    i { font-size: 18px; }
+}
+
+.state-message {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666;
+    font-size: 16px;
+    padding: 60px 0;
+    justify-content: center;
+
+    i { font-size: 24px; }
+    &.error { color: #dc3545; }
+}
+
+.edit-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+
+    h2 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #1a365d;
+        margin: 0 0 24px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        i { color: #fd7e14; font-size: 18px; }
+    }
+}
+
+.form-section-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f0f0f0;
+
+    &.mt { margin-top: 28px; }
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+
+    label {
+        display: block;
+        font-size: 13px;
+        font-weight: 500;
+        color: #555;
+        margin-bottom: 6px;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 10px 14px;
+        border: 1px solid #dde3ef;
+        border-radius: 8px;
+        font-size: 14px;
+        color: #333;
+        background: #fafbfd;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        box-sizing: border-box;
+
+        &:focus {
+            outline: none;
+            border-color: #2d5a9e;
+            box-shadow: 0 0 0 3px rgba(45, 90, 158, 0.12);
+            background: white;
+        }
+    }
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 16px;
+
+    i { font-size: 18px; }
+
+    &.alert-success { background: #d1fae5; color: #065f46; }
+    &.alert-error   { background: #fee2e2; color: #991b1b; }
+    &.alert-warning { background: #fff3cd; color: #856404; }
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+
+    .spacer { flex: 1; }
+}
+
+.btn-cancel {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: #f1f4f9;
+    color: #555;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+
+    &:hover { background: #dde3ef; color: #333; }
+}
+
+.btn-delete {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    background: transparent;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover:not(:disabled) { background: #dc3545; color: white; }
+    &:disabled { opacity: 0.55; cursor: not-allowed; }
+}
+
+.btn-save {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #1a365d 0%, #2d5a9e 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover:not(:disabled) {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(26, 54, 93, 0.35);
+    }
+
+    &:disabled { opacity: 0.55; cursor: not-allowed; }
+}
+
+@media (max-width: 768px) {
+    .account-council-edit-area {
+        padding: 20px 0;
+        .container-fluid { padding: 0 15px; }
+    }
+
+    .card { padding: 20px; }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}

@@ -1,17 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { AccountTopHeader } from '../../common/account-top-header/account-top-header';
 import { AccountNavbar } from '../../common/account-navbar/account-navbar';
 import { Footer } from '../../common/footer/footer';
 import { environment } from '../../../environments/environment';
-
-interface CouncilSecretary {
-    name: string | null;
-    phone: string | null;
-    email: string | null;
-}
 
 interface Council {
     councilID: number;
@@ -21,27 +15,28 @@ interface Council {
     address2: string | null;
     city: string | null;
     state: string | null;
-    secretary: CouncilSecretary | null;
+    secretary: { name: string | null; phone: string | null; email: string | null } | null;
 }
 
 @Component({
-    selector: 'app-account-council-page',
+    selector: 'app-account-council-detail-page',
     standalone: true,
     imports: [CommonModule, RouterLink, AccountTopHeader, AccountNavbar, Footer],
-    templateUrl: './account-council-page.html',
-    styleUrl: './account-council-page.scss'
+    templateUrl: './account-council-detail-page.html',
+    styleUrl: './account-council-detail-page.scss'
 })
-export class AccountCouncilPage implements OnInit {
-    councils: Council[] = [];
+export class AccountCouncilDetailPage implements OnInit {
+    council: Council | null = null;
     loading = true;
     error = false;
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
     ngOnInit(): void {
-        this.http.get<Council[]>(`${environment.server}/api/council`).subscribe({
+        const id = this.route.snapshot.paramMap.get('id');
+        this.http.get<Council>(`${environment.server}/api/council/${id}`).subscribe({
             next: (data) => {
-                this.councils = data;
+                this.council = data;
                 this.loading = false;
             },
             error: () => {
