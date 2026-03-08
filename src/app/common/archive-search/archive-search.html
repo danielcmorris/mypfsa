@@ -1,0 +1,20 @@
+<div class="archive-search">
+    <div class="archive-search-inner">
+        <div class="archive-search-label">
+            <i class="bx bx-search-alt-2"></i>
+            <span>Search the Archives</span>
+        </div>
+        <div class="archive-search-input-row">
+            <input
+                type="text"
+                class="archive-search-input"
+                placeholder="Ask a question or search for a topic..."
+                [(ngModel)]="query"
+                (keydown)="onKeyDown($event)"
+            />
+            <button class="archive-search-btn" (click)="search()" [disabled]="!query.trim()">
+                Search
+            </button>
+        </div>
+    </div>
+</div>

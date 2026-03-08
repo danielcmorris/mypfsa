@@ -52,6 +52,7 @@ import { AccountCouncilEditPage } from './pages/account-council-edit-page/accoun
 import { AccountNewslettersPage } from './pages/account-newsletters-page/account-newsletters-page';
 import { AccountNewsletterEditPage } from './pages/account-newsletter-edit-page/account-newsletter-edit-page';
 import { AccountSearchPage } from './pages/account-search-page/account-search-page';
+import { SearchPage } from './pages/search-page/search-page';
 import { CallbackPage } from './pages/callback-page/callback-page';
 export const routes: Routes = [
     { path: '', component: HomeDemoOne },
@@ -92,6 +93,8 @@ export const routes: Routes = [
     { path: 'become-a-member', component: BecomeMemberPage },
     { path: 'festas', component: FestasPage },
     { path: 'festa-schedule', component: FestaSchedulePage },
+    // Public search
+    { path: 'search/:topic', component: SearchPage },
     // Auth callback route
     { path: 'callback', component: CallbackPage },
     // Account routes (protected)

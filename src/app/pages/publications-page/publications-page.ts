@@ -6,10 +6,11 @@ import { InnerPageBanner } from '../../common/inner-page-banner/inner-page-banne
 import { Navbar } from '../../common/navbar/navbar';
 import { TopHeader } from '../../common/top-header/top-header';
 import { MagazinesComponent } from "../../common/magazines/magazines";
+import { ArchiveSearchComponent } from '../../common/archive-search/archive-search';
 
 @Component({
   selector: 'app-publications-page',
-  imports: [NewslettersComponent, NewsletterComponent, MagazineComponent, InnerPageBanner, Navbar, TopHeader, MagazinesComponent],
+  imports: [NewslettersComponent, NewsletterComponent, MagazineComponent, InnerPageBanner, Navbar, TopHeader, MagazinesComponent, ArchiveSearchComponent],
   templateUrl: './publications-page.html',
   styleUrl: './publications-page.scss',
 })
