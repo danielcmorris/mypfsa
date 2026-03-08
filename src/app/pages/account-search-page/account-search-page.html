@@ -62,7 +62,7 @@
                                 <i class="bx bxs-file-pdf"></i> {{ item.title }}
                             </a>
                             <span *ngIf="!item.fileUrl" class="source-title">{{ item.title }}</span>
-                            <span *ngIf="item.snippet" class="source-snippet" [innerHTML]="item.snippet"></span>
+                            <span *ngIf="item.snippet && item.snippet !== 'No snippet is available for this page.'" class="source-snippet" [innerHTML]="item.snippet"></span>
                         </div>
                     </li>
                 </ol>
