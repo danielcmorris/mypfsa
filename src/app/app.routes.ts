@@ -51,6 +51,7 @@ import { AccountCouncilDetailPage } from './pages/account-council-detail-page/ac
 import { AccountCouncilEditPage } from './pages/account-council-edit-page/account-council-edit-page';
 import { AccountNewslettersPage } from './pages/account-newsletters-page/account-newsletters-page';
 import { AccountNewsletterEditPage } from './pages/account-newsletter-edit-page/account-newsletter-edit-page';
+import { AccountSearchPage } from './pages/account-search-page/account-search-page';
 import { CallbackPage } from './pages/callback-page/callback-page';
 export const routes: Routes = [
     { path: '', component: HomeDemoOne },
@@ -112,5 +113,6 @@ export const routes: Routes = [
     { path: 'account/newsletters/new', component: AccountNewsletterEditPage, canActivate: [authGuard] },
     { path: 'account/newsletters/:id/edit', component: AccountNewsletterEditPage, canActivate: [authGuard] },
     { path: 'account/profile', component: AccountProfilePage, canActivate: [authGuard] },
+    { path: 'account/search', component: AccountSearchPage, canActivate: [authGuard] },
     { path: '**', component: ErrorPage } // This line will remain down from the whole component list
 ];

@@ -27,6 +27,7 @@ export class AccountNavbar {
         { label: 'Agents', path: '/account/agents', icon: 'bx bx-user-pin' },
         { label: 'Newsletters', path: '/account/newsletters', icon: 'bx bx-news' },
         { label: 'Council', path: '/account/council', icon: 'bx bx-group' },
+        { label: 'Search', path: '/account/search', icon: 'bx bx-search-alt-2' },
         { label: 'Profile', path: '/account/profile', icon: 'bx bx-user' }
     ];
 
