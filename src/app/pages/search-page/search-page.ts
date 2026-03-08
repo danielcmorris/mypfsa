@@ -8,6 +8,7 @@ import { combineLatest } from 'rxjs';
 import { TopHeader } from '../../common/top-header/top-header';
 import { Navbar } from '../../common/navbar/navbar';
 import { Footer } from '../../common/footer/footer';
+import { NewslettersComponent } from '../../common/newsletters/newsletters';
 import { environment } from '../../../environments/environment';
 
 interface SearchResultItem {
@@ -29,7 +30,7 @@ interface SearchResponse {
 @Component({
     selector: 'app-search-page',
     standalone: true,
-    imports: [CommonModule, FormsModule, TopHeader, Navbar, Footer],
+    imports: [CommonModule, FormsModule, TopHeader, Navbar, Footer, NewslettersComponent],
     templateUrl: './search-page.html',
     styleUrl: './search-page.scss'
 })
@@ -70,6 +71,16 @@ export class SearchPage implements OnInit {
         if (event.key === 'Enter') {
             this.search();
         }
+    }
+
+    clear(): void {
+        this.query = '';
+        this.result = null;
+        this.renderedSummary = null;
+        this.error = false;
+        this.loading = false;
+        this.lastRanQuery = '';
+        this.router.navigate(['/search', this.topic], { queryParams: {} });
     }
 
     private runSearch(): void {

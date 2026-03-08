@@ -21,6 +21,9 @@
                     (keydown)="onKeyDown($event)"
                     [disabled]="loading"
                 />
+                <button *ngIf="query" class="btn-clear" (click)="clear()" title="Clear search">
+                    <i class="bx bx-x"></i>
+                </button>
                 <button class="btn-search" (click)="search()" [disabled]="loading || !query.trim()">
                     <span *ngIf="!loading">Search</span>
                     <span *ngIf="loading"><i class="bx bx-loader-alt bx-spin"></i> Searching...</span>
